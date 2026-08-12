@@ -205,17 +205,35 @@ editas el HTML la terminal cambia sola. Detalle en el §14 de [CLAUDE.md](CLAUDE
 
 ## Despliegue
 
-Objetivo: **Cloudflare Pages**, conectado a este repositorio. Cada push publica solo.
+En producción en <https://freejolitos.consulting>, como **Worker de Cloudflare con assets
+estáticos** — no como proyecto de Pages. Cloudflare fusionó Pages dentro de Workers y los sitios
+estáticos nuevos nacen así.
 
-| Ajuste | Valor |
-|---|---|
-| Comando de build | *(ninguno)* |
-| Directorio de salida | `/` |
-| Framework | None |
+Toda la configuración está en [`wrangler.jsonc`](wrangler.jsonc). Para desplegar a mano:
 
-Pages resuelve `/servicios` → `servicios.html` por su cuenta, que es exactamente lo que imita el
-servidor de desarrollo. Los directorios que empiezan con punto no se despliegan, así que `.claude/`
-se queda fuera solo.
+```bash
+npx wrangler deploy
+```
+
+En PowerShell hay que llamar a `npx.cmd`: la política de ejecución de Windows bloquea el
+envoltorio `npx.ps1`. No hace falta cambiar esa política.
+
+### Tres cosas que cuestan un despliegue fallido si no se saben
+
+**Workers no ignora los directorios que empiezan con punto.** Eso es comportamiento de Pages. Aquí
+todo lo que no deba publicarse tiene que estar en [`.assetsignore`](.assetsignore), **incluido
+`.git/`** — el primer despliegue dejó `/.git/config` y `/.git/index` sirviéndose en público.
+
+**`_redirects` solo acepta rutas relativas.** Una redirección entre nombres de dominio se rechaza
+con `Only relative URLs are allowed`. El 301 de `www` al dominio raíz vive como *Redirect Rule* en
+el panel de Cloudflare, no en el repositorio.
+
+**`_headers` sí funciona**, y ahí están las cabeceras de seguridad.
+
+### Automatizar
+
+Hoy el despliegue es manual. Conectar el repositorio desde *Settings → Build* del Worker hace que
+cada push publique solo; el `wrangler.jsonc` ya está listo para eso.
 
 ---
 
