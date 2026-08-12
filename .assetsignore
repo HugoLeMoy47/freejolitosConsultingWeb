@@ -18,9 +18,27 @@ README.md
 NOTICE.md
 LICENSE
 
+# CRÍTICO — el repositorio de git.
+#
+# Workers static assets NO ignora los directorios que empiezan con punto. Eso es
+# comportamiento de Pages, y dar por hecho que aplicaba aquí costó un despliegue
+# con /.git/config, /.git/HEAD y /.git/index sirviéndose en público. Con eso se
+# reconstruye el repositorio entero, incluidos archivos borrados en algún commit.
+# Aquí no había nada secreto —el repositorio es público— pero no se repite.
+.git/
+
+# Temporales de wrangler. Se cuelan en cada despliegue si no se excluyen.
+.wrangler/
+
 # Herramientas de desarrollo y configuración.
 .claude/
 .assetsignore
 wrangler.jsonc
 .gitattributes
 .gitignore
+
+# Defensivos: si alguna vez entran al proyecto, que no se publiquen solos.
+node_modules/
+.vscode/
+.idea/
+*.log
