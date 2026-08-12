@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "freejolitos",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [".claude/servidor.js", "4321"],
+      "port": 4321
+    }
+  ]
+}

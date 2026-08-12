@@ -1,0 +1,34 @@
+# Cuaderno interno: razonamiento de negocio, lógica de precios, restricciones
+# contractuales. El repositorio es PÚBLICO y nada de eso tiene por qué serlo.
+# La versión técnica, que sí viaja al repositorio, es CLAUDE.md.
+NOTAS-INTERNAS.md
+
+# Ajustes locales del agente: permisos y rutas de una máquina concreta.
+# .claude/servidor.js y .claude/launch.json SÍ se versionan: son el entorno de
+# desarrollo del proyecto.
+.claude/settings.local.json
+.claude/settings.local.json.bak
+
+# Sistema operativo
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*~
+
+# Por si algún día entra herramienta de apoyo. El sitio no tiene proceso de
+# build y no debería adquirir uno: ver §3 de CLAUDE.md.
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Salidas de verificación y temporales
+/tmp/
+*.log

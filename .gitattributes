@@ -1,0 +1,5 @@
+# El repositorio guarda LF. Sin esto, cada máquina Windows ve el sitio entero
+# como modificado y los diffs dejan de servir.
+* text=auto eol=lf
+
+*.png binary

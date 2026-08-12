@@ -1,0 +1,972 @@
+/* =========================================================
+   Freejolitos Consultores — hoja de estilos única
+   Paleta extraída del logotipo. Sin webfonts, sin terceros.
+   ========================================================= */
+
+:root {
+  --texto:        #343434;
+  --acento:       #01CFCB;
+  --resalte:      #D8FAF9;
+  --secundario:   #6B6B6B;   /* variante accesible de #888888, ver nota abajo */
+  --secundario-decorativo: #888888;
+  --borde:        #CCCCCC;
+  --fondo:        #FFFFFF;
+
+  /* Derivado, no inventado: #D8FAF9 al 12% sobre blanco.
+     Es el lienzo sobre el que flotan los paneles blancos. Casi imperceptible
+     de frente, pero da la profundidad por capas sin meter un gris nuevo. */
+  --lienzo:       #FAFEFE;
+
+  /* Borde de panel: el #CCCCCC de la paleta, aclarado sobre el lienzo para que
+     defina sin dibujar una caja dura. */
+  --borde-suave:  rgba(1, 207, 203, 0.18);
+
+  --r-panel:      20px;
+  --r-chico:      10px;
+  --r-pildora:    999px;
+
+  --ancho-texto:  38rem;
+  --ancho-total:  66rem;
+
+  --pila: Arial, Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* #888888 sobre blanco da 3.54:1 — insuficiente para texto normal en WCAG AA.
+   Se conserva como color decorativo (bordes, iconografía) y el texto secundario
+   usa #6B6B6B (5.29:1). Criterio de aceptación §10: contraste AA. */
+
+/* ---------- Base ---------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--pila);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--texto);
+  background: var(--lienzo);
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* ---------- Salto al contenido ---------- */
+
+.salto {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--texto);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 var(--r-chico) 0;
+  z-index: 100;
+}
+.salto:focus { left: 0; }
+
+/* ---------- Tipografía ---------- */
+
+h1, h2, h3 {
+  color: var(--texto);
+  text-wrap: balance;
+}
+
+/* Titular de despliegue: peso normal, interlínea apretada, tracking negativo.
+   Es lo que hace que una pila de sistema se lea como una tipografía de display. */
+h1 {
+  font-size: clamp(2rem, 1.2rem + 3.6vw, 3.5rem);
+  font-weight: normal;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.5rem;
+  max-width: 20ch;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 1.15rem + 1.2vw, 1.9rem);
+  font-weight: normal;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 1.3;
+  margin: 2rem 0 0.5rem;
+}
+
+p { margin: 0 0 1.25rem; max-width: var(--ancho-texto); }
+
+/* Marcador turquesa bajo una frase del titular. Grueso y a la altura de la
+   línea base, para que se lea como resaltador y no como enlace. */
+.marcado {
+  background-image: linear-gradient(var(--acento), var(--acento));
+  background-repeat: no-repeat;
+  background-size: 100% 0.22em;
+  background-position: 0 88%;
+}
+
+.entrada {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  max-width: 34rem;
+}
+
+.subtitulo {
+  font-size: 1.1875rem;
+  line-height: 1.55;
+  color: var(--secundario);
+  max-width: 34rem;
+  margin: 0 0 2rem;
+}
+
+strong { font-weight: bold; }
+
+a {
+  color: var(--texto);
+  text-decoration-color: var(--acento);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+a:hover { text-decoration-color: var(--texto); }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+ul { max-width: var(--ancho-texto); padding-left: 1.25rem; margin: 0 0 1.25rem; }
+li { margin-bottom: 0.5rem; }
+li::marker { color: var(--acento); }
+
+/* ---------- Rejilla ---------- */
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-total);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+main { display: block; padding-bottom: 3rem; }
+
+/* ---------- Encabezado ---------- */
+
+.sitio-encabezado {
+  padding: 1.5rem 0 2.5rem;
+}
+
+.sitio-encabezado .contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+}
+
+/* Sin view-transition-name: con la cortinilla opaca, cualquier elemento con
+   nombre propio flotaría por encima del color y se vería mal. El sitio de
+   referencia hace lo mismo — su cortinilla tapa hasta el encabezado. */
+.marca {
+  display: inline-block;
+  line-height: 0;
+  text-decoration: none;
+}
+
+/* Proporción real del archivo: 2245 × 520 (4.317:1). No recolorear ni recortar. */
+.marca img { width: 190px; height: 44px; display: block; }
+
+.navegacion ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+.navegacion li { margin: 0; }
+
+/* Píldoras de navegación, al estilo de la barra de referencia. */
+.navegacion a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  color: var(--secundario);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--r-pildora);
+  transition: color 0.18s ease, background-color 0.18s ease;
+}
+.navegacion a:hover { color: var(--texto); background: var(--resalte); }
+
+.navegacion a[aria-current="page"] {
+  color: var(--texto);
+  background: var(--resalte);
+}
+
+/* ---------- Paneles ---------- */
+
+/* El panel es la unidad de composición: bloque blanco redondeado flotando
+   sobre el lienzo. Sustituye a las líneas divisorias de la versión anterior. */
+.panel {
+  background: var(--fondo);
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--r-panel);
+  padding: clamp(1.75rem, 1rem + 3vw, 3rem);
+  margin-bottom: 1.25rem;
+}
+.panel > :last-child { margin-bottom: 0; }
+
+.panel-hueco {
+  background: transparent;
+  border: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Panel de apertura: sin caja, el titular respira contra el lienzo. */
+.portada {
+  padding: 1rem 0 3rem;
+}
+
+/* ---------- Etiqueta de sección (cuadrito + texto) ---------- */
+
+.etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secundario);
+  margin: 0 0 1rem;
+  max-width: none;
+}
+
+.etiqueta::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--acento);
+  flex: none;
+}
+
+/* Cuadrito turquesa sobre el título de cada panel. Es el marcador de sección
+   del sitio de referencia, puro adorno: no mete texto que nadie escribió. */
+.panel > h2::before,
+.slab > h2::before {
+  content: "";
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--acento);
+  margin-bottom: 1.1rem;
+}
+
+/* ---------- Bloques de resalte ---------- */
+
+.resalte {
+  background: var(--resalte);
+  border-radius: var(--r-chico);
+  padding: 1.5rem 1.75rem;
+  margin: 1.75rem 0;
+  max-width: var(--ancho-texto);
+}
+.resalte > :last-child { margin-bottom: 0; }
+.resalte p { max-width: none; }
+
+/* ---------- Tarjetas de servicio ---------- */
+
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1.25rem;
+  margin: 0 0 1.25rem;
+}
+
+.servicio {
+  background: var(--fondo);
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--r-panel);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.servicio:hover {
+  border-color: var(--acento);
+  box-shadow: 0 2px 20px rgba(1, 207, 203, 0.12);
+}
+
+.servicio h3 { margin-top: 0; }
+.servicio p { max-width: none; }
+.servicio > :last-child { margin-bottom: 0; }
+
+/* El separador «·» va como texto entre el precio y la nota, tal como está
+   escrito en copy/. Por eso la línea es un solo párrafo y no dos bloques. */
+.linea-precio {
+  max-width: none;
+  margin: 0 0 1.25rem;
+  color: var(--secundario);
+  line-height: 1.45;
+}
+
+.precio {
+  font-size: 1.375rem;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  color: var(--texto);
+}
+
+.nota-precio {
+  font-size: 0.9375rem;
+  font-style: italic;
+  color: var(--secundario);
+}
+
+/* ---------- Enlace con galón ---------- */
+
+.enlace-chevron {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9375rem;
+  border-bottom: 2px solid var(--acento);
+  padding-bottom: 0.15rem;
+  transition: gap 0.18s ease, border-color 0.18s ease;
+}
+.enlace-chevron::after { content: "›"; font-size: 1.15em; line-height: 1; }
+.enlace-chevron:hover { gap: 0.7rem; border-color: var(--texto); }
+
+/* ---------- Lista con palomita (dibujada en CSS, sin SVG) ---------- */
+
+.lista-check {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  max-width: var(--ancho-texto);
+}
+
+.lista-check li {
+  position: relative;
+  padding-left: 2.25rem;
+  margin-bottom: 0.85rem;
+}
+
+.lista-check li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 1.35rem;
+  height: 1.35rem;
+  border: 1.5px solid var(--acento);
+  border-radius: 50%;
+}
+
+.lista-check li::after {
+  content: "";
+  position: absolute;
+  left: 0.47rem;
+  top: 0.42em;
+  width: 0.3rem;
+  height: 0.6rem;
+  border-right: 2px solid var(--acento);
+  border-bottom: 2px solid var(--acento);
+  transform: rotate(42deg);
+}
+
+/* ---------- Tabla ---------- */
+
+.tabla-envoltura {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--r-chico);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 33rem;
+  font-size: 0.9375rem;
+}
+
+caption {
+  text-align: left;
+  font-size: 0.875rem;
+  color: var(--secundario);
+  padding: 0.85rem 1rem 0.35rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--borde-suave);
+  vertical-align: top;
+}
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+
+thead th {
+  background: var(--resalte);
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+tbody th { font-weight: bold; }
+
+/* ---------- Preguntas frecuentes ---------- */
+
+.faq { max-width: var(--ancho-texto); }
+
+.faq-item { padding: 1.25rem 0; border-bottom: 1px solid var(--borde-suave); }
+.faq-item:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.faq-item h3 { margin: 0 0 0.4rem; font-size: 1.0625rem; }
+.faq-item p { margin: 0; max-width: none; }
+
+/* ---------- Bloque oscuro de llamada a la acción ---------- */
+
+.slab {
+  background: var(--texto);
+  color: #FFFFFF;
+  border-radius: var(--r-panel);
+  padding: clamp(2rem, 1.2rem + 3.5vw, 3.5rem);
+  margin: 2.5rem 0 0;
+}
+
+.slab h2 { color: #FFFFFF; }
+.slab p { color: #E4E4E4; max-width: 34rem; }
+.slab .etiqueta { color: #CCCCCC; }
+.slab > :last-child { margin-bottom: 0; }
+
+/* ---------- Botones píldora ---------- */
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1.75rem;
+}
+
+.boton, .boton-secundario {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.85rem 1.6rem;
+  font-size: 1rem;
+  border-radius: var(--r-pildora);
+  border: 2px solid transparent;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.boton {
+  background: var(--acento);
+  color: var(--texto);
+  border-color: var(--acento);
+  font-weight: bold;
+}
+.boton:hover { background: var(--texto); color: #FFFFFF; border-color: var(--texto); }
+
+.boton-secundario {
+  background: transparent;
+  color: var(--texto);
+  border-color: var(--borde);
+}
+.boton-secundario:hover { border-color: var(--acento); }
+
+/* Dentro del bloque oscuro los botones se invierten. */
+.slab .boton { background: var(--acento); color: var(--texto); border-color: var(--acento); }
+.slab .boton:hover { background: #FFFFFF; border-color: #FFFFFF; }
+.slab .boton-secundario { color: #FFFFFF; border-color: #6B6B6B; }
+.slab .boton-secundario:hover { border-color: var(--acento); }
+
+/* ---------- Pie ---------- */
+
+.sitio-pie {
+  padding: 1rem 0 3rem;
+  font-size: 0.9375rem;
+}
+
+.pie-caja {
+  background: var(--texto);
+  color: #CCCCCC;
+  border-radius: var(--r-panel);
+  padding: clamp(1.75rem, 1rem + 3vw, 2.75rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem 3rem;
+  justify-content: space-between;
+}
+
+.pie-caja p { margin: 0; max-width: 22rem; color: #CCCCCC; }
+.pie-caja strong { color: #FFFFFF; }
+.pie-caja ul { list-style: none; padding: 0; margin: 0; max-width: none; }
+.pie-caja li { margin-bottom: 0.4rem; }
+.pie-caja a { color: #CCCCCC; text-decoration-color: var(--acento); }
+.pie-caja a:hover { color: #FFFFFF; }
+
+/* ---------- Utilidades ---------- */
+
+.solo-lectores {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================================================
+   Cortinilla entre documentos — View Transitions, CSS puro.
+
+   Réplica del comportamiento medido en el sitio de referencia:
+   un panel opaco del color de marca cubre la pantalla completa,
+   se hace el cambio de página debajo, y luego se descubre.
+
+   Medición del original (73 fotogramas capturados):
+     · panel fijo a pantalla completa, por encima de todo
+     · color de acento, opacidad 0 → 1
+     · curva LINEAL, ~450 ms
+     · el salto de página ocurre con el panel ya opaco
+
+   ADVERTENCIA — esto contradice la regla §7 del brief, que prohíbe
+   «cualquier animación que retrase la aparición del contenido».
+   Una cortinilla opaca retrasa el contenido lo que dure --cortina-tiempo.
+   Se construyó a petición expresa del usuario. Para suavizarlo, baja
+   --cortina-tiempo; para eliminarlo, pon `navigation: none` abajo.
+
+   Sigue sin usar JavaScript. El sitio de referencia sí lo usa: intercepta
+   los clics y retrasa la navegación a mano. Aquí lo hace el navegador,
+   así que sin soporte la navegación es simplemente la normal.
+   ========================================================= */
+
+:root {
+  /* Color de la cortinilla. Por omisión el gris oscuro de la marca, el mismo
+     de los bloques de cierre y del pie.
+     Para la versión turquesa —más cercana al original, que usa su acento—
+     cambia esta línea a: var(--acento)
+     Ojo: §6 prohíbe el turquesa como fondo de página completo. */
+  --cortina: var(--texto);
+  --cortina-tiempo: 0.6s;   /* 0.6 cubrir + 0.6 revelar = 1.2 s en total */
+}
+
+@view-transition { navigation: auto; }
+
+/* El lienzo de la transición es la cortinilla: queda detrás de las dos
+   instantáneas, así que asoma en cuanto la primera se desvanece. */
+::view-transition { background-color: var(--cortina); }
+
+/* Sin la mezcla aditiva que trae por omisión: queremos un fundido plano
+   contra el color, no dos capas sumándose. */
+::view-transition-old(root),
+::view-transition-new(root) { mix-blend-mode: normal; }
+
+/* Fase 1 — la página que dejas se desvanece y descubre el color.
+   Fase 2 — ya cubierto, la página nueva se revela desde el color. */
+::view-transition-old(root) {
+  animation: cubrir var(--cortina-tiempo) linear both;
+}
+::view-transition-new(root) {
+  animation: revelar var(--cortina-tiempo) linear var(--cortina-tiempo) both;
+}
+
+@keyframes cubrir  { from { opacity: 1; } to   { opacity: 0; } }
+@keyframes revelar { from { opacity: 0; } to   { opacity: 1; } }
+
+/* =========================================================
+   Diagramas
+   Son SVG en línea, sin peticiones externas. Van marcados como
+   aria-hidden y NO contienen información: todo lo que dicen está
+   escrito en el texto de al lado. Regla §8: nada importante dentro
+   de una imagen. Si borras cada diagrama del HTML, no se pierde nada.
+   ========================================================= */
+
+.diagrama {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1.5rem 0 0;
+  background: var(--resalte);
+  border-radius: var(--r-chico);
+  padding: 1.25rem;
+}
+
+.servicio .diagrama { margin-top: auto; }
+
+/* Piezas que reaccionan al puntero. El estado de reposo ya es el estado
+   completo: la interacción añade énfasis, nunca revela información. */
+.diagrama .crece    { transform-box: fill-box; transform-origin: left center;   transition: transform 0.5s cubic-bezier(0.32, 0.08, 0, 1); }
+.diagrama .sube     { transform-box: fill-box; transform-origin: center bottom; transition: transform 0.5s cubic-bezier(0.32, 0.08, 0, 1); }
+.diagrama .recorre  { transition: stroke-dashoffset 0.7s cubic-bezier(0.32, 0.08, 0, 1); }
+.diagrama .late     { transition: r 0.4s ease, opacity 0.4s ease; }
+.diagrama .trazo    { opacity: 0.7; transition: opacity 0.35s ease; }
+
+.panel:hover .diagrama .trazo,
+.servicio:hover .diagrama .trazo { opacity: 1; }
+
+.servicio:hover .diagrama .crece,
+.servicio:focus-within .diagrama .crece,
+.panel:hover .diagrama .crece { transform: scaleX(1.06); }
+
+.servicio:hover .diagrama .sube,
+.servicio:focus-within .diagrama .sube,
+.panel:hover .diagrama .sube { transform: scaleY(1.08); }
+
+.servicio:hover .diagrama .recorre,
+.panel:hover .diagrama .recorre { stroke-dashoffset: 0; }
+
+.servicio:hover .diagrama .late,
+.panel:hover .diagrama .late { r: 9; opacity: 1; }
+
+/* =========================================================
+   Fichas — «Cómo trabajo» en tarjetas numeradas
+   La numeración se genera con un contador de CSS: es cronología
+   visual, no texto inventado dentro del HTML.
+   ========================================================= */
+
+/* Dos columnas como máximo: con tres, la ficha ancha deja un hueco en la
+   primera fila. Así la retícula queda 2 + 1 ancha + 2. */
+.fichas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+  gap: 1.25rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: ficha;
+  max-width: none;
+}
+
+.ficha {
+  counter-increment: ficha;
+  position: relative;
+  background: var(--fondo);
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--r-panel);
+  padding: 1.75rem;
+  margin: 0;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.32, 0.08, 0, 1);
+}
+
+.ficha::after {
+  content: counter(ficha, decimal-leading-zero);
+  position: absolute;
+  top: 1.6rem;
+  right: 1.75rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  color: var(--secundario);
+}
+
+.ficha:hover,
+.ficha:focus-within {
+  border-color: var(--acento);
+  box-shadow: 0 4px 24px rgba(1, 207, 203, 0.14);
+  transform: translateY(-4px);
+}
+
+.ficha h2,
+.ficha h3 {
+  margin: 0 0 0.7rem;
+  padding-right: 2.5rem;
+  font-size: 1.1875rem;
+  font-weight: bold;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+.ficha p  { max-width: none; }
+.ficha > :last-child { margin-bottom: 0; }
+
+/* En la ficha, el cuadrito de sección no aplica: ya está el glifo. */
+.ficha > h2::before { content: none; }
+
+/* Glifo de la ficha: 40×40, puro adorno. */
+.glifo {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1.1rem;
+}
+.glifo .trazo {
+  opacity: 0.55;
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.32, 0.08, 0, 1), opacity 0.35s ease;
+}
+.ficha:hover .glifo .trazo,
+.ficha:focus-within .glifo .trazo { stroke-dashoffset: 0; opacity: 1; }
+
+/* Ficha ancha, para el punto que necesita más aire. */
+.ficha-ancha { grid-column: 1 / -1; }
+
+/* ---------- Realce de fila en la tabla ---------- */
+
+tbody tr { transition: background-color 0.18s ease; }
+tbody tr:hover { background: var(--resalte); }
+
+/* ---------- Preguntas frecuentes plegables ----------
+   <details open> por omisión: el contenido está visible al cargar y
+   presente en el HTML para cualquier lector automático. Plegar es una
+   comodidad del visitante, nunca una condición para ver el texto. */
+
+.faq-item > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-weight: bold;
+  font-size: 1.0625rem;
+  line-height: 1.35;
+  padding: 0.15rem 0;
+}
+.faq-item > summary::-webkit-details-marker { display: none; }
+
+.faq-item > summary::before {
+  content: "";
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 0.5em;
+  background: var(--acento);
+  transition: transform 0.25s cubic-bezier(0.32, 0.08, 0, 1);
+}
+.faq-item[open] > summary::before { transform: rotate(45deg) scale(1.15); }
+
+.faq-item > summary:hover { color: var(--texto); }
+.faq-item > summary:focus-visible { outline: 3px solid var(--acento); outline-offset: 3px; }
+.faq-item > p { padding-left: 1.25rem; margin-top: 0.5rem; }
+
+/* El h3 vive dentro del summary: la pregunta sigue siendo un encabezado real
+   en el esquema del documento, no un botón sin jerarquía. */
+.faq-item > summary h3 {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: bold;
+  line-height: 1.35;
+}
+
+/* =========================================================
+   Movimiento ligado al desplazamiento — CSS puro, sin JavaScript.
+   Sólo mueve, nunca oculta: no se anima la opacidad, así que el
+   contenido es visible en todo momento aunque la animación no corra.
+   Usa la propiedad `translate`, no `transform`, para no pelearse con
+   los desplazamientos de :hover.
+   ========================================================= */
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .panel, .servicio, .ficha, .slab, .pie-caja {
+      animation: asomar linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 32%;
+    }
+    @keyframes asomar {
+      from { translate: 0 16px; }
+      to   { translate: 0 0; }
+    }
+  }
+}
+
+/* =========================================================
+   prefers-reduced-motion — apaga TODO. No es opcional.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* ---------- Impresión ---------- */
+
+@media print {
+  .navegacion, .slab, .salto { display: none; }
+  body { font-size: 11pt; color: #000; background: #fff; }
+  a { text-decoration: none; color: #000; }
+  .panel, .servicio, .tabla-envoltura { border: 1px solid #999; border-radius: 0; }
+  .resalte { border: 1px solid #999; background: none; }
+  .pie-caja { background: none; color: #000; border: 1px solid #999; }
+  .pie-caja p, .pie-caja a, .pie-caja strong { color: #000; }
+}
+
+/* =========================================================
+   Easter egg de la portada — «modo terminal»
+
+   Se activa con cinco clics en el logotipo, solo en /. El motor está en
+   assets/terminal.js y solo lo carga index.html. Nada de esto se aplica
+   jamás sin ese gesto: no hay una sola regla que toque el sitio en reposo.
+
+   Los tres colores de fósforo pasan WCAG AA sobre el negro de la terminal:
+   verde 14.9:1 · verde tenue 6.9:1 · turquesa de marca 10.1:1.
+   ========================================================= */
+
+:root {
+  --tty-fondo:  #050A07;
+  --tty-verde:  #3DFF6E;   /* fósforo principal */
+  --tty-tenue:  #2FB055;   /* secundario, todavía AA */
+  --tty-acento: var(--acento);  /* el turquesa de la marca, para precios y enlaces */
+}
+
+/* Congela el desplazamiento de la página de abajo mientras la terminal está
+   encendida. Se quita al apagarla. */
+html.tty-activo, html.tty-activo body { overflow: hidden; }
+
+#tty {
+  position: fixed;
+  inset: 0;
+  z-index: 11000;          /* por encima de todo, incluida la cortinilla en reposo */
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--tty-fondo);
+  color: var(--tty-verde);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0 0 40vh;       /* aire abajo para que el cursor no quede pegado */
+  -webkit-font-smoothing: antialiased;
+}
+
+.tty-lluvia {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.75;
+  transition: opacity 900ms linear;
+}
+
+.tty-lluvia-fin { opacity: 0; }
+
+/* ---------- Barra superior ---------- */
+
+.tty-barra {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.9rem 1.25rem;
+  background: linear-gradient(var(--tty-fondo) 72%, transparent);
+  border-bottom: 1px solid rgba(61, 255, 110, 0.22);
+}
+
+/* El logotipo va INTACTO sobre su fondo blanco: el §6 prohíbe recolorearlo,
+   y el PNG es opaco. La pastilla blanca es la forma honesta de ponerlo sobre
+   negro sin tocarlo. */
+.tty-marca {
+  display: block;
+  padding: 7px 12px;
+  border: 0;
+  border-radius: var(--r-chico);
+  background: #FFFFFF;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.tty-marca img { width: 132px; height: auto; display: block; }
+
+.tty-marca:focus-visible {
+  outline: 2px solid var(--tty-verde);
+  outline-offset: 3px;
+}
+
+.tty-pista {
+  margin: 0;
+  color: var(--tty-tenue);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- El flujo de texto ---------- */
+
+.tty-flujo {
+  padding: 1.5rem 1.25rem 0;
+  max-width: 76rem;
+}
+
+.ln {
+  white-space: pre;        /* el ajuste de línea lo hace el JS, como una terminal */
+  min-height: 1.5em;
+  margin: 0;
+}
+
+.ln-prompt { color: var(--tty-tenue); }
+
+.ln-cmd        { color: var(--tty-verde); margin-top: 1.1em; }
+.ln-titulo     { color: var(--tty-verde); font-weight: bold; }
+.ln-h2         { color: var(--tty-acento); font-weight: bold; margin-top: 0.6em; }
+.ln-sub        { color: var(--tty-verde); font-weight: bold; margin-top: 0.6em; }
+.ln-pregunta   { color: var(--tty-acento); margin-top: 0.6em; }
+.ln-precio     { color: var(--tty-acento); font-weight: bold; }
+.ln-tenue      { color: var(--tty-tenue); }
+.ln-texto      { color: var(--tty-verde); opacity: 0.88; }
+.ln-vacia      { min-height: 0.9em; }
+
+#tty a {
+  color: var(--tty-acento);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(1, 207, 203, 0.45);
+}
+
+#tty a:hover,
+#tty a:focus-visible {
+  background: var(--tty-acento);
+  color: var(--tty-fondo);
+  border-bottom-color: transparent;
+  outline: none;
+}
+
+/* Cursor parpadeante al final de la sesión. */
+.ln-cursor::after {
+  content: "█";
+  color: var(--tty-verde);
+  animation: tty-parpadeo 1.06s steps(1) infinite;
+}
+
+@keyframes tty-parpadeo {
+  0%, 50%   { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* Sin movimiento: el cursor deja de parpadear y la lluvia ni se crea (JS).
+   El easter egg sigue funcionando, pintado de golpe. */
+@media (prefers-reduced-motion: reduce) {
+  .ln-cursor::after { animation: none; }
+  .tty-lluvia { display: none; }
+}
+
+@media (max-width: 40rem) {
+  #tty { font-size: 0.75rem; }
+  .tty-flujo { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .tty-marca img { width: 104px; }
+}
