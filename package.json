@@ -1,0 +1,9 @@
+{
+  "name": "freejolitos-verify",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "verify:copy": "node scripts/verify-copy.js",
+    "export:csv": "node scripts/export-missing-csv.js"
+  }
+}

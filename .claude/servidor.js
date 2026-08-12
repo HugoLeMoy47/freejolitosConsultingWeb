@@ -27,7 +27,8 @@ http
     let archivo = path.join(RAIZ, ruta);
     // Nada fuera de la raíz del sitio.
     if (!archivo.startsWith(RAIZ)) {
-      res.writeHead(403).end("403");
+      res.writeHead(403, { "Content-Type": "text/plain; charset=utf-8" });
+      res.end("403");
       return;
     }
     // URL limpia: /servicios → servicios.html
@@ -40,10 +41,18 @@ http
         res.end("<h1>404</h1>");
         return;
       }
+      // Añadir cabeceras de seguridad útiles en el servidor de desarrollo
+      // (no sustituye las políticas que deban aplicarse en el edge/producción).
       res.writeHead(200, {
         "Content-Type": TIPOS[path.extname(archivo)] || "application/octet-stream",
-        // Sin esto Chrome cachea el CSS y no se ven los cambios.
+        // Sin esto Chrome cachea el CSS y no se ven los cambios durante dev.
         "Cache-Control": "no-store, must-revalidate",
+        // Hardening básico para desarrollo local — ajustar según producción.
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "X-Frame-Options": "DENY",
+        "Permissions-Policy": "interest-cohort=()",
+        "Content-Security-Policy": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self';",
       });
       res.end(datos);
     });
