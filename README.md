@@ -7,8 +7,8 @@ albergues y organizaciones que atienden población migrante y refugiada.
 HTML estático escrito a mano. Sin framework, sin proceso de build, sin una sola dependencia que
 cargue en el navegador.
 
-> **Estado: no publicado.** Los datos de contacto son marcadores. Ver
-> [Antes de publicar](#antes-de-publicar).
+> **Estado: en despliegue** en <https://freejolitos.consulting>. Ver
+> [Antes de publicar](#antes-de-publicar) para lo que falta cerrar.
 
 ---
 
@@ -70,6 +70,10 @@ manda `Cache-Control: no-store`, sin lo cual el navegador cachea el CSS y no ves
 ├── como-trabajo.html       Cómo trabajo
 ├── quien-soy.html          Quién soy
 ├── datos-e-ia.html         Datos e IA
+├── 404.html                noindex, sin canonical, sin JSON-LD
+│
+├── wrangler.jsonc          Configuración de despliegue en Cloudflare
+├── .assetsignore           Qué del repositorio NO se publica en el sitio
 │
 ├── copy/                   ← FUENTE DE VERDAD del texto
 │   ├── 01-inicio-A.md          versión publicada
@@ -217,12 +221,12 @@ se queda fuera solo.
 
 ## Antes de publicar
 
-- [ ] **Sustituir los datos de contacto.** Hoy son marcadores en las cinco páginas, cada uno con
-      un comentario `PENDIENTE` encima: `https://wa.me/52XXXXXXXXXX` y
-      `hola@freejolitos.consulting`. **Es lo único que impide publicar.**
+- [x] **Datos de contacto.** WhatsApp real en las cinco páginas desde el 12 de agosto de 2026.
+- [ ] **Verificar que `hola@freejolitos.consulting` reciba.** El dominio tiene MX activos, pero el
+      alias debe existir como reenvío en el registrador o el correo rebota.
 - [ ] Validar el JSON-LD con la herramienta de resultados enriquecidos de Google. Requiere URL
       pública; hasta ahora solo se verificó que parsea.
-- [ ] Confirmar el dominio y actualizar `canonical`, `og:url` y `sitemap.xml` si cambia.
+- [ ] Redirección 301 de `www` al dominio raíz.
 - [ ] Revisar el sitio con ojos humanos en Chrome de escritorio y en un teléfono real.
 
 Y tras cualquier cambio, la lista de siempre: JavaScript desactivado y todo sigue visible · un

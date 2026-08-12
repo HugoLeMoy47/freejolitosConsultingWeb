@@ -240,13 +240,11 @@ propia caja, no arrastra la página.
 
 ## 8. Lo que falta
 
-1. **Datos de contacto reales.** Es lo único que impide publicar. Hoy hay marcadores en las cinco
-   páginas, cada uno con un comentario `PENDIENTE` encima:
-   ```
-   https://wa.me/52XXXXXXXXXX
-   hola@freejolitos.consulting
-   ```
-   **Hay que pedírselos al titular. No publicar sin sustituirlos.**
+1. **Verificar el alias de correo.** El WhatsApp ya es real: `wa.me/525533444852`, confirmado por
+   el titular el 12 de agosto de 2026 y presente en las cinco páginas. Falta comprobar que
+   `hola@freejolitos.consulting` exista como reenvío en el registrador — el dominio tiene MX
+   activos, pero si el alias no está dado de alta, el correo rebota y el sitio anuncia una
+   dirección muerta.
 2. **Validar el JSON-LD** con la herramienta de resultados enriquecidos de Google. Requiere URL
    pública; hasta ahora solo se validó que parsea.
 3. **Ver el sitio con ojos humanos.** Nadie ha visto una captura.

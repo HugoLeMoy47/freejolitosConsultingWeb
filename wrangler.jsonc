@@ -19,8 +19,9 @@
     // se contradice a sí mismo ante los buscadores.
     "html_handling": "drop-trailing-slash",
 
-    // No hay 404.html todavía, así que un 404 normal es lo correcto. Poner
-    // "404-page" sin la página serviría una respuesta vacía.
-    "not_found_handling": "none"
+    // Sirve 404.html, con código 404 de verdad. Los buscadores necesitan el
+    // código correcto: una página bonita que responda 200 es peor que nada,
+    // porque indexan la disculpa como si fuera contenido.
+    "not_found_handling": "404-page"
   }
 }
