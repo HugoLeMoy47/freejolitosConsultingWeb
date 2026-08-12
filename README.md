@@ -230,10 +230,15 @@ el panel de Cloudflare, no en el repositorio.
 
 **`_headers` sí funciona**, y ahí están las cabeceras de seguridad.
 
-### Automatizar
+### Despliegue automático
 
-Hoy el despliegue es manual. Conectar el repositorio desde *Settings → Build* del Worker hace que
-cada push publique solo; el `wrangler.jsonc` ya está listo para eso.
+**Ya está conectado.** Cada push a `main` dispara una compilación en la nube que clona el
+repositorio y ejecuta `npx wrangler deploy`. El comando de arriba solo hace falta para desplegar
+sin pasar por GitHub.
+
+Una compilación fallida **no tumba el sitio**: la última versión buena sigue publicada hasta que
+otra la reemplace. Conviene saberlo, porque un error de configuración puede pasar desapercibido
+—el sitio se ve bien— mientras los cambios nuevos no llegan a producción.
 
 ---
 
