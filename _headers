@@ -1,0 +1,22 @@
+# Cabeceras HTTP. Cloudflare consume este archivo; no se sirve como parte del sitio.
+#
+# La política de seguridad de contenido es estricta de verdad: no hay una sola
+# excepción, ni un 'unsafe-inline'. El sitio la aguanta porque no tiene nada en
+# línea — cero atributos style=, cero bloques <style>, cero <script> sin src y
+# cero manejadores onclick. Verificado antes de escribir esto.
+#
+# Esto no es adorno. El titular vende protección de datos a organizaciones que
+# manejan información de personas en situación vulnerable, y lo primero que
+# alguien técnico hace es inspeccionar su sitio. Cero peticiones a terceros, y
+# una política que las hace imposibles por diseño.
+#
+# Si algún día se agrega algo en línea, la página dejará de funcionar y hay que
+# resolverlo quitando lo que se agregó, NO relajando esta política.
+
+/*
+  Content-Security-Policy: default-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
