@@ -1,0 +1,26 @@
+# Qué NO se publica en freejolitos.consulting.
+#
+# El repositorio es público y contiene más cosas que el sitio. Sin este archivo,
+# Cloudflare serviría todo, y eso trae dos problemas reales:
+#
+#   1. copy/01-inicio-B.md es la variante NO publicada de la portada. Servirla
+#      significa que un agente o un rastreador puede leer una versión del sitio
+#      que no es la viva. Es exactamente lo que el CLAUDE.md prohíbe.
+#   2. Los demás archivos de copy/ duplican palabra por palabra el texto de las
+#      páginas. Contenido duplicado compitiendo consigo mismo.
+
+# Fuente del copy: se versiona, no se publica.
+copy/
+
+# Documentación del repositorio, no del sitio.
+CLAUDE.md
+README.md
+NOTICE.md
+LICENSE
+
+# Herramientas de desarrollo y configuración.
+.claude/
+.assetsignore
+wrangler.jsonc
+.gitattributes
+.gitignore

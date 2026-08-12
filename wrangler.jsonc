@@ -1,0 +1,26 @@
+{
+  // Le dice a Cloudflare que este repositorio es un sitio estático, no un Worker
+  // con lógica. Sin este archivo, Cloudflare despliega su script de ejemplo y el
+  // dominio contesta "Hello world" en todas las rutas.
+  //
+  // No hay campo "main": sin script, el Worker sirve únicamente los archivos.
+  // El sitio sigue sin proceso de build, como manda el CLAUDE.md.
+
+  "name": "freejolitosconsultingweb",
+  "compatibility_date": "2026-08-11",
+
+  "assets": {
+    // La raíz del repositorio. Lo que NO debe publicarse está en .assetsignore.
+    "directory": "./",
+
+    // /servicios se sirve desde servicios.html, y /servicios/ redirige a
+    // /servicios sin barra. Tiene que ser así: los <link rel="canonical"> de las
+    // cinco páginas apuntan a las URLs sin barra final. Si no coinciden, el sitio
+    // se contradice a sí mismo ante los buscadores.
+    "html_handling": "drop-trailing-slash",
+
+    // No hay 404.html todavía, así que un 404 normal es lo correcto. Poner
+    // "404-page" sin la página serviría una respuesta vacía.
+    "not_found_handling": "none"
+  }
+}
