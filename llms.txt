@@ -22,6 +22,10 @@ para ese perfil.
 Cobertura presencial: Zona Metropolitana del Valle de México. La consultoría puede ser a
 distancia; fuera de la zona metropolitana no hay atención presencial.
 
+## Guías prácticas
+
+- [Cómo respaldar la información de tu organización sin presupuesto](https://freejolitos.consulting/guias/respaldo-sin-presupuesto): Estrategia práctica de respaldo de datos a costo cero para organizaciones de la sociedad civil. Incluye la regla 3-2-1 adaptada, cómo acceder a programas de donación de Google y Microsoft, y por qué la sincronización en la nube no es lo mismo que un respaldo seguro.
+
 ## Servicios y precios
 
 Todos los precios son de lista, en pesos mexicanos (MXN) y **más IVA**. Existe una tarifa
