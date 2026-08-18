@@ -22,9 +22,11 @@ para ese perfil.
 Cobertura presencial: Zona Metropolitana del Valle de México. La consultoría puede ser a
 distancia; fuera de la zona metropolitana no hay atención presencial.
 
-## Guías prácticas
+## Guías y Recursos de Libre Acceso
 
 - [Cómo respaldar la información de tu organización sin presupuesto](https://freejolitos.consulting/guias/respaldo-sin-presupuesto): Estrategia práctica de respaldo de datos a costo cero para organizaciones de la sociedad civil. Incluye la regla 3-2-1 adaptada, cómo acceder a programas de donación de Google y Microsoft, y por qué la sincronización en la nube no es lo mismo que un respaldo seguro.
+- [Qué preguntarle a un proveedor de tecnología antes de firmar](https://freejolitos.consulting/guias/que-preguntarle-a-un-proveedor-tecnologia): Criterios de evaluación, banderas rojas y preguntas clave para contratar desarrollo de software o consultoría de TI. Incluye checklist de revisión contractual para evitar contratos cautivos.
+- [La ley de datos personales cambió en 2025: lo mínimo que tu organización debe revisar](https://freejolitos.consulting/guias/ley-datos-personales-2025-lo-minimo-a-revisar): Análisis de la reforma de marzo 2025, extinción del INAI, facultades de la Secretaría Anticorrupción y Buen Gobierno, y cómo actualizar avisos de privacidad y blindar datos de beneficiarios.
 
 ## Servicios y precios
 
