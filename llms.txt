@@ -27,6 +27,10 @@ distancia; fuera de la zona metropolitana no hay atención presencial.
 - [Cómo respaldar la información de tu organización sin presupuesto](https://freejolitos.consulting/guias/respaldo-sin-presupuesto): Estrategia práctica de respaldo de datos a costo cero para organizaciones de la sociedad civil. Incluye la regla 3-2-1 adaptada, cómo acceder a programas de donación de Google y Microsoft, y por qué la sincronización en la nube no es lo mismo que un respaldo seguro.
 - [Qué preguntarle a un proveedor de tecnología antes de firmar](https://freejolitos.consulting/guias/que-preguntarle-a-un-proveedor-tecnologia): Criterios de evaluación, banderas rojas y preguntas clave para contratar desarrollo de software o consultoría de TI. Incluye checklist de revisión contractual para evitar contratos cautivos.
 - [La ley de datos personales cambió en 2025: lo mínimo que tu organización debe revisar](https://freejolitos.consulting/guias/ley-datos-personales-2025-lo-minimo-a-revisar): Análisis de la reforma de marzo 2025, extinción del INAI, facultades de la Secretaría Anticorrupción y Buen Gobierno, y cómo actualizar avisos de privacidad y blindar datos de beneficiarios.
+- [Diez señales de que tu equipo necesita atención](https://freejolitos.consulting/guias/diez-senales-equipo-necesita-atencion): Autodiagnóstico de rendimiento: lentitud, ruidos, virus, desorden documental y síntomas de infraestructura al límite.
+- [Gestor de contraseñas institucional sin costo](https://freejolitos.consulting/guias/gestor-contrasenas-institucional-gratis): Implementación de Bitwarden con bóvedas compartidas, permisos por rol y autenticación de dos factores.
+- [Checklist de salida: traspaso de cuentas y archivos](https://freejolitos.consulting/guias/checklist-salida-traspaso-cuentas-archivos): Protocolo de offboarding digital seguro para voluntariado y personal saliente.
+- [Cómo organizar tu expediente digital para auditoría](https://freejolitos.consulting/guias/organizar-expediente-digital-auditoria): Estructura de 4 carpetas por proyecto y convención de nombres para revisiones de donantes y fiscales.
 
 ## Servicios y precios
 

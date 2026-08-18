@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestor de contraseñas institucional sin costo: adiós al post-it y al Excel compartido — Freejolitos Consultores</title>
+<meta name="description" content="Guía paso a paso para configurar un gestor de contraseñas seguro (Bitwarden) en ONGs y pequeños equipos. Bóvedas compartidas por rol y doble factor sin costo.">
+<link rel="canonical" href="https://freejolitos.consulting/guias/gestor-contrasenas-institucional-gratis">
+<link rel="stylesheet" href="/assets/estilos.css">
+<link rel="icon" href="/assets/logo.png" type="image/png">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Freejolitos Consultores">
+<meta property="og:title" content="Gestor de contraseñas institucional sin costo">
+<meta property="og:description" content="Guía de implementación de Bitwarden: bóvedas compartidas, doble factor y auditoría de accesos en equipos pequeños.">
+<meta property="og:url" content="https://freejolitos.consulting/guias/gestor-contrasenas-institucional-gratis">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Gestor de contraseñas institucional sin costo: adiós al post-it y al Excel compartido",
+      "description": "Guía paso a paso de implementación de Bitwarden para ONGs y pequeños equipos: bóvedas compartidas, permisos por rol y autenticación de dos factores.",
+      "author": {
+        "@type": "Person",
+        "name": "Hugo Legorreta",
+        "jobTitle": "Consultor Principal",
+        "worksFor": {
+          "@type": "ProfessionalService",
+          "name": "Freejolitos Consultores",
+          "url": "https://freejolitos.consulting"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Freejolitos Consultores",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://freejolitos.consulting/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-08-18",
+      "inLanguage": "es-MX",
+      "isPartOf": { "@id": "https://freejolitos.consulting/#sitio" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="sitio-encabezado">
+  <div class="contenedor">
+    <a class="marca" href="/" aria-label="Freejolitos Consultores — inicio">
+      <img src="/assets/logo.png" width="2245" height="520" alt="Freejolitos Consultores">
+    </a>
+    <nav class="navegacion" aria-label="Navegación principal">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/servicios">Servicios</a></li>
+        <li><a href="/como-trabajo">Cómo trabajo</a></li>
+        <li><a href="/quien-soy">Quién soy</a></li>
+        <li><a href="/guias" aria-current="page">Guías</a></li>
+        <li><a href="/datos-e-ia">Datos e IA</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <div class="contenedor">
+
+    <section class="portada">
+      <div class="kicker">Guía práctica · Ciberseguridad</div>
+      <h1 class="titulo-pagina">Gestor de contraseñas institucional <span class="marcado">sin pagar licencias</span></h1>
+
+      <p class="entrada">«¿Cuál es la contraseña de la cuenta de Facebook?» — «Pregúntale a Sandra, ella la tiene en un post-it.» — «Sandra se fue en julio.» Esta conversación ocurre en miles de organizaciones. Los gestores de contraseñas compartidas resuelven esto en una tarde, costo cero, y con auditoría de quién accedió a qué.</p>
+    </section>
+
+    <article class="panel">
+      <div class="resalte">
+        <p><strong>La diferencia de seguridad:</strong> Con Bitwarden, cada contraseña se guarda una sola vez, cifrada, y el personal solo ve lo que necesita según su rol. Sin Bitwarden, las contraseñas viven en post-its, Excel, WhatsApp y correos — una filtración esperando ocurrir.</p>
+      </div>
+
+      <h2>¿Por qué Bitwarden y no otra herramienta?</h2>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0;">
+        <div style="border:1px solid #CCCCCC;background:#FAFAFA;border-radius:8px;padding:18px;">
+          <h3 style="color:#343434;margin-top:0;">❌ Métodos Inseguros</h3>
+          <ul style="font-size:14.5px;padding-left:18px;line-height:1.6;">
+            <li><strong>Post-its en el monitor:</strong> Visible a cualquiera; se pierde si alguien se retira.</li>
+            <li><strong>Excel compartido:</strong> Sin cifrado; cualquiera que tenga acceso a la carpeta ve todas las claves.</li>
+            <li><strong>WhatsApp o Telegram:</strong> Historial visible, contraseñas guardadas en dispositivos; si roban el teléfono, acceso total.</li>
+            <li><strong>Anotaciones en el teléfono:</strong> Sin contraseña, sin recuperación si se pierde el dispositivo.</li>
+          </ul>
+        </div>
+
+        <div style="border:1px solid #86EFAC;background:#F0FDF4;border-radius:8px;padding:18px;">
+          <h3 style="color:#22C55E;margin-top:0;">✅ Método Seguro: Bitwarden</h3>
+          <ul style="font-size:14.5px;padding-left:18px;line-height:1.6;">
+            <li><strong>Cifrado end-to-end:</strong> Ni siquiera Bitwarden ve tus contraseñas.</li>
+            <li><strong>Permisos por rol:</strong> Cada persona ve solo lo que necesita.</li>
+            <li><strong>Auditoría de accesos:</strong> Historial de quién vio, copió o usó cada contraseña.</li>
+            <li><strong>Gratuito para equipos pequeños:</strong> Precio $0 para hasta 6 usuarios.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Estructura de Bóveda Institucional: Ejemplo Real</h2>
+
+      <div style="background: #FAFAFA; border: 1px solid #CCCCCC; border-radius: 8px; padding: 20px; margin: 20px 0;">
+        <p style="margin-top: 0; font-weight: bold; color: #343434;">👑 Cuenta Administradora Institucional</p>
+        <p style="font-size: 13px; color: #666; margin: 0 0 16px 0;"><code>admin@tuorganizacion.org</code> — Solo el director/a puede acceder</p>
+
+        <div style="border-left: 4px solid #01CFCB; padding-left: 16px; margin: 0;">
+          <p style="margin: 0 0 12px 0;"><strong style="color: #01CFCB;">🔐 Bóveda General Compartida</strong></p>
+
+          <div style="margin-left: 12px; padding-top: 8px;">
+            <div style="background: #fff; border: 1px solid #CCCCCC; border-radius: 6px; padding: 12px; margin-bottom: 10px;">
+              <div style="font-weight: bold; color: #343434; margin-bottom: 4px;">👥 Colección: Finanzas y Bancos</div>
+              <div style="font-size: 13px; color: #555;">Acceso: Solo dirección y contador</div>
+              <div style="font-size: 12px; color: #888; margin-top: 4px;">→ Cuentas bancarias, OTP de administración fiscal, accesos a plataformas de donantes</div>
+            </div>
+
+            <div style="background: #fff; border: 1px solid #CCCCCC; border-radius: 6px; padding: 12px; margin-bottom: 10px;">
+              <div style="font-weight: bold; color: #343434; margin-bottom: 4px;">👥 Colección: Redes y Web</div>
+              <div style="font-size: 13px; color: #555;">Acceso: Equipo de comunicación</div>
+              <div style="font-size: 12px; color: #888; margin-top: 4px;">→ Instagram, Facebook, Twitter, Google Analytics, CMS del sitio web</div>
+            </div>
+
+            <div style="background: #fff; border: 1px solid #CCCCCC; border-radius: 6px; padding: 12px;">
+              <div style="font-weight: bold; color: #343434; margin-bottom: 4px;">👥 Colección: Herramientas Operativas</div>
+              <div style="font-size: 13px; color: #555;">Acceso: Todo el personal</div>
+              <div style="font-size: 12px; color: #888; margin-top: 4px;">→ Google Drive/Workspace, Zoom, Slack, buzón de beneficiarios</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Los 4 Pasos para Implementar Bitwarden</h2>
+
+      <details open>
+        <summary><strong>Paso 1: Crear la Cuenta Administradora Institucional (5 minutos)</strong></summary>
+        <div style="padding: 12px 0;">
+          <ol style="margin: 0; padding-left: 18px;">
+            <li>Ir a <code>bitwarden.com</code>.</li>
+            <li>Hacer clic en «Create Account».</li>
+            <li>Usar correo corporativo: <code>admin@tuorganizacion.org</code> (no personal).</li>
+            <li>Crear contraseña de administrador <strong>fuerte</strong> (16+ caracteres, caracteres especiales).</li>
+            <li>Guardar esta contraseña en un lugar físicamente seguro o en un gestor de contraseñas personal (no en Bitwarden).</li>
+            <li>Activar doble factor de autenticación (2FA) con una app como Google Authenticator.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details open>
+        <summary><strong>Paso 2: Crear la Organización y las Colecciones (10 minutos)</strong></summary>
+        <div style="padding: 12px 0;">
+          <ol style="margin: 0; padding-left: 18px;">
+            <li>Dentro de Bitwarden, ir a «Organizations» → «Create Organization».</li>
+            <li>Llenar datos: nombre (ej. «Freejolitos Consultores»), plan gratuito.</li>
+            <li>Crear las Colecciones según departamentos:
+              <ul style="margin: 8px 0;">
+                <li>Finanzas y Bancos</li>
+                <li>Redes y Web</li>
+                <li>Herramientas Operativas</li>
+              </ul>
+            </li>
+            <li>Dentro de cada colección, crear entradas para cada contraseña (banco, cuenta, usuario, OTP si tiene).</li>
+          </ol>
+        </div>
+      </details>
+
+      <details open>
+        <summary><strong>Paso 3: Invitar Usuarios y Asignar Permisos (15 minutos)</strong></summary>
+        <div style="padding: 12px 0;">
+          <ol style="margin: 0; padding-left: 18px;">
+            <li>En la Organización, ir a «Members» → «Invite».</li>
+            <li>Para cada persona, seleccionar:
+              <ul style="margin: 8px 0;">
+                <li><strong>Correo institucional</strong> (no personal).</li>
+                <li><strong>Rol</strong>: Member (acceso) o Admin (gestión).</li>
+                <li><strong>Colecciones</strong> a las que tiene acceso.</li>
+              </ul>
+            </li>
+            <li>Explicar a cada uno: «Recibirán una invitación; deben crear una contraseña fuerte personal y activar 2FA».</li>
+          </ol>
+        </div>
+      </details>
+
+      <details open>
+        <summary><strong>Paso 4: Instalar la Extensión e Instruir al Equipo (10 minutos por persona)</strong></summary>
+        <div style="padding: 12px 0;">
+          <ol style="margin: 0; padding-left: 18px;">
+            <li>Cada persona descarga la extensión Bitwarden para su navegador (Chrome, Firefox, Safari, Edge).</li>
+            <li>Inicia sesión con su correo y contraseña personal.</li>
+            <li>Activa 2FA (recibe un código en su teléfono cada vez que inicia sesión desde una nueva máquina).</li>
+            <li>Elige: autocompletar contraseñas con un atajo (Ctrl+Shift+L en Windows).</li>
+            <li>Pronto: las contraseñas aparecen automáticamente al navegar a un sitio conocido (ej., al ir a Google Drive, aparece el usuario/contraseña).</li>
+          </ol>
+        </div>
+      </details>
+
+      <h2>Checklist de Migración Segura desde Excel/Post-its</h2>
+
+      <details open>
+        <summary>Expande la lista de verificación</summary>
+        <ul style="margin: 12px 0;">
+          <li><input type="checkbox"> Crear cuenta administradora con correo institucional y 2FA activo.</li>
+          <li><input type="checkbox"> Crear la Organización en Bitwarden.</li>
+          <li><input type="checkbox"> Establecer las 3 colecciones (Finanzas, Redes/Web, Operativas).</li>
+          <li><input type="checkbox"> Hacer una lista de todas las cuentas institucionales a migrar (correo, redes, bancos, etc.).</li>
+          <li><input type="checkbox"> Cambiar las contraseñas viejas por otras fuertes (16+ caracteres, sin patrones predecibles).</li>
+          <li><input type="checkbox"> Ingresar cada contraseña nueva en Bitwarden (no en Excel).</li>
+          <li><input type="checkbox"> Invitar al equipo a Bitwarden y confirmar que cada uno aceptó la invitación.</li>
+          <li><input type="checkbox"> Instruir al equipo en vivo (30 minutos): demostración de cómo acceder, copiar contraseñas y usar el autocompletado.</li>
+          <li><input type="checkbox"> Destruir físicamente los post-its, borrar el Excel compartido, eliminar archivos de texto con contraseñas.</li>
+          <li><input type="checkbox"> Configurar auditoría: revisar semanalmente quién accedió a qué en Bitwarden (pestaña Activity/Logs).</li>
+        </ul>
+      </details>
+
+      <h2>Costo y Mantenimiento</h2>
+
+      <div class="resalte">
+        <p><strong>Plan Gratuito de Bitwarden:</strong> Hasta 6 usuarios, bóvedas compartidas ilimitadas, 2FA, historial completo de accesos. Costo: <strong>$0/mes</strong>.</p>
+        <p><strong>Plan Premium (opcional):</strong> $10 USD/año por persona, si necesitas funciones avanzadas (cifrado TOTP, sincronización entre dispositivos). Recomendado: Comienza con el plan gratuito; mejora si lo necesitas después de 3 meses.</p>
+      </div>
+
+    </article>
+
+    <section class="slab">
+      <div class="contenedor">
+        <h2>¿Estás guardando contraseñas en post-its o Excel compartido?</h2>
+        <p>Bitwarden se implementa en una tarde. Contacta si necesitas ayuda para migrar tus cuentas actuales o establecer los permisos correctos por departamento.</p>
+        <div class="acciones">
+          <a href="/servicios#acompanamiento" class="boton">Solicita acompañamiento</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="sitio-pie">
+  <div class="contenedor">
+    <div class="pie-caja">
+      <p><a href="https://wa.me/525533444852">WhatsApp</a> · <a href="mailto:hola@freejolitos.consulting">hola@freejolitos.consulting</a></p>
+    </div>
+    <nav aria-label="Navegación del pie">
+      <ul>
+        <li><a href="/datos-e-ia">Declaración de privacidad</a></li>
+        <li><a href="https://github.com/HugoLeMoy47/freejolitosConsultingWeb/">Código fuente</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
