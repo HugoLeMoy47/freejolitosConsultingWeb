@@ -1,4 +1,4 @@
-# Datos e IA
+# Cómo manejo tu información
 
 > Tono A. Es la página que casi nadie en el sector tiene y la más citable por agentes.
 >
@@ -9,15 +9,16 @@
 
 ## H1
 
-Qué pasa con la información de tu organización
+Cómo manejo tu información
 
 ## Entrada
 
-Uso inteligencia artificial para producir buena parte de mi trabajo. Lo digo de frente porque en tu
-sector la pregunta pesa más que en cualquier otro: atiendes a personas cuya seguridad puede depender
-de que su información no circule.
+Uso inteligencia artificial para producir buena parte de mi trabajo. Lo explico con detalle en este
+documento, y explicito qué datos trato, para qué y cómo los protejo.
 
-Esto es exactamente lo que hago y lo que no.
+Esta página explica cómo trabajo con la información de tu organización, en lenguaje directo. Si
+buscas el documento formal con los requisitos de ley, está en el [aviso de
+privacidad](/aviso-de-privacidad).
 
 ---
 
@@ -28,8 +29,6 @@ No los pido, no los recibo y no los cargo en ninguna herramienta.
 Construyo los sistemas que gestionan esa información, pero para diseñarlos y probarlos uso un
 **esquema equivalente con datos ficticios**. Modelo el reporte con datos de prueba; tú lo corres
 después con los tuyos, en tu propio sistema.
-
-Esta es la regla de la que no hay excepciones.
 
 ## El análisis de datos se hace en local
 
@@ -51,9 +50,6 @@ de cliente.
 Si un proyecto implica integrar inteligencia artificial dentro de tus propios servicios, te digo
 exactamente qué proveedores se usan y bajo qué condiciones, antes de empezar.
 
-Si no es el caso, la inteligencia artificial es solo mi herramienta de trabajo y no toca la
-información de tu organización.
-
 ## Lo que puedes pedirme
 
 Puedes pedirme por escrito el detalle de cómo manejo la información de tu organización, y puedes
@@ -73,9 +69,8 @@ pregunta es buena, la agrego aquí.
 
 ## Metadatos
 
-**Title:** Qué pasa con la información de tu organización — datos e inteligencia artificial | Hugo Legorreta
+**Title:** Cómo manejo tu información — Freejolitos Consultores
 
-**Meta description:** Política de manejo de datos e inteligencia artificial. Nunca se trabaja con
-datos de las personas atendidas: para diseñar y probar sistemas se usan esquemas equivalentes con
-datos ficticios.
+**Meta description:** Política sobre manejo de la información de organizaciones y uso responsable
+de inteligencia artificial. Explica qué datos se tratan, para qué y bajo qué condiciones.
 

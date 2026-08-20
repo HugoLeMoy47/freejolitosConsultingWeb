@@ -100,6 +100,21 @@ el HTML: es cronología visual, no texto inventado.
 - Movimiento ligado al desplazamiento con `animation-timeline: view()`. Anima `translate`,
   **nunca la opacidad**: el contenido es visible en todo momento aunque la animación no corra. Va
   dentro de `@supports` y de `prefers-reduced-motion: no-preference`.
+- **Menú móvil como casilla + etiqueta**, la misma técnica que el `<details>` de arriba: sin
+  JavaScript, el navegador expone el estado marcado/no marcado de la casilla y la etiqueta hace de
+  botón visual (`.menu-boton`, icono de tres barras en CSS puro — nada de SVG nuevo, para no mover
+  el conteo de doce SVG de más abajo). Debajo de `40rem` de ancho la casilla oculta `.navegacion`
+  hasta que se marca; arriba de ese ancho la casilla no se muestra y el menú se ve como siempre. Los
+  seis enlaces del menú **siguen en el HTML en todo momento**, igual que el resto de la sección.
+
+### Pie de página
+
+Los enlaces del pie (`.pie-caja`) se agrupan en tres bloques dentro de la misma caja oscura —
+**Sitio**, **Privacidad**, **Contacto** — en vez de una lista plana de once enlaces. Cada bloque es
+un `.pie-grupo` con una etiqueta `.pie-titulo` (un `<span>`, no un encabezado: no debe alterar la
+jerarquía de `h1`/`h2` de la página) y su `<ul>`. La estructura es **idéntica en las dieciséis
+páginas**, generada del mismo bloque de HTML — si un agente edita el pie de una página a mano en vez
+de replicar la estructura de otra, es el error más probable de reintroducir.
 
 ---
 
@@ -136,6 +151,17 @@ prohíbe para el turquesa.
 > `document.visibilityState === "hidden"`, así que no se puede observar desde un panel embebido.
 > Se verificó que las cinco reglas llegan intactas al navegador y que `--cortina` resuelve a
 > `#343434`, pero hay que abrirla en Chrome de escritorio para verla.
+>
+> **Pendiente de depurar (reportado 2026-08-19):** el titular probó en Chrome de escritorio real y
+> la cortinilla no corrió al entrar o salir de `/guias`, `/aviso-de-privacidad`, `/terminos` ni
+> `/como-manejo-tu-informacion`. Auditoría estática ya descartada como causa: las dieciséis páginas
+> cargan la misma `estilos.css` con `@view-transition { navigation: auto; }`, ninguna tiene
+> `view-transition-name` (la regla §2 se respeta en todas), no hay ids duplicados, ni tags sin
+> cerrar, ni `<meta http-equiv>`/`<base>`/CSP en el HTML. Nada en el código explica por qué esas
+> cuatro páginas específicamente se comportan distinto a `/`, `/servicios`, `/como-trabajo`,
+> `/quien-soy` o las páginas individuales de `/guias/*`. Antes de tocar CSS por esto, abrir DevTools
+> → Console durante la navegación fallida y ver si hay un aviso de la View Transitions API — es el
+> único diagnóstico que falta.
 
 ---
 
@@ -168,10 +194,16 @@ guarda de ruta dentro: si alguien lo incluyera en otra página, no haría nada.
   una pérdida: apuntaba a la página en la que ya estabas.
 - Un clic en el fondo de la terminal termina el pintado de golpe, para no tener que esperarlo.
 
-Verificado en navegador: enciende a los cinco clics y no a los cuatro; el contador se reinicia
-pasados 1200 ms; 104 renglones y 8 enlaces vivos; el `<main>` queda idéntico; apaga, devuelve el
-foco al logotipo y vuelve a encender; un enlace lleva a `/servicios` con el estilo normal. Cero
-errores en consola y cero peticiones externas.
+Verificado en navegador (antes del pie de tres columnas de 2026-08-19): enciende a los cinco clics
+y no a los cuatro; el contador se reinicia pasados 1200 ms; el `<main>` queda idéntico; apaga,
+devuelve el foco al logotipo y vuelve a encender; un enlace lleva a `/servicios` con el estilo
+normal. Cero errores en consola y cero peticiones externas.
+
+El conteo de «104 renglones y 8 enlaces vivos» quedó obsoleto con el pie agrupado: `guion()` sigue
+leyendo `.pie-caja nav a` en vivo (§5, no hay una segunda copia del texto), así que el `ls ..` del
+terminal ahora imprime once enlaces en vez de ocho, y el total de renglones cambió con ellos. No es
+un bug — es el comportamiento documentado arriba —, pero el número exacto no se ha vuelto a contar
+en Chrome de escritorio real.
 
 > **Ojo al probarlo:** igual que la cortinilla, no se puede observar desde un panel embebido —
 > Chrome detiene `requestAnimationFrame` en pestañas que no componen y el pintado se congela en el
@@ -217,18 +249,47 @@ lograr.
 
 ## 7. Verificar antes de dar algo por terminado
 
-Dos comprobaciones automatizadas conviene rehacerlas tras cualquier cambio. **Los scripts no están
-en el repositorio todavía**; hay que recrearlos.
+Los scripts sí están en el repositorio (`scripts/verify-copy.js`, `scripts/verify-semantic.js`,
+`npm run verify:copy`). **Arreglados el 2026-08-19** — tenían dos bugs que inflaban los
+«faltantes» a decenas por página incluso en texto sin tocar:
+
+1) los rótulos internos del `.md` (`## H1`, `## Entrada`, `## Cierre`, `## Metadatos`, las notas en
+   blockquote, las directivas `**JSON-LD:**`/`**Acción principal:**`) se comparaban tal cual contra
+   el HTML renderizado, cuando nunca aparecen como texto visible — ahora se excluyen como
+   «andamiaje» antes de verificar (`isScaffoldBlock` en ambos scripts; **Title:**/**Meta
+   description:** sí se comparan, pero sin el rótulo).
+2) en `verify-semantic.js`, `htmlCandidates()` insertaba saltos de línea para partir la página en
+   candidatos por párrafo, pero llamaba a `stripHtml()` después, cuya normalización de espacios se
+   comía esos saltos — el documento entero quedaba como un solo candidato gigante y la similitud de
+   coseno se diluía a casi cero para todo, incluso texto idéntico palabra por palabra. Ahora usa un
+   separador que no es whitespace.
+3) los bloques **Title:**/**Meta description:** se buscaban como texto de página, pero
+   `<meta name="description" content="...">` guarda su texto en un **atributo**, no entre tags —
+   quitar los tags se lo llevaba entero. Ahora se lee el atributo directamente y se compara por
+   igualdad, no por búsqueda de texto.
+
+**Ambos scripts corren mejor juntos que solos:** el de comparación literal (`verify-copy.js`) usa
+solapamiento de palabras con un umbral del 60 %, que en oraciones cortas con vocabulario común
+("información", "inteligencia artificial") puede dar falso positivo de coincidencia aunque la frase
+exacta no esté; el semántico (`verify-semantic.js`, n-gramas + coseno) es más estricto ahí y atrapa
+ausencias que el literal deja pasar. Ver el ejemplo real en el punto 1.
 
 1. **Fidelidad del copy.** Comparar el texto renderizado de cada página contra su archivo en
-   `copy/`, ignorando `<script>`, `<svg>` y comentarios, y normalizando espacios antes de
-   puntuación. Estado actual: **76 bloques, 0 discrepancias.** La única ausencia esperada es el
-  bloque comentado de `como-manejo-tu-informacion` (bloqueado hasta que el titular migre a un plan comercial
-   de IA; la razón está escrita junto al comentario).
+   `copy/`, ignorando `<script>`, `<svg>`, comentarios y andamiaje editorial (ver arriba). Estado a
+   2026-08-19 tras el arreglo (`npm run verify:copy` y `node scripts/verify-semantic.js`): **las
+   cinco páginas en 0 discrepancias en los dos scripts**, salvo la única ausencia esperada de
+   siempre — el bloque comentado de `como-manejo-tu-informacion` (bloqueado hasta que el titular
+   migre a un plan comercial de IA). El resto de la divergencia que hubo en esa página (detallada
+   antes en §8) se resolvió el mismo día: el titular confirmó que la página en vivo es la versión
+   correcta, y `copy/05` se actualizó para igualarla — no se tocó el HTML.
 2. **Auditoría del DOM.** Un `h1` por página, cero saltos de jerarquía, cero ids duplicados, cero
-   anclas rotas, JSON-LD que parsea en las cinco, doce SVG sin texto dentro, siete `<details>`
-   abiertos, cero peticiones a dominios externos. **Un solo script en todo el sitio**
-   (`assets/terminal.js`, únicamente en la portada, §5): si aparece otro, es un error.
+   anclas rotas, JSON-LD que parsea, doce SVG sin texto dentro (`como-manejo-tu-informacion.html`
+   recuperó el suyo el 2026-08-19 — datos reales aislados en caja punteada tachada, datos ficticios
+   fluyendo hacia el sistema; adorno puro, cero información nueva), siete `<details>` abiertos en
+   Inicio, cero peticiones a dominios externos. **Un solo script en todo el sitio**
+   (`assets/terminal.js`, únicamente en la portada, §5): si aparece otro, es un error. El
+   menú (seis enlaces) y el pie (tres grupos, once enlaces) deben ser byte-por-byte idénticos en las
+   dieciséis páginas — ver «Pie de página» en §3.
 
 Contraste verificado, todos los pares pasan AA: 12.45 texto sobre panel · 12.26 sobre lienzo ·
 5.25 secundario · 11.24 sobre resalte · 6.40 botón · 9.79 y 12.45 en bloque oscuro · 7.75 pie.
@@ -241,17 +302,31 @@ propia caja, no arrastra la página.
 ## 8. Lo que falta
 
 1. **Verificar el alias de correo.** El WhatsApp ya es real: `wa.me/525533444852`, confirmado por
-   el titular el 12 de agosto de 2026 y presente en las cinco páginas. Falta comprobar que
+   el titular el 12 de agosto de 2026 y presente en las dieciséis páginas. Falta comprobar que
    `hola@freejolitos.consulting` exista como reenvío en el registrador — el dominio tiene MX
    activos, pero si el alias no está dado de alta, el correo rebota y el sitio anuncia una
    dirección muerta.
 2. **Validar el JSON-LD** con la herramienta de resultados enriquecidos de Google. Requiere URL
    pública; hasta ahora solo se validó que parsea.
 3. **Ver el sitio con ojos humanos.** Nadie ha visto una captura.
-4. **Las cuatro guías** de `/guias`, cuando exista el copy. Hoy `/guias` y `/casos` **no existen**
-   y no están en la navegación ni en `sitemap.xml` — una página vacía le dice a un agente que el
-   sitio está a medias.
-5. **Recrear los dos scripts de verificación** del §7 dentro del repositorio.
-6. **Descomentar el bloque de términos comerciales** de `como-manejo-tu-informacion.html` cuando corresponda. Está
+4. **`/casos` no existe** y con razón — §6 prohíbe agregar una página de casos sin autorización.
+   `/guias` sí existe, con siete guías publicadas, en la navegación y en `sitemap.xml`.
+5. **Depurar por qué la cortinilla del §4 no corre** en `/guias`, `/aviso-de-privacidad`,
+   `/terminos` ni `/como-manejo-tu-informacion` en Chrome de escritorio real — nota añadida en §4.
+6. **Scripts de verificación (`scripts/verify-*.js`): arreglados el 2026-08-19** — ver el detalle
+   en §7. Ya no hace falta reconciliarlos con una cifra manual aparte.
+7. **SVG de `como-manejo-tu-informacion.html`: repuesto el 2026-08-19.** Se había perdido en el
+   cambio de nombre de `datos-e-ia.html`. El inventario de doce del §3 vuelve a cuadrar.
+8. **`como-manejo-tu-informacion.html` había divergido de `copy/05` — resuelto el 2026-08-19.**
+   Con los dos scripts arreglados de §7 corriendo juntos salió a la luz que la página se había
+   reescrito a mano después del cambio de nombre de `datos-e-ia.html` sin que `copy/05` se
+   actualizara: el `<h1>`, el párrafo de apertura, dos oraciones más, el `<title>` y el meta
+   description ya no coincidían, y hasta el propio título del archivo de copy («Qué pasa con la
+   información de tu organización») seguía con el nombre viejo de la página. El titular confirmó que
+   la página en vivo es la versión correcta; **`copy/05` se reescribió para igualarla**, título del
+   documento incluido (ahora `# Cómo manejo tu información`). El HTML no se tocó. El bloque
+   comentado sigue igual — sigue bloqueado hasta que el titular migre a un plan comercial de IA, ver
+   el punto 9.
+9. **Descomentar el bloque de términos comerciales** de `como-manejo-tu-informacion.html` cuando corresponda. Está
    comentado con la razón escrita al lado.
 

@@ -77,6 +77,11 @@
     <a class="marca" href="/" aria-label="Freejolitos Consultores — inicio">
       <img src="/assets/logo.png" width="2245" height="520" alt="Freejolitos Consultores">
     </a>
+    <input type="checkbox" id="menu-interruptor" class="solo-lectores menu-interruptor">
+    <label for="menu-interruptor" class="menu-boton">
+      <span class="solo-lectores">Menú</span>
+      <span class="menu-icono" aria-hidden="true"></span>
+    </label>
     <nav class="navegacion" aria-label="Navegación principal">
       <ul>
         <li><a href="/">Inicio</a></li>
@@ -109,6 +114,19 @@
         <h2 id="nunca-datos">Nunca trabajo con datos de las personas que atiendes</h2>
         <p>No los pido, no los recibo y no los cargo en ninguna herramienta.</p>
         <p>Construyo los sistemas que gestionan esa información, pero para diseñarlos y probarlos uso un <strong>esquema equivalente con datos ficticios</strong>. Modelo el reporte con datos de prueba; tú lo corres después con los tuyos, en tu propio sistema.</p>
+
+        <!-- Adorno, sin información. Los datos reales quedan aislados (caja punteada,
+             tachada), nunca conectan; los datos ficticios sí fluyen hacia el sistema.
+             Todo lo que sugiere ya está escrito arriba. Bórralo y no se pierde nada. -->
+        <svg class="diagrama" viewBox="0 0 320 140" aria-hidden="true" focusable="false">
+          <rect x="14" y="30" width="96" height="80" rx="10" fill="none" stroke="#343434" stroke-opacity=".38" stroke-width="1.5" stroke-dasharray="6 6"/>
+          <line x1="30" y1="46" x2="94" y2="94" stroke="#343434" stroke-opacity=".3" stroke-width="1.5"/>
+          <circle class="late" cx="170" cy="70" r="7" fill="#01CFCB"/>
+          <path class="recorre" d="M177 70 H240" fill="none" stroke="#01CFCB" stroke-width="2.5" stroke-dasharray="70" stroke-dashoffset="70" stroke-linecap="round"/>
+          <rect x="244" y="42" width="62" height="56" rx="9" fill="#01CFCB" opacity=".18" stroke="#01CFCB" stroke-width="1.5"/>
+          <rect class="sube" x="256" y="76" width="14" height="14" rx="3" fill="#01CFCB"/>
+          <rect class="sube" x="276" y="64" width="14" height="26" rx="3" fill="#01CFCB" opacity=".6"/>
+        </svg>
       </section>
 
       <section class="panel" aria-labelledby="analisis-local">
@@ -145,23 +163,38 @@
 <footer class="sitio-pie">
   <div class="contenedor">
     <div class="pie-caja">
-      <div>
+      <div class="pie-marca">
         <p><strong>Freejolitos Consultores</strong><br>
         Hugo Legorreta, consultor de tecnología.<br>
         Zona Metropolitana del Valle de México.</p>
       </div>
-      <nav aria-label="Navegación del pie">
-      <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/servicios">Servicios y precios</a></li>
-        <li><a href="/como-trabajo">Cómo trabajo</a></li>
-        <li><a href="/quien-soy">Quién soy</a></li>
-        <li><a href="/guias">Guías</a></li>
-        <li><a href="/como-manejo-tu-informacion">Datos e IA</a></li>
-        <li><a href="/aviso-de-privacidad">Aviso de privacidad</a></li>
-        <li><a href="/terminos">Términos de uso</a></li>
-        <li><a href="https://github.com/HugoLeMoy47/freejolitosConsultingWeb/">Código fuente</a></li>
-      </ul>
+      <nav aria-label="Navegación del pie" class="pie-grupos">
+        <div class="pie-grupo">
+          <span class="pie-titulo">Sitio</span>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/servicios">Servicios y precios</a></li>
+            <li><a href="/como-trabajo">Cómo trabajo</a></li>
+            <li><a href="/quien-soy">Quién soy</a></li>
+            <li><a href="/guias">Guías</a></li>
+          </ul>
+        </div>
+        <div class="pie-grupo">
+          <span class="pie-titulo">Privacidad</span>
+          <ul>
+            <li><a href="/como-manejo-tu-informacion">Cómo manejo tu información</a></li>
+            <li><a href="/aviso-de-privacidad">Aviso de privacidad</a></li>
+            <li><a href="/terminos">Términos de uso</a></li>
+          </ul>
+        </div>
+        <div class="pie-grupo">
+          <span class="pie-titulo">Contacto</span>
+          <ul>
+            <li><a href="https://wa.me/525533444852">WhatsApp</a></li>
+            <li><a href="mailto:hola@freejolitos.consulting">hola@freejolitos.consulting</a></li>
+            <li><a href="https://github.com/HugoLeMoy47/freejolitosConsultingWeb/">Código fuente</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
   </div>

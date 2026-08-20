@@ -23,6 +23,11 @@
     <a class="marca" href="/" aria-label="Freejolitos Consultores — inicio">
       <img src="/assets/logo.png" width="2245" height="520" alt="Freejolitos Consultores">
     </a>
+    <input type="checkbox" id="menu-interruptor" class="solo-lectores menu-interruptor">
+    <label for="menu-interruptor" class="menu-boton">
+      <span class="solo-lectores">Menú</span>
+      <span class="menu-icono" aria-hidden="true"></span>
+    </label>
     <nav class="navegacion" aria-label="Navegación principal">
       <ul>
         <li><a href="/">Inicio</a></li>
@@ -46,13 +51,14 @@
     </section>
 
     <section class="panel" aria-labelledby="secciones">
-      <h2 id="secciones">Las cinco páginas del sitio</h2>
+      <h2 id="secciones">Las páginas del sitio</h2>
       <nav aria-label="Todas las páginas">
         <ul>
           <li><a href="/">Inicio</a> — a qué me dedico y para quién.</li>
           <li><a href="/servicios">Servicios y precios</a> — las tres formas de trabajar conmigo, con sus costos.</li>
           <li><a href="/como-trabajo">Cómo trabajo</a> — qué pasa desde que me escribes hasta que entrego.</li>
           <li><a href="/quien-soy">Quién soy</a> — de dónde vengo y por qué trabajo con organizaciones.</li>
+          <li><a href="/guias">Guías</a> — recursos gratuitos sobre datos, continuidad y tecnología.</li>
           <li><a href="/como-manejo-tu-informacion">Datos e IA</a> — qué hago con la información de tu organización.</li>
         </ul>
       </nav>
@@ -64,22 +70,38 @@
 <footer class="sitio-pie">
   <div class="contenedor">
     <div class="pie-caja">
-      <div>
+      <div class="pie-marca">
         <p><strong>Freejolitos Consultores</strong><br>
         Hugo Legorreta, consultor de tecnología.<br>
         Zona Metropolitana del Valle de México.</p>
       </div>
-      <nav aria-label="Navegación del pie">
-      <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/servicios">Servicios y precios</a></li>
-        <li><a href="/como-trabajo">Cómo trabajo</a></li>
-        <li><a href="/aviso-de-privacidad">Aviso de privacidad</a></li>
-        <li><a href="/como-manejo-tu-informacion">Cómo manejo tu información</a></li>
-        <li><a href="/terminos">Términos de uso</a></li>
-        <li><a href="/guias">Guías</a></li>
-        <li><a href="https://github.com/HugoLeMoy47/freejolitosConsultingWeb/">Código fuente</a></li>
-      </ul>
+      <nav aria-label="Navegación del pie" class="pie-grupos">
+        <div class="pie-grupo">
+          <span class="pie-titulo">Sitio</span>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/servicios">Servicios y precios</a></li>
+            <li><a href="/como-trabajo">Cómo trabajo</a></li>
+            <li><a href="/quien-soy">Quién soy</a></li>
+            <li><a href="/guias">Guías</a></li>
+          </ul>
+        </div>
+        <div class="pie-grupo">
+          <span class="pie-titulo">Privacidad</span>
+          <ul>
+            <li><a href="/como-manejo-tu-informacion">Cómo manejo tu información</a></li>
+            <li><a href="/aviso-de-privacidad">Aviso de privacidad</a></li>
+            <li><a href="/terminos">Términos de uso</a></li>
+          </ul>
+        </div>
+        <div class="pie-grupo">
+          <span class="pie-titulo">Contacto</span>
+          <ul>
+            <li><a href="https://wa.me/525533444852">WhatsApp</a></li>
+            <li><a href="mailto:hola@freejolitos.consulting">hola@freejolitos.consulting</a></li>
+            <li><a href="https://github.com/HugoLeMoy47/freejolitosConsultingWeb/">Código fuente</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
   </div>

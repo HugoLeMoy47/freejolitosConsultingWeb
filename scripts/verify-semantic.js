@@ -30,6 +30,19 @@ function stripHtml(html) {
   return html;
 }
 
+// Igual que en verify-copy.js: el texto de <title> vive entre tags, pero el
+// de <meta name="description" content="..."> vive en un ATRIBUTO que
+// stripHtml tira junto con el resto del tag — nunca puede salir de buscarlo
+// como candidato de texto de página, hay que leer el atributo directamente.
+function extractTitle(html) {
+  const m = html.match(/<title>([\s\S]*?)<\/title>/i);
+  return m ? m[1].replace(/\s+/g, ' ').trim() : '';
+}
+function extractMetaDescription(html) {
+  const m = html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i);
+  return m ? m[1].replace(/\s+/g, ' ').trim() : '';
+}
+
 function stripMarkdown(md) {
   if (!md) return '';
   md = md.replace(/^---[\s\S]*?---\s*/m, '');
@@ -42,6 +55,22 @@ function stripMarkdown(md) {
 
 function blocksFromMarkdown(md) {
   return md.split(/\n\s*\n/).map(s => s.trim()).filter(Boolean);
+}
+
+// Misma convención de andamiaje que scripts/verify-copy.js (mantener ambas en
+// sync si cambia): rótulos de sección, notas editoriales y directivas de
+// construcción que nunca aparecen como texto visible en la página.
+const DIRECTIVE_ONLY = /^\*\*(json-ld|acci[oó]n principal)\s*:?\*\*/i;
+const RELOCATED_LABEL = /^(title|meta description):\s*/i;
+
+function isScaffoldBlock(raw) {
+  const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
+  if (!lines.length) return true;
+  if (lines.length === 1 && /^#{1,6}\s+\S/.test(lines[0])) return true;
+  if (lines.every(l => /^>/.test(l))) return true;
+  if (lines.every(l => /^<!--/.test(l) || /^-->$/.test(l))) return true;
+  if (DIRECTIVE_ONLY.test(raw.trim())) return true;
+  return false;
 }
 
 const SPANISH_STOP = new Set([
@@ -98,26 +127,51 @@ function run() {
     if (!copyRaw) return console.log('  MISSING COPY: ' + p.copy);
 
     const html = htmlRaw;
-    const blocks = blocksFromMarkdown(copyRaw).map(b => stripMarkdown(b));
+    const rawBlocks = blocksFromMarkdown(copyRaw);
+    const contentBlocks = rawBlocks.filter(b => !isScaffoldBlock(b));
 
-    // Crear candidatos desde HTML: separar por párrafos y encabezados
+    // Crear candidatos desde HTML: separar por parrafos y encabezados.
+    // OJO: stripHtml() colapsa TODO whitespace (incluidos saltos de linea) a
+    // un solo espacio. La version anterior insertaba un salto de linea y
+    // llamaba a stripHtml() despues, que se lo comia -- todo el documento
+    // quedaba como un solo candidato gigante y la similitud de coseno se
+    // diluia a casi cero para todo, incluso texto identico palabra por
+    // palabra. Se usa un separador que NO es whitespace para que sobreviva
+    // a stripHtml, y se parte por el al final.
+    var BLOCK_SEP = "@@BREAK@@";
     function htmlCandidates(raw) {
-      const s = raw
-        .replace(/<\/(p|h1|h2|h3|li|section|article|header|footer|main|div)>/gi, '\n')
-        .replace(/<br\s*\/?\s*>/gi, '\n');
-      const stripped = stripHtml(s);
-      return stripped.split(/\n+/).map(l => l.trim()).filter(Boolean).map(l => l.replace(/\s+/g, ' '));
+      var withBreaks = raw
+        .replace(/<\/(p|h1|h2|h3|li|section|article|header|footer|main|div)>/gi, BLOCK_SEP)
+        .replace(/<br\s*\/?\s*>/gi, BLOCK_SEP);
+      var stripped = stripHtml(withBreaks);
+      return stripped.split(BLOCK_SEP).map(function(l){ return l.trim(); }).filter(Boolean);
     }
 
     const candidates = htmlCandidates(html);
+    const pageTitle = normalize(extractTitle(htmlRaw));
+    const pageDesc = normalize(extractMetaDescription(htmlRaw));
 
     let missing = [];
-    blocks.forEach((blk, i) => {
+    contentBlocks.forEach((raw, i) => {
+      const strippedRaw = stripMarkdown(raw);
+      const isTitle = /^title:\s*/i.test(strippedRaw);
+      const isDesc = /^meta description:\s*/i.test(strippedRaw);
+      const blk = strippedRaw.replace(RELOCATED_LABEL, '');
       if (!blk) return;
-      // Ignorar bloques cortos o marcadores que no son contenido real
+
+      if (isTitle) {
+        if (normalize(blk) === pageTitle) return;
+        missing.push({ index: i+1, text: blk.slice(0,200), sim: 'atributo <title> no coincide' });
+        return;
+      }
+      if (isDesc) {
+        if (normalize(blk) === pageDesc) return;
+        missing.push({ index: i+1, text: blk.slice(0,200), sim: 'atributo meta[description] no coincide' });
+        return;
+      }
+
       const wk = normalize(blk).split(' ').filter(Boolean).length;
-      const markerRe = /^(h1|h2|h3|entrada|cierre|meta|title|subtitle|subtítulo|h1:|h2:|h3:)/i;
-      if (wk < 4 || markerRe.test(blk)) return;
+      if (wk < 4) return; // demasiado corto para que la similitud de n-gramas diga algo
       const fblk = features(blk);
       // comparar con cada candidato y tomar la máxima similitud
       let best = 0;
@@ -130,7 +184,7 @@ function run() {
       if (sim < THRESH) missing.push({ index: i+1, text: blk.slice(0,200), sim: Math.round(sim*100)/100 });
     });
 
-    console.log('  blocks:', blocks.length, ' missing (semantic):', missing.length);
+    console.log('  blocks:', contentBlocks.length, '(', rawBlocks.length - contentBlocks.length, 'de andamiaje omitidos )  missing (semantic):', missing.length);
     if (missing.length) {
       totalMissing += missing.length;
       missing.slice(0,10).forEach(m => console.log('   - block', m.index, ':', m.text, '(sim', m.sim + ')'));

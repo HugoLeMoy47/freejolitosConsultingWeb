@@ -215,6 +215,57 @@ main { display: block; padding-bottom: 3rem; }
   background: var(--resalte);
 }
 
+/* Menú móvil sin JavaScript: casilla + etiqueta, la misma técnica que ya usan
+   los <details> del FAQ (interactividad de CSS puro, contenido siempre en el
+   HTML). La casilla se oculta con .solo-lectores pero se queda tabulable; la
+   etiqueta es el botón visual y expone el foco de la casilla con :focus-visible. */
+.menu-boton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--r-pildora);
+  cursor: pointer;
+  color: var(--texto);
+}
+.menu-interruptor:focus-visible + .menu-boton {
+  outline: 3px solid var(--acento);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Icono de tres barras en CSS puro: nada de SVG nuevo, para no romper el
+   conteo de doce SVG del sitio (documentado en CLAUDE.md §3). */
+.menu-icono { position: relative; display: block; width: 1.375rem; height: 2px; background: currentColor; border-radius: 2px; }
+.menu-icono::before,
+.menu-icono::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+.menu-icono::before { top: -6px; }
+.menu-icono::after { top: 6px; }
+
+@media (max-width: 40rem) {
+  .menu-boton { display: inline-flex; }
+
+  .navegacion {
+    flex-basis: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+  .menu-interruptor:checked ~ .navegacion { max-height: 16rem; }
+
+  .navegacion ul { flex-direction: column; gap: 0.125rem; padding: 0.5rem 0 0.75rem; }
+  .navegacion a { display: block; }
+}
+
 /* ---------- Paneles ---------- */
 
 /* El panel es la unidad de composición: bloque blanco redondeado flotando
@@ -519,6 +570,26 @@ tbody th { font-weight: bold; }
 .pie-caja a { color: #CCCCCC; text-decoration-color: var(--acento); }
 .pie-caja a:hover { color: #FFFFFF; }
 
+/* Los enlaces del pie se agrupan en tres bloques (Sitio / Privacidad /
+   Contacto) dentro de la misma caja oscura, en vez de una lista plana:
+   con más de una decena de rutas, agrupar por categoría se escanea más
+   rápido que una columna larga. */
+.pie-grupos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem 2.5rem;
+}
+.pie-grupo { min-width: 8.5rem; }
+.pie-titulo {
+  display: block;
+  margin: 0 0 0.6rem;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
 /* ---------- Utilidades ---------- */
 
 .solo-lectores {
@@ -807,13 +878,13 @@ tbody tr:hover { background: var(--resalte); }
 /* ---------- Impresión ---------- */
 
 @media print {
-  .navegacion, .slab, .salto { display: none; }
+  .navegacion, .menu-boton, .slab, .salto { display: none; }
   body { font-size: 11pt; color: #000; background: #fff; }
   a { text-decoration: none; color: #000; }
   .panel, .servicio, .tabla-envoltura { border: 1px solid #999; border-radius: 0; }
   .resalte { border: 1px solid #999; background: none; }
   .pie-caja { background: none; color: #000; border: 1px solid #999; }
-  .pie-caja p, .pie-caja a, .pie-caja strong { color: #000; }
+  .pie-caja p, .pie-caja a, .pie-caja strong, .pie-titulo { color: #000; }
 }
 
 /* =========================================================

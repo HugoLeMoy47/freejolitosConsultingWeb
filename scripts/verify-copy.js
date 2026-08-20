@@ -36,6 +36,19 @@ function stripHtml(html) {
   return html;
 }
 
+// El texto de <title> vive entre tags (sobrevive a stripHtml), pero el de
+// <meta name="description" content="..."> vive en un ATRIBUTO — stripHtml lo
+// tira junto con el resto del tag. Buscarlo como texto de página nunca puede
+// funcionar; sale por comparación directa contra el valor real del atributo.
+function extractTitle(html) {
+  const m = html.match(/<title>([\s\S]*?)<\/title>/i);
+  return m ? m[1].replace(/\s+/g, ' ').trim() : '';
+}
+function extractMetaDescription(html) {
+  const m = html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i);
+  return m ? m[1].replace(/\s+/g, ' ').trim() : '';
+}
+
 function stripMarkdown(md) {
   if (!md) return '';
   // Remove frontmatter if any
@@ -54,6 +67,31 @@ function stripMarkdown(md) {
 function blocksFromMarkdown(md) {
   // Split on two or more newlines (approx paragraph blocks)
   return md.split(/\n\s*\n/).map(s => s.trim()).filter(Boolean);
+}
+
+// Los archivos de copy/ siguen una convención fija de andamiaje editorial:
+// título del documento, nota de tono en blockquote, y rótulos de sección
+// ("## H1", "## Entrada", "## Cierre", "## Metadatos") que organizan el
+// archivo pero nunca aparecen como texto visible en la página — el contenido
+// real va en el bloque *siguiente* a cada rótulo. Compararlos contra el HTML
+// renderizado siempre falla y no significa nada: hay que excluirlos antes de
+// verificar, no contarlos como discrepancia.
+// Bajo "## Metadatos", **JSON-LD:** y **Acción principal:**/**Alternativa:** son
+// instrucciones de construcción (qué estructura usar, qué botón mostrar), no texto
+// que deba aparecer tal cual en la página — a diferencia de **Title:** y
+// **Meta description:**, que sí son el contenido real de una etiqueta, solo que
+// recolocado (ver RELOCATED_LABEL más abajo).
+const DIRECTIVE_ONLY = /^\*\*(json-ld|acci[oó]n principal)\s*:?\*\*/i;
+const RELOCATED_LABEL = /^(title|meta description):\s*/;
+
+function isScaffoldBlock(raw) {
+  const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
+  if (!lines.length) return true;
+  if (lines.length === 1 && /^#{1,6}\s+\S/.test(lines[0])) return true; // rótulo de encabezado
+  if (lines.every(l => /^>/.test(l))) return true; // nota editorial en blockquote
+  if (lines.every(l => /^<!--/.test(l) || /^-->$/.test(l))) return true; // marcador de comentario suelto
+  if (DIRECTIVE_ONLY.test(raw.trim())) return true; // instrucción de construcción, no copy
+  return false;
 }
 
 function tokenize(text) {
@@ -85,22 +123,40 @@ function run() {
     if (!copyRaw) return console.log('  MISSING COPY: ' + p.copy);
 
     const html = stripHtml(htmlRaw).toLowerCase();
-    const md = stripMarkdown(copyRaw).toLowerCase();
-    const blocks = blocksFromMarkdown(copyRaw).map(b => stripMarkdown(b).toLowerCase());
+    const pageTitle = extractTitle(htmlRaw).toLowerCase();
+    const pageDesc = extractMetaDescription(htmlRaw).toLowerCase();
+    const rawBlocks = blocksFromMarkdown(copyRaw);
+    const contentBlocks = rawBlocks.filter(b => !isScaffoldBlock(b));
 
     let missing = [];
-    blocks.forEach((blk, i) => {
+    contentBlocks.forEach((raw, i) => {
+      const strippedRaw = stripMarkdown(raw).toLowerCase();
+      const isTitle = /^title:\s*/.test(strippedRaw);
+      const isDesc = /^meta description:\s*/.test(strippedRaw);
+      const blk = strippedRaw.replace(RELOCATED_LABEL, '');
       if (!blk) return;
+
+      if (isTitle) {
+        if (blk === pageTitle) return;
+        missing.push({ index: i+1, text: blk.slice(0, 200), ratio: 'atributo <title> no coincide' });
+        return;
+      }
+      if (isDesc) {
+        if (blk === pageDesc) return;
+        missing.push({ index: i+1, text: blk.slice(0, 200), ratio: 'atributo meta[description] no coincide' });
+        return;
+      }
+
       if (html.includes(blk)) return; // exact match
       const ratio = wordOverlapRatio(blk, html);
       if (ratio >= FUZZY_THRESHOLD) return; // fuzzy match
-      missing.push({ index: i+1, text: blk.slice(0, 200), ratio: Math.round(ratio * 100) });
+      missing.push({ index: i+1, text: blk.slice(0, 200), ratio: 'overlap ' + Math.round(ratio * 100) + '%' });
     });
 
-    console.log('  blocks:', blocks.length, ' missing:', missing.length);
+    console.log('  blocks:', contentBlocks.length, '(', rawBlocks.length - contentBlocks.length, 'de andamiaje omitidos )  missing:', missing.length);
     if (missing.length) {
       totalMissing += missing.length;
-      missing.slice(0,10).forEach(m => console.log('   - block', m.index, ':', m.text, ' (overlap', m.ratio + '%)'));
+      missing.slice(0,10).forEach(m => console.log('   - block', m.index, ':', m.text, ' (', m.ratio, ')'));
       if (missing.length > 10) console.log('   ...', missing.length - 10, 'more');
     }
   });
