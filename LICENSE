@@ -1,9 +1,17 @@
-La Licencia MIT que aparece abajo se aplica al CÓDIGO de este repositorio:
-los archivos HTML, la hoja de estilos, el JavaScript y los scripts auxiliares.
+Este repositorio organiza su contenido en tres capas de derechos de autor y licencias:
 
-NO se aplica al logotipo, al nombre «Freejolitos Consultores» ni a los textos
-comerciales del sitio, que son propiedad de su titular y quedan con todos los
-derechos reservados. Los detalles están en NOTICE.md.
+1. Código: los archivos HTML, la hoja de estilos, el JavaScript y los scripts auxiliares están
+   incluidos bajo la Licencia MIT (texto más abajo).
+
+2. Guías y artículos: los archivos bajo `guias/` y sus fuentes en `copy/` se publican bajo
+   Creative Commons Atribución 4.0 Internacional (CC BY 4.0). Consulta NOTICE.md para la
+   redacción y alcance exacto.
+
+3. Marca y textos comerciales: el logotipo, el nombre "Freejolitos Consultores", la paleta y
+   los textos comerciales del sitio (Inicio, Servicios, Cómo trabajo, Quién soy y copy asociado)
+   quedan con todos los derechos reservados del titular.
+
+Los detalles y la lista de archivos por capa están en NOTICE.md.
 
 -------------------------------------------------------------------------------
 

@@ -61,7 +61,7 @@ una frase de presentación: es la razón por la que este negocio está armado co
 
 Uso IA para producir buena parte de mi trabajo: análisis, documentación y revisión. Nunca con datos
 de las personas que atiende tu organización — para eso trabajo con esquemas equivalentes y datos de
-prueba. Lo explico a detalle en la [política de datos](/datos-e-ia).
+prueba. Lo explico a detalle en la [política de datos](/como-manejo-tu-informacion).
 
 ## Cómo empezamos
 
@@ -108,3 +108,4 @@ Se cotiza como proyecto aparte. No hace falta contratar un acompañamiento mensu
 **Meta description:** Diagnóstico, acompañamiento mensual y desarrollo a la medida para
 organizaciones sin área de sistemas en la Zona Metropolitana del Valle de México. Diagnóstico desde
 $14,400, con tarifa institucional para OSC.
+

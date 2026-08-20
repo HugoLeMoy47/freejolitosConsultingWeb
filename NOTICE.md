@@ -24,6 +24,16 @@ sin pedir permiso. Para eso está la MIT.
 
 ---
 
+## Guías y artículos — Creative Commons Atribución 4.0 (CC BY 4.0)
+
+**Las guías y los artículos** de este sitio —los archivos bajo `guias/` y sus fuentes correspondientes en `copy/`— se publican bajo licencia Creative Commons Atribución 4.0 Internacional (CC BY 4.0). Puedes copiarlos, adaptarlos y usarlos, incluso con fines comerciales, siempre que cites la fuente: Hugo Legorreta Moysén, freejolitos.consulting.
+
+Esto **no** incluye el copy comercial del sitio —Inicio, Servicios, Cómo trabajo y Quién soy—, que queda con todos los derechos reservados junto con el logotipo, el nombre y la paleta.
+
+---
+
+---
+
 ## Con todos los derechos reservados — no puedes usarlo
 
 **El logotipo.** `assets/logo.png` es un signo distintivo de Freejolitos Consultores. Una licencia
@@ -65,3 +75,4 @@ aunque los conozcas por otra vía.
 
 Con eso queda un sitio estático, accesible, sin dependencias de terceros y legible por agentes,
 que es la parte que vale la pena copiar.
+

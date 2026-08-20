@@ -53,7 +53,7 @@ revisión. Es la razón de que una organización pequeña pueda recibir document
 normalmente solo produce una firma grande, a un costo que puede sostener.
 
 Nunca con datos de las personas que atiendes. Eso tiene su propia página, con el detalle completo:
-[qué pasa con la información de tu organización](/datos-e-ia).
+[qué pasa con la información de tu organización](/como-manejo-tu-informacion).
 
 ---
 
@@ -81,3 +81,4 @@ compromiso.
 
 **Meta description:** Un informe por visita, con lo que no se pudo determinar dicho de frente, y una
 revisión de integridad antes de cada entrega. Uso de inteligencia artificial declarado abiertamente.
+

@@ -254,3 +254,4 @@ propia caja, no arrastra la página.
 5. **Recrear los dos scripts de verificación** del §7 dentro del repositorio.
 6. **Descomentar el bloque de términos comerciales** de `datos-e-ia.html` cuando corresponda. Está
    comentado con la razón escrita al lado.
+

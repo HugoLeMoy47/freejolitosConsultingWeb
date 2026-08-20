@@ -18,3 +18,4 @@ Notas:
 - Aplica estas cabeceras en el edge (Cloudflare) o en el Worker que sirva el sitio, no sólo en el servidor de desarrollo.
 - Prueba CSP en `Content-Security-Policy-Report-Only` para capturar falsos positivos antes del bloqueo.
 - No agregar cabeceras que dupliquen mecanismos de seguridad ya aplicados por plataforma sin verificar efectos.
+

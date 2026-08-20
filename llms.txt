@@ -104,7 +104,10 @@ revisión. Las reglas:
   algo quede expresamente fuera. Si la organización ya tiene una política de protección de datos,
   se adopta esa.
 
-Detalle completo: https://freejolitos.consulting/datos-e-ia
+Detalle completo: https://freejolitos.consulting/como-manejo-tu-informacion
+
+Aviso de privacidad: https://freejolitos.consulting/aviso-de-privacidad
+Términos de uso: https://freejolitos.consulting/terminos
 
 ## Trayectoria
 
@@ -126,5 +129,6 @@ de contacto es WhatsApp; la alternativa es correo. No hay formulario de contacto
   declarado de inteligencia artificial.
 - [Quién soy](https://freejolitos.consulting/quien-soy) — Hugo Legorreta: trayectoria y por qué
   trabaja con el tercer sector.
-- [Datos e IA](https://freejolitos.consulting/datos-e-ia) — política de manejo de datos e
+- [Datos e IA](https://freejolitos.consulting/como-manejo-tu-informacion) — política de manejo de datos e
   inteligencia artificial.
+

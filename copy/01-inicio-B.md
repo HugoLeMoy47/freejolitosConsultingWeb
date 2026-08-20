@@ -61,9 +61,10 @@ razón de que el negocio esté armado así.
 
 Uso IA para producir buena parte de mi trabajo: análisis, documentación, revisión. Nunca con los
 datos de las personas que atiendes — para eso uso esquemas equivalentes y datos de prueba. Está todo
-explicado en la [política de datos](/datos-e-ia).
+explicado en la [política de datos](/como-manejo-tu-informacion).
 
 ## Cómo empezamos
 
 Media hora de plática. Me cuentas qué está pasando y te digo derecho si te puedo ayudar, si lo que
 necesitas es otra cosa, o si esto lo puedes resolver tú solo sin pagarme.
+

@@ -123,3 +123,4 @@ organizaciones de la sociedad civil.
 
 **JSON-LD:** un `Offer` por cada uno de los tres servicios, con `price`, `priceCurrency: MXN` y
 `areaServed`.
+

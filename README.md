@@ -273,3 +273,4 @@ Si quieres reutilizar la estructura, hay una guía de cinco pasos en [NOTICE.md]
 falta. Documenta cuatro decisiones que parecen errores y no lo son. **Manténlo al día** — es lo
 único que un agente nuevo lee automáticamente, y sin él una sesión desde otro equipo «arreglaría»
 esas cuatro cosas.
+
