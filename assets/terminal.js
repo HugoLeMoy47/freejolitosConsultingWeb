@@ -405,6 +405,7 @@
     tty = document.createElement("div");
     tty.id = "tty";
     tty.setAttribute("role", "dialog");
+    tty.setAttribute("aria-modal", "true");
     tty.setAttribute("aria-label", "Modo terminal");
 
     var cv = document.createElement("canvas");
@@ -479,6 +480,13 @@
     flujo.addEventListener("click", function (ev) {
       if (ev.target.closest("a")) return;
       saltar();
+    });
+
+    /* Equivalente de teclado del clic en el fondo: Escape también salta el
+       pintado. No cierra la terminal — eso sigue siendo el gesto deliberado
+       de cinco clics — solo evita obligar a esperar la animación. */
+    tty.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape") saltar();
     });
 
     alQuintoClic(boton, apagar);

@@ -198,9 +198,13 @@ main { display: block; padding-bottom: 3rem; }
 }
 .navegacion li { margin: 0; }
 
-/* Píldoras de navegación, al estilo de la barra de referencia. */
+/* Píldoras de navegación, al estilo de la barra de referencia.
+   min-height 2.75rem (44px): área de toque cómoda, no solo el mínimo AA
+   de 24px que ya cumplía el padding por sí solo. */
 .navegacion a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   text-decoration: none;
   font-size: 0.9375rem;
   color: var(--secundario);
@@ -454,6 +458,7 @@ table {
   width: 100%;
   min-width: 33rem;
   font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums; /* columnas de precio alineadas por dígito */
 }
 
 caption {
@@ -566,8 +571,10 @@ tbody th { font-weight: bold; }
 .pie-caja p { margin: 0; max-width: 22rem; color: #CCCCCC; }
 .pie-caja strong { color: #FFFFFF; }
 .pie-caja ul { list-style: none; padding: 0; margin: 0; max-width: none; }
-.pie-caja li { margin-bottom: 0.4rem; }
-.pie-caja a { color: #CCCCCC; text-decoration-color: var(--acento); }
+.pie-caja li { margin-bottom: 0; }
+/* display:block + padding en vez de solo el alto de línea: más área de
+   toque en una lista de once enlaces, sin inflar demasiado el pie. */
+.pie-caja a { display: block; padding: 0.3rem 0; color: #CCCCCC; text-decoration-color: var(--acento); }
 .pie-caja a:hover { color: #FFFFFF; }
 
 /* Los enlaces del pie se agrupan en tres bloques (Sitio / Privacidad /
@@ -875,6 +882,66 @@ tbody tr:hover { background: var(--resalte); }
   }
 }
 
+/* ---------- Listas de verificación (guías) ---------- */
+
+/* Las casillas viven dentro de <label> (accesibilidad: nombre accesible +
+   un solo hit-target para casilla y texto). Esto solo mejora el área de
+   toque y da estado de :hover — selector genérico por :has(), no requiere
+   tocar el HTML de cada guía. */
+main label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.4rem;
+  margin: 0 -0.4rem;
+  border-radius: var(--r-chico);
+  cursor: pointer;
+}
+main label:has(input[type="checkbox"]):hover { background: var(--resalte); }
+main input[type="checkbox"] {
+  accent-color: var(--acento);
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+/* ---------- Termómetro de diagnóstico (guía) ----------
+   Colores de estado (rojo/ámbar/verde) para severidad, no colores de marca:
+   es una categoría distinta a la regla "no inventar colores" del §3 de
+   CLAUDE.md, que rige la paleta de marca. Antes vivían como estilos inline
+   sin verificar contraste — el verde de cifra sobre su fondo, por ejemplo,
+   daba 1.84:1. Los tonos oscuros de cifra de abajo se eligieron para ≥4.5:1
+   (verificado a mano: verde 5.77:1). */
+.termometro {
+  background: var(--resalte);
+  border: 1px solid var(--borde);
+  border-radius: var(--r-chico);
+  padding: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  margin: 1.5rem 0;
+}
+.termometro-pregunta { margin: 0 0 1rem; }
+.termometro-niveles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  text-align: center;
+}
+@media (max-width: 40rem) {
+  .termometro-niveles { grid-template-columns: 1fr; }
+}
+.termometro-nivel { border-radius: var(--r-chico); padding: 0.75rem; border: 1px solid; }
+.termometro-cifra { font-size: 1.125rem; font-weight: bold; }
+.termometro-etiqueta { font-size: 0.8125rem; color: var(--secundario); margin-top: 0.25rem; }
+
+.termometro-bajo    { background: #D4EDDA; border-color: #86EFAC; }
+.termometro-bajo    .termometro-cifra { color: #166534; }
+.termometro-medio   { background: #FFF3CD; border-color: #F59E0B; }
+.termometro-medio   .termometro-cifra { color: #92400E; }
+.termometro-critico { background: #FFF5F5; border-color: #EF4444; }
+.termometro-critico .termometro-cifra { color: #991B1B; }
+
 /* ---------- Impresión ---------- */
 
 @media print {
@@ -1007,6 +1074,7 @@ html.tty-activo, html.tty-activo body { overflow: hidden; }
   color: var(--tty-acento);
   text-decoration: none;
   border-bottom: 1px solid rgba(1, 207, 203, 0.45);
+  scroll-margin-top: 4.5rem; /* la .tty-barra sticky no tape un enlace enfocado por Tab */
 }
 
 #tty a:hover,

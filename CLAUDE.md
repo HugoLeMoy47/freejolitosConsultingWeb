@@ -55,6 +55,14 @@ Paleta extraída del logotipo real. **No inventar colores.**
 | Bordes | `#CCCCCC` | `--borde` |
 | Lienzo | `#FAFEFE` | `--lienzo` |
 
+**Excepción — colores de estado, no de marca.** El `.termometro` de
+`guias/diez-senales-equipo-necesita-atencion.html` usa rojo/ámbar/verde para severidad
+(`.termometro-bajo/-medio/-critico` en `estilos.css`). No son parte de la paleta de arriba — señalan
+riesgo, no identidad — así que "no inventar colores" no aplica ahí. Antes vivían como `style=`
+inline sin verificar contraste (el verde de cifra daba 1.84:1 sobre su fondo); ahora son clases con
+tonos oscuros elegidos para ≥4.5:1. Si se agrega un segundo widget de severidad, reusar estas clases
+en vez de inventar un tercer set de colores.
+
 Tipografía: pila de sistema encabezada por Arial, para coherencia con los documentos de la
 marca. **Sin webfonts** — evita una petición a un tercero y es coherente con la regla 4.
 
@@ -106,6 +114,12 @@ el HTML: es cronología visual, no texto inventado.
   el conteo de doce SVG de más abajo). Debajo de `40rem` de ancho la casilla oculta `.navegacion`
   hasta que se marca; arriba de ese ancho la casilla no se muestra y el menú se ve como siempre. Los
   seis enlaces del menú **siguen en el HTML en todo momento**, igual que el resto de la sección.
+- **Checklists de las guías** (`<input type="checkbox">` dentro de `<li>`): cada casilla va envuelta
+  en `<label>` — nombre accesible para lector de pantalla, y clic en el texto marca la casilla (un
+  solo hit-target, sin zona muerta). El estilo (`estilos.css`, sección «Listas de verificación») usa
+  `label:has(input[type="checkbox"])` para dar área de toque y `:hover` a las 75 casillas de los 6
+  archivos de `/guias/*` sin tocar el HTML de cada una — si agregas una guía nueva con checklist,
+  basta con `<li><label><input type="checkbox"> texto</label></li>`, el CSS ya la alcanza.
 
 ### Pie de página
 
