@@ -1,8 +1,8 @@
-﻿Allinear licencias; agregar páginas de privacidad y términos; renombrar datos-e-ia; actualizar sitemap y llms
+﻿Allinear licencias; agregar páginas de privacidad y términos; renombrar la página de manejo de información; actualizar sitemap y llms
 
 - Alinea LICENSE y NOTICE.md: declara tres capas de derechos (Código: MIT; Guías y artículos: CC BY 4.0; Marca y textos comerciales: derechos reservados)
 - Añade aviso-de-privacidad.html y terminos.html
-- Renombra datos-e-ia a como-manejo-tu-informacion y agrega _redirects con 301
+- Renombra la página de manejo de información y agrega _redirects con 301
 - Actualiza sitemap.xml y llms.txt; actualiza referencias internas
 
 Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>

@@ -17,7 +17,7 @@ Ejecución del verificador
 - `servicios.html` ↔ `copy/02-servicios.md`: 5 bloques faltantes
 - `como-trabajo.html` ↔ `copy/03-como-trabajo.md`: 6 bloques faltantes
 - `quien-soy.html` ↔ `copy/04-quien-soy.md`: 6 bloques faltantes
-- `datos-e-ia.html` ↔ `copy/05-datos-e-ia.md`: 8 bloques faltantes
+- `como-manejo-tu-informacion.html` ↔ `copy/05-como-manejo-tu-informacion.md`: 8 bloques faltantes
 
 Notas sobre la verificación tolerante
 - El verificador intenta primero una coincidencia literal. Si falla, calcula el solapamiento de palabras entre el bloque de `copy/` y el texto extraído del HTML. Si ≥60% de las palabras aparecen, el bloque se considera presente.
@@ -30,7 +30,7 @@ Notas sobre la verificación tolerante
 - `servicios.html` ↔ `copy/02-servicios.md`: 8 bloques faltantes
 - `como-trabajo.html` ↔ `copy/03-como-trabajo.md`: 7 bloques faltantes
 - `quien-soy.html` ↔ `copy/04-quien-soy.md`: 8 bloques faltantes
-- `datos-e-ia.html` ↔ `copy/05-datos-e-ia.md`: 10 bloques faltantes
+- `como-manejo-tu-informacion.html` ↔ `copy/05-como-manejo-tu-informacion.md`: 10 bloques faltantes
 
 Notas y siguientes pasos sugeridos
 - Revisar los bloques reportados por el verificador y confirmar si son diferencias esperadas (p. ej. metadatos, JSON-LD, tablas, o secciones comentadas). El script hace una comparación literal simplificada.

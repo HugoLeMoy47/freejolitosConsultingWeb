@@ -8,7 +8,7 @@ const pages = [
   { html: 'servicios.html', copy: 'copy/02-servicios.md' },
   { html: 'como-trabajo.html', copy: 'copy/03-como-trabajo.md' },
   { html: 'quien-soy.html', copy: 'copy/04-quien-soy.md' },
-  { html: 'datos-e-ia.html', copy: 'copy/05-datos-e-ia.md' },
+  { html: 'como-manejo-tu-informacion.html', copy: 'copy/05-como-manejo-tu-informacion.md' },
 ];
 
 function read(file) {

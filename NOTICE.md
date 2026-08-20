@@ -43,8 +43,9 @@ propio. Si reutilizas el código, **sustituye este archivo por el tuyo**.
 **El nombre.** «Freejolitos», «Freejolitos Consultores» y el dominio asociado. No los uses de
 forma que sugiera relación, respaldo u origen común.
 
-**El copy.** Todo el texto comercial del sitio: el contenido de `copy/`, el texto visible dentro
-de los `.html`, `llms.txt`, y las descripciones de `meta` y JSON-LD. Está escrito para un negocio
+**El copy comercial.** El texto comercial de `copy/01-inicio-A.md`, `copy/02-servicios.md`,
+`copy/03-como-trabajo.md` y `copy/04-quien-soy.md`, el texto visible dentro de esos `.html`,
+`llms.txt`, y las descripciones comerciales de `meta` y JSON-LD. Está escrito para un negocio
 concreto y calibrado a una guía de voz específica. No es plantilla.
 
 **La paleta y el sistema visual**, en la medida en que identifican a la marca. Los colores

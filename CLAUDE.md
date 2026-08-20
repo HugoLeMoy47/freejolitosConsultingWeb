@@ -223,7 +223,7 @@ en el repositorio todavía**; hay que recrearlos.
 1. **Fidelidad del copy.** Comparar el texto renderizado de cada página contra su archivo en
    `copy/`, ignorando `<script>`, `<svg>` y comentarios, y normalizando espacios antes de
    puntuación. Estado actual: **76 bloques, 0 discrepancias.** La única ausencia esperada es el
-   bloque comentado de `datos-e-ia` (bloqueado hasta que el titular migre a un plan comercial
+  bloque comentado de `como-manejo-tu-informacion` (bloqueado hasta que el titular migre a un plan comercial
    de IA; la razón está escrita junto al comentario).
 2. **Auditoría del DOM.** Un `h1` por página, cero saltos de jerarquía, cero ids duplicados, cero
    anclas rotas, JSON-LD que parsea en las cinco, doce SVG sin texto dentro, siete `<details>`
@@ -252,6 +252,6 @@ propia caja, no arrastra la página.
    y no están en la navegación ni en `sitemap.xml` — una página vacía le dice a un agente que el
    sitio está a medias.
 5. **Recrear los dos scripts de verificación** del §7 dentro del repositorio.
-6. **Descomentar el bloque de términos comerciales** de `datos-e-ia.html` cuando corresponda. Está
+6. **Descomentar el bloque de términos comerciales** de `como-manejo-tu-informacion.html` cuando corresponda. Está
    comentado con la razón escrita al lado.
 

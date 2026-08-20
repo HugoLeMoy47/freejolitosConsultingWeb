@@ -69,7 +69,7 @@ manda `Cache-Control: no-store`, sin lo cual el navegador cachea el CSS y no ves
 ├── servicios.html          Servicios y precios
 ├── como-trabajo.html       Cómo trabajo
 ├── quien-soy.html          Quién soy
-├── datos-e-ia.html         Datos e IA
+├── como-manejo-tu-informacion.html  Datos e IA
 ├── 404.html                noindex, sin canonical, sin JSON-LD
 │
 ├── wrangler.jsonc          Configuración de despliegue en Cloudflare
@@ -81,7 +81,7 @@ manda `Cache-Control: no-store`, sin lo cual el navegador cachea el CSS y no ves
 │   ├── 02-servicios.md
 │   ├── 03-como-trabajo.md
 │   ├── 04-quien-soy.md
-│   └── 05-datos-e-ia.md
+│   └── 05-como-manejo-tu-informacion.md
 │
 ├── assets/
 │   ├── estilos.css         Hoja única

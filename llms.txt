@@ -34,11 +34,11 @@ distancia; fuera de la zona metropolitana no hay atención presencial.
 
 ## Servicios y precios
 
-Todos los precios son de lista, en pesos mexicanos (MXN) y **más IVA**. Existe una tarifa
+Todos los precios son de lista, en pesos mexicanos (MXN) e **incluyen IVA**. Existe una tarifa
 institucional para organizaciones de la sociedad civil sin fines de lucro; es política publicada,
 no una negociación caso por caso. El cobro es a precio fijo por resultado, no por hora.
 
-### 1. Diagnóstico y ruta crítica — $14,400 MXN + IVA (precio fijo)
+### 1. Diagnóstico y ruta crítica — $16,704 MXN ($14,400 + IVA, precio fijo)
 
 Puerta de entrada y requisito para el acompañamiento mensual. Incluye una visita de levantamiento
 en las instalaciones, el análisis posterior y una sesión de presentación de resultados. Entrega un
@@ -46,7 +46,7 @@ documento con la ruta crítica priorizada: qué atender primero, qué puede espe
 cada cosa y qué riesgo se corre si no se atiende. Incluye una sección con lo que no se pudo
 determinar y qué haría falta para averiguarlo.
 
-### 2. Acompañamiento mensual — desde $7,000 MXN + IVA al mes
+### 2. Acompañamiento mensual — desde $8,120 MXN ($7,000 + IVA) al mes
 
 Combina horas de consultoría con Hugo Legorreta (decisiones, arquitectura, interlocución con la
 dirección, documentación) y horas de soporte operativo que ejecuta un técnico que él coordina y
@@ -54,9 +54,9 @@ supervisa.
 
 | Modalidad | Al mes | Visitas | Precio |
 |---|---|---|---|
-| Base | 2 h de consultoría + 4 h de soporte | 1 | $7,000 MXN + IVA |
-| Media | 4 h de consultoría + 8 h de soporte | 2 | $14,000 MXN + IVA |
-| Amplia | 6 h de consultoría + 12 h de soporte | 3 | $21,000 MXN + IVA |
+| Base | 2 h de consultoría + 4 h de soporte | 1 | $8,120 MXN ($7,000 + IVA) |
+| Media | 4 h de consultoría + 8 h de soporte | 2 | $16,240 MXN ($14,000 + IVA) |
+| Amplia | 6 h de consultoría + 12 h de soporte | 3 | $24,360 MXN ($21,000 + IVA) |
 
 Condiciones: requiere diagnóstico previo; tres meses iniciales y después mes a mes con aviso de
 treinta días; las horas no usadas se acumulan un mes y después se pierden; traslados incluidos

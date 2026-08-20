@@ -19,7 +19,7 @@ aplica una tarifa institucional; no es una negociación caso por caso, es polít
 
 ## 1. Diagnóstico y ruta crítica
 
-**$14,400 + IVA** · precio fijo · *tarifa institucional para OSC*
+**$16,704 MXN** · precio fijo · *($14,400 + IVA) · tarifa institucional para OSC*
 
 Es la puerta de entrada, y es requisito para el acompañamiento mensual. No me comprometo a acompañar
 a una organización sin saber primero en qué estado está.
@@ -43,7 +43,7 @@ Es un documento que tu dirección puede llevar a su consejo o a su financiador t
 
 ## 2. Acompañamiento mensual
 
-**Desde $7,000 + IVA al mes** · *tarifa institucional para OSC*
+**Desde $8,120 MXN al mes** · *($7,000 + IVA) · tarifa institucional para OSC*
 
 ### Qué incluye
 
@@ -57,9 +57,9 @@ quedas sin quien la enlace.
 
 | Modalidad | Al mes | Visitas mías | Precio |
 |---|---|---|---|
-| **Base** | 2 h de consultoría + 4 h de soporte | 1 | $7,000 + IVA |
-| **Media** | 4 h de consultoría + 8 h de soporte | 2 | $14,000 + IVA |
-| **Amplia** | 6 h de consultoría + 12 h de soporte | 3 | $21,000 + IVA |
+| **Base** | 2 h de consultoría + 4 h de soporte | 1 | $8,120 MXN ($7,000 + IVA) |
+| **Media** | 4 h de consultoría + 8 h de soporte | 2 | $16,240 MXN ($14,000 + IVA) |
+| **Amplia** | 6 h de consultoría + 12 h de soporte | 3 | $24,360 MXN ($21,000 + IVA) |
 
 ### Condiciones
 

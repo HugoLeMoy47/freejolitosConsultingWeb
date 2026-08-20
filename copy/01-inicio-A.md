@@ -32,13 +32,13 @@ equipo nuevo.
 ## Tres formas de trabajar conmigo
 
 ### Diagnóstico y ruta crítica
-**$14,400 + IVA** · *tarifa institucional para organizaciones sin fines de lucro*
+**$16,704 MXN** · *($14,400 + IVA) · tarifa institucional para organizaciones sin fines de lucro*
 
 Voy, escucho, reviso y te entrego una ruta crítica priorizada que tu dirección puede llevar a su
 consejo o a su financiador. Con costos, con riesgos, y con lo que no pude averiguar dicho de frente.
 
 ### Acompañamiento mensual
-**Desde $7,000 + IVA al mes** · *tarifa institucional disponible*
+**Desde $8,120 MXN al mes** · *($7,000 + IVA) · tarifa institucional disponible*
 
 Alguien que ya conoce tu operación, que responde cuando algo se descompone y que te avisa de lo que
 viene antes de que te caiga encima. Requiere un diagnóstico previo.
