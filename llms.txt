@@ -31,6 +31,7 @@ distancia; fuera de la zona metropolitana no hay atención presencial.
 - [Gestor de contraseñas institucional sin costo](https://freejolitos.consulting/guias/gestor-contrasenas-institucional-gratis): Implementación de Bitwarden con bóvedas compartidas, permisos por rol y autenticación de dos factores.
 - [Checklist de salida: traspaso de cuentas y archivos](https://freejolitos.consulting/guias/checklist-salida-traspaso-cuentas-archivos): Protocolo de offboarding digital seguro para voluntariado y personal saliente.
 - [Cómo organizar tu expediente digital para auditoría](https://freejolitos.consulting/guias/organizar-expediente-digital-auditoria): Estructura de 4 carpetas por proyecto y convención de nombres para revisiones de donantes y fiscales.
+- [Cómo mantener tu comunicación y proteger tus contactos sin depender de un chip](https://freejolitos.consulting/guias/proteger-contactos-y-comunicacion-en-ruta): Dirigida a personas en movilidad, no a organizaciones. Cinco medidas gratuitas: contactos fuera de la SIM, mensajería sin chip, PIN de WhatsApp, mensajes temporales y limpieza de documentos.
 
 ## Servicios y precios
 
