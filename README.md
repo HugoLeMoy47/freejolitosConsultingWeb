@@ -1,8 +1,7 @@
 # Sitio web — Freejolitos Consultores
 
 Sitio profesional de **Hugo Legorreta**, consultor independiente de TI que trabaja con
-organizaciones de la sociedad civil mexicanas del sector de movilidad humana: casas de migrantes,
-albergues y organizaciones que atienden población migrante y refugiada.
+organizaciones de la sociedad civil mexicanas sin área de sistemas.
 
 HTML estático escrito a mano. Sin framework, sin proceso de build, sin una sola dependencia que
 cargue en el navegador.

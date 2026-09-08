@@ -5,12 +5,11 @@
 
 ## H1
 
-Pongo en orden la tecnología de organizaciones que atienden población migrante.
+Pongo en orden la tecnología de organizaciones de la sociedad civil sin área de sistemas.
 
 ## Subtítulo
 
-Para organizaciones sin área de sistemas. Diagnóstico, acompañamiento mensual y desarrollo a la
-medida. Zona Metropolitana del Valle de México.
+Diagnóstico, acompañamiento mensual y desarrollo a la medida. Zona Metropolitana del Valle de México.
 
 ## El problema
 

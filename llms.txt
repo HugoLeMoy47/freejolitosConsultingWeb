@@ -1,7 +1,6 @@
 # Freejolitos Consultores — Hugo Legorreta
 
-> Consultoría en tecnología para organizaciones de la sociedad civil mexicanas que atienden
-> población migrante y refugiada — casas de migrantes, albergues y organizaciones sin área de
+> Consultoría en tecnología para organizaciones de la sociedad civil mexicanas sin área de
 > sistemas. Zona Metropolitana del Valle de México. Diagnóstico a precio fijo, acompañamiento
 > mensual y desarrollo a la medida, con tarifa institucional publicada para organizaciones sin
 > fines de lucro.
@@ -15,9 +14,8 @@ Consultores.
 ## A quién sirve
 
 Organizaciones de la sociedad civil sin fines de lucro, normalmente de menos de cien personas,
-sin área de sistemas propia, que atienden población migrante y refugiada en México. También toma
-proyectos fuera del sector, pero el enfoque, los precios y la forma de trabajar están diseñados
-para ese perfil.
+sin área de sistemas propia en México. También toma proyectos fuera del sector, pero el enfoque,
+los precios y la forma de trabajar están diseñados para ese perfil.
 
 Cobertura presencial: Zona Metropolitana del Valle de México. La consultoría puede ser a
 distancia; fuera de la zona metropolitana no hay atención presencial.

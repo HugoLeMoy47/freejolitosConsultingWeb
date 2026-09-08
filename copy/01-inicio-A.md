@@ -4,12 +4,11 @@
 
 ## H1
 
-Acompaño a organizaciones que atienden población migrante a poner orden en su tecnología.
+Pongo en orden la tecnología de organizaciones de la sociedad civil sin área de sistemas.
 
 ## Subtítulo
 
-Diagnóstico, acompañamiento mensual y desarrollo a la medida, para organizaciones que no tienen
-área de sistemas. Zona Metropolitana del Valle de México.
+Diagnóstico, acompañamiento mensual y desarrollo a la medida. Zona Metropolitana del Valle de México.
 
 ## El problema
 
@@ -103,7 +102,7 @@ Se cotiza como proyecto aparte. No hace falta contratar un acompañamiento mensu
 
 ## Metadatos
 
-**Title:** Hugo Legorreta — Tecnología para organizaciones que atienden población migrante | Freejolitos Consultores
+**Title:** Freejolitos Consultores — Tecnología para organizaciones de la sociedad civil | Hugo Legorreta
 
 **Meta description:** Diagnóstico, acompañamiento mensual y desarrollo a la medida para
 organizaciones sin área de sistemas en la Zona Metropolitana del Valle de México. Diagnóstico desde
