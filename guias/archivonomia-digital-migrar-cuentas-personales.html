@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archivonomía digital para OSC: cómo migrar de cuentas personales a dominio propio — Freejolitos Consultores</title>
+<meta name="description" content="Guía práctica para organizaciones de la sociedad civil: cómo migrar archivos de cuentas personales a dominio propio y Unidades Compartidas sin perder ni duplicar información.">
+<link rel="canonical" href="https://freejolitos.consulting/guias/archivonomia-digital-migrar-cuentas-personales">
+<link rel="stylesheet" href="/assets/estilos.css">
+<link rel="icon" href="/assets/logo.png" type="image/png">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Freejolitos Consultores">
+<meta property="og:title" content="Archivonomía digital para OSC: cómo migrar de cuentas personales a dominio propio">
+<meta property="og:description" content="Guía práctica para organizaciones de la sociedad civil: cómo migrar archivos de cuentas personales a dominio propio y Unidades Compartidas sin perder ni duplicar información.">
+<meta property="og:url" content="https://freejolitos.consulting/guias/archivonomia-digital-migrar-cuentas-personales">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Archivonomía digital para organizaciones de la sociedad civil: cómo migrar de cuentas personales a dominio propio sin perder ni duplicar archivos",
+      "description": "Guía práctica para organizaciones de la sociedad civil sobre cómo transferir la propiedad de archivos a Unidades Compartidas institucionales, estructura de carpetas, nomenclatura ISO y gobernanza de accesos.",
+      "author": {
+        "@type": "Person",
+        "name": "Hugo Legorreta",
+        "jobTitle": "Consultor Principal",
+        "sameAs": [
+          "https://www.linkedin.com/in/hugolegorretamoysen"
+        ],
+        "worksFor": {
+          "@type": "ProfessionalService",
+          "name": "Freejolitos Consultores",
+          "url": "https://freejolitos.consulting",
+          "sameAs": [
+            "https://www.linkedin.com/company/143555145/"
+          ]
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Freejolitos Consultores",
+        "sameAs": [
+          "https://www.linkedin.com/company/143555145/"
+        ],
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://freejolitos.consulting/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "inLanguage": "es-MX",
+      "isPartOf": { "@id": "https://freejolitos.consulting/#sitio" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="sitio-encabezado">
+  <div class="contenedor">
+    <a class="marca" href="/" aria-label="Freejolitos Consultores — inicio">
+      <img src="/assets/logo.png" width="2245" height="520" alt="Freejolitos Consultores">
+    </a>
+    <input type="checkbox" id="menu-interruptor" class="solo-lectores menu-interruptor">
+    <label for="menu-interruptor" class="menu-boton">
+      <span class="solo-lectores">Menú</span>
+      <span class="menu-icono" aria-hidden="true"></span>
+    </label>
+    <nav class="navegacion" aria-label="Navegación principal">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/servicios">Servicios</a></li>
+        <li><a href="/como-trabajo">Cómo trabajo</a></li>
+        <li><a href="/quien-soy">Quién soy</a></li>
+        <li><a href="/guias" aria-current="page">Guías</a></li>
+        <li><a href="/como-manejo-tu-informacion">Datos e IA</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <div class="contenedor">
+
+    <section class="portada">
+      <div class="kicker">Guía práctica · Gestión Documental y Migración a Dominio Institucional · 8–10 minutos de lectura</div>
+      <h1 class="titulo-pagina">Archivonomía digital para OSC: <span class="marcado">cómo migrar a dominio propio</span> sin perder ni duplicar archivos</h1>
+      <p class="meta">Publicada el 14 de septiembre de 2026 · Hugo Legorreta</p>
+
+      <p class="entrada">En la gran mayoría de las organizaciones de la sociedad civil (OSC), colectivos y albergues en México con los que he colaborado, la historia fundacional en internet es casi siempre la misma: <strong>la asociación nació al calor de la urgencia comunitaria y se organizó digitalmente con lo que había a la mano</strong>.</p>
+    </section>
+
+    <article class="panel">
+      <h2>El problema</h2>
+
+      <p>Al principio, una cuenta gratuita <code>@gmail.com</code> administrada por la persona fundadora, sumada a carpetas compartidas con las cuentas personales de Hotmail, Yahoo o Gmail del equipo voluntario, fue suficiente para arrancar. Sin embargo, conforme la organización crece, gana proyectos, recibe fondos institucionales y tramita su estatus de Donataria Autorizada ante el SAT, este esquema informal se convierte en una bomba de tiempo operativa.</p>
+
+      <p>Cuando la organización finalmente da el paso de adquirir su propio dominio (<code>@organizacion.org</code>) y da de alta su suite en la nube (generalmente a través de las licencias sociales gratuitas de Google for Nonprofits o Microsoft 365 con TechSoup), surge el verdadero dolor de cabeza: <strong>el traspaso de archivos</strong>.</p>
+
+      <p>La falta de un método claro genera tres problemas críticos:</p>
+
+      <ol>
+        <li><strong>Archivos secuestrados o huérfanos:</strong> La persona que coordinaba un proyecto hace tres años renuncia. Como los archivos estaban guardados en su cuenta personal de <code>@gmail.com</code>, si esa persona elimina su cuenta o borra archivos para liberar espacio en su Drive personal, los informes técnicos y comprobaciones desaparecen de la noche a la mañana para toda la organización.</li>
+        <li><strong>La pesadilla de la duplicación masiva:</strong> El método intuitivo del equipo suele ser <em>«descargar la carpeta completa en un archivo .zip a la computadora, descomprimirla y volverla a subir al nuevo correo institucional»</em>. Esto rompe los enlaces compartidos con donantes, destruye el historial de revisiones y comentarios, satura el almacenamiento y genera 5 versiones distintas del mismo archivo en computadoras distintas.</li>
+        <li><strong>Pérdida de control y fuga de información:</strong> Excolaboradores, extrabajadores o consultores externos continúan teniendo acceso de edición a bases de datos de beneficiarios, credenciales y estados de cuenta institucionales desde sus cuentas personales sin que la dirección tenga visibilidad ni registro de auditoría.</li>
+      </ol>
+
+      <p>Esta guía presenta un método paso a paso para ordenar, migrar y gobernar el archivo digital de tu organización hacia tu dominio institucional, sin perder información, sin crear duplicados y protegiendo la memoria histórica de tu causa.</p>
+
+      <h2>1. Propiedad de la información: La diferencia crucial entre «Mi Unidad» y «Unidades Compartidas»</h2>
+
+      <p>El error más común al adoptar herramientas institucionales como Google Workspace o Microsoft 365 es seguir trabajando bajo la lógica del almacenamiento personal.</p>
+
+      <p>Es fundamental que la dirección y el equipo comprendan la diferencia entre dos espacios de almacenamiento completamente distintos:</p>
+
+      <div class="tabla-envoltura">
+        <table>
+          <caption>Comparativa entre almacenamiento personal (Mi Unidad) y almacenamiento institucional (Unidades Compartidas)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Mi Unidad (Personal)</th>
+              <th scope="col">Unidades Compartidas (Institucional)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>El dueño es el usuario individual que creó el archivo.</td>
+              <td>El dueño es la organización (la persona moral o colectivo).</td>
+            </tr>
+            <tr>
+              <td>Si el colaborador renuncia y se borra su cuenta, sus archivos se pierden o quedan huérfanos.</td>
+              <td>Si el colaborador renuncia y se borra su cuenta, los archivos permanecen intactos en la organización.</td>
+            </tr>
+            <tr>
+              <td>Consume cuota personal de almacenamiento.</td>
+              <td>No depende de la cuota personal de los usuarios.</td>
+            </tr>
+            <tr>
+              <td>Permisos dispersos y caóticos administrados por cada persona.</td>
+              <td>Permisos centralizados y administrados por rol institucional.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="resalte">
+        <p><strong>La regla de oro institucional:</strong> Ningún documento de trabajo, proyecto, convenio o comprobación de la organización debe vivir en «Mi Unidad» de ninguna cuenta. Todo el patrimonio documental debe residir exclusivamente en <strong>Unidades Compartidas (<em>Shared Drives</em>)</strong> (en Google Workspace) o en <strong>Bibliotecas de Documentos de SharePoint / Teams</strong> (en Microsoft 365).</p>
+      </div>
+
+      <p>Al colocar un archivo en una Unidad Compartida, la propiedad del documento deja de pertenecer a la persona física que lo redactó y pasa a pertenecer a la organización. Si ese colaborador deja el equipo el día de mañana y su cuenta de correo es suspendida o eliminada, ningún enlace se rompe y ningún documento se pierde.</p>
+
+      <h2>2. Procedimiento paso a paso para transferir archivos sin duplicar</h2>
+
+      <p>Para migrar la información acumulada en cuentas personales <code>@gmail.com</code> hacia el nuevo dominio institucional <code>@organizacion.org</code>, <strong>nunca descargues carpetas en .zip a tu disco duro</strong>. Mueve la información directamente dentro de la nube de Google para conservar la integridad del archivo.</p>
+
+      <div class="resalte">
+        <p><strong>Flujo del procedimiento estándar (de cuenta personal @gmail.com a Unidad Compartida institucional):</strong></p>
+        <ol>
+          <li>Crear la Unidad Compartida en el dominio institucional.</li>
+          <li>Invitar temporalmente la cuenta personal <code>@gmail.com</code> con rol de «Administrador de contenido».</li>
+          <li>En la cuenta personal, mover los archivos desde «Mi Unidad» hacia la «Unidad Compartida».</li>
+          <li>El sistema transfiere automáticamente la titularidad de los archivos a la organización.</li>
+          <li>Retirar el acceso a la cuenta personal <code>@gmail.com</code> una vez verificado el traspaso.</li>
+        </ol>
+      </div>
+
+      <h3>El paso a paso detallado:</h3>
+
+      <ol>
+        <li><strong>Crea la Unidad Compartida en la cuenta administradora:</strong> Inicia sesión con tu correo institucional (<code>coordinacion@organizacion.org</code>), entra a Google Drive, ve a la sección <strong>Unidades compartidas</strong> (en el panel izquierdo) y crea una nueva unidad (por ejemplo: <code>00_ARCHIVO_GENERAL_OSC</code>).</li>
+        <li><strong>Otorga acceso temporal a la cuenta personal:</strong> Dentro de la Unidad Compartida recién creada, haz clic en <strong>Administrar miembros</strong> y agrega la cuenta personal antigua (<code>tuorganizacion@gmail.com</code> o el correo del coordinador) con el rol de <strong>Administrador de contenido</strong> o <strong>Colaborador</strong>.</li>
+        <li><strong>Mueve (no copies) los archivos desde la cuenta personal:</strong> Abre una ventana de navegador con la cuenta personal <code>@gmail.com</code>. Entra a Google Drive. Selecciona las carpetas o archivos que deseas migrar y utiliza la opción <strong>Mover a</strong> (o arrastra directamente) hacia la carpeta correspondiente dentro de la <strong>Unidad compartida</strong> a la que fue invitada.<br><em>Nota de Google Drive:</em> Al mover un archivo de una cuenta personal a una Unidad Compartida, el sistema mostrará una advertencia indicando que <strong>la titularidad del archivo será transferida a la organización</strong>. Acepta la transferencia.</li>
+        <li><strong>Verifica la propiedad:</strong> Entra de nuevo desde tu cuenta institucional. Abre los detalles de cualquier archivo recién movido. Verás que el campo <em>Propietario</em> ahora indica el nombre de tu organización o el de la Unidad Compartida, desvinculando por completo la dependencia de la cuenta personal.</li>
+        <li><strong>Limpia accesos y revoca permisos:</strong> Una vez completada la migración de todas las carpetas, regresa a <strong>Administrar miembros</strong> en la Unidad Compartida desde tu cuenta institucional y <strong>elimina a las cuentas personales <code>@gmail.com</code></strong>. A partir de ese momento, el acceso será exclusivamente a través de los correos institucionales <code>@organizacion.org</code>.</li>
+      </ol>
+
+      <h2>3. Las 4 carpetas maestras de archivonomía digital</h2>
+
+      <p>Uno de los errores más frecuentes es crear árboles de carpetas con 10 o 15 niveles de profundidad que nadie entiende ni recuerda. La simplicidad garantiza el orden.</p>
+
+      <p>Para una organización de la sociedad civil, recomiendo estructurar el repositorio en <strong>4 carpetas maestras estandarizadas</strong>, numeradas con prefijos de dos dígitos para forzar su orden visual:</p>
+
+      <div class="resalte">
+        <p><strong>Estructura modular del repositorio institucional:</strong></p>
+        <ul>
+          <li><code>00_Gobernanza_Legal/</code> — El núcleo legal, constitutivo y fiscal de la asociación</li>
+          <li><code>10_Proyectos_Activos/</code> — Iniciativas, fondos y convenios en ejecución</li>
+          <li><code>20_Archivo_Historico/</code> — Bóveda en solo lectura de proyectos concluidos</li>
+          <li><code>30_Plantillas_Maestras/</code> — Formatos oficiales limpios e identidad gráfica</li>
+        </ul>
+      </div>
+
+      <h3>00_Gobernanza_Legal</h3>
+      <p>Es el núcleo institucional y legal de la organización. Solo tienen acceso de edición la Dirección General, la Coordinación Administrativa y la Presidencia del Consejo.</p>
+      <ul>
+        <li><code>01_Constitutiva_Poderes</code>: Acta constitutiva, protocolizaciones, reformas de estatutos, poderes notariales vigentes y revocados.</li>
+        <li><code>02_Fiscal_SAT</code>: Constancia de Situación Fiscal actualizada, oficios de Donataria Autorizada en el Diario Oficial de la Federación (DOF), opinión de cumplimiento 32-D positiva, certificados de e.firma/FIEL bajo contraseña segura.</li>
+        <li><code>03_Registros_Oficiales</code>: CLUNI de INDESOL/Bienestar, Registro Estatal de OSC, registro de marcas ante el IMPI.</li>
+        <li><code>04_Convenios_Marco</code>: Convenios de colaboración con universidades, dependencias de gobierno o redes aliadas.</li>
+      </ul>
+
+      <h3>10_Proyectos_Activos</h3>
+      <p>Contiene únicamente las iniciativas, fondos y convocatorias que están actualmente en ejecución física o financiera.</p>
+      <ul>
+        <li><strong>Estructura por proyecto:</strong> <code>AÑO_DONANTE_NombreCorto</code> (ejemplo: <code>2026_INDESOL_Comedores</code>, <code>2026_USAID_DerechosHumanos</code>).</li>
+        <li><strong>Subcarpetas dentro de cada proyecto:</strong>
+          <ul>
+            <li><code>01_Propuesta_y_Convenio</code>: Términos de referencia, convenio firmado, presupuesto base aprobado.</li>
+            <li><code>02_Operacion_y_Campo</code>: Listas de asistencia, bitácoras de campo, minutas de reuniones, registro de actividades.</li>
+            <li><code>03_Comprobacion_Financiera</code>: Facturas XML y PDF, recibos de nómina o honorarios, pólizas de cheque.</li>
+            <li><code>04_Informes_Entregados</code>: Informes trimestrales narrativos y financieros acompañados del acuse de recepción oficial.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>20_Archivo_Historico</h3>
+      <p>Es la bóveda de proyectos cerrados y auditados.</p>
+      <ul>
+        <li><strong>Regla estricta:</strong> Esta carpeta debe configurarse en <strong>modo Solo Lectura (Lector)</strong> para todo el equipo operativo.</li>
+        <li><strong>Organización:</strong> Se clasifica por año fiscal de cierre (<code>2023/</code>, <code>2024/</code>, <code>2025/</code>).</li>
+        <li><strong>Propósito:</strong> Responder en menos de 24 horas a requerimientos de auditorías retrospectivas del SAT, donantes internacionales o revisiones del Órgano de Control, sin riesgo de que alguien modifique o borre un archivo histórico por descuido.</li>
+      </ul>
+
+      <h3>30_Plantillas_Maestras</h3>
+      <p>Formatos oficiales en blanco para evitar que el personal «limpie» un archivo de trabajo anterior y sobreescriba datos ajenos.</p>
+      <ul>
+        <li>Plantilla oficial de recibo de viáticos y comprobación de gastos de campo (hoja de cálculo).</li>
+        <li>Formato oficial de lista de asistencia con leyenda de Aviso de Privacidad y consentimiento de uso de imagen y fotografía.</li>
+        <li>Plantilla de informe narrativo mensual estandarizada.</li>
+        <li>Manual de identidad gráfica, logotipos en alta resolución (PNG con fondo transparente, SVG, curvas vectoriales) y tipografías institucionales.</li>
+        <li>Formato membretado oficial para oficios y comunicaciones externas.</li>
+      </ul>
+
+      <h2>4. La fórmula de nomenclatura universal para archivos</h2>
+
+      <p>El desorden documental no solo ocurre por carpetas mal organizadas, sino por nombres de archivos ambiguos como:</p>
+
+      <ul>
+        <li>❌ <code>presupuesto_final_v2_este_si_bueno_revisadoHugo.xlsx</code></li>
+        <li>❌ <code>lista de asistencia taller 12 marzo.pdf</code></li>
+        <li>❌ <code>informe donante corregido.docx</code></li>
+      </ul>
+
+      <p>Para eliminar la confusión, implementa la <strong>Fórmula de Nomenclatura Universal</strong> basada en el estándar internacional de fechas (ISO 8601):</p>
+
+      <div class="resalte">
+        <p><strong>Fórmula estándar:</strong></p>
+        <p><code>YYYYMMDD_ORGANIZACION_NombreDescriptivo_vX</code></p>
+      </div>
+
+      <div class="tabla-envoltura">
+        <table>
+          <caption>Desglose de componentes de la nomenclatura universal</caption>
+          <thead>
+            <tr>
+              <th scope="col">YYYYMMDD</th>
+              <th scope="col">ORGANIZACION</th>
+              <th scope="col">NombreDescriptivo</th>
+              <th scope="col">Versión</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>20260315</td>
+              <td>_OSC_</td>
+              <td>PresupuestoGeneral_Operativo</td>
+              <td>_v1</td>
+            </tr>
+            <tr>
+              <td>20260401</td>
+              <td>_ALBERGUE_</td>
+              <td>InformeNarrativo_INDESOL_Q1</td>
+              <td>_vFINAL</td>
+            </tr>
+            <tr>
+              <td>20260510</td>
+              <td>_COLECTIVO_</td>
+              <td>ListaAsistencia_TallerDDHH</td>
+              <td>_v1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Por qué funciona cada elemento:</h3>
+
+      <ol>
+        <li><strong><code>YYYYMMDD</code> (Año a 4 dígitos, Mes a 2 dígitos, Día a 2 dígitos):</strong> Al comenzar con la fecha invertida, cualquier sistema operativo (Windows, macOS, Linux, Google Drive) ordenará tus archivos en estricto orden cronológico automáticamente al hacer clic en «Ordenar por nombre».</li>
+        <li><strong><code>ORGANIZACION</code>:</strong> El acrónimo o sigla corta de tu asociación (ejemplo: <code>FREEJOLITOS</code>, <code>CDH</code>, <code>ALBERGUE</code>). Si descargas el archivo o se lo envías por correo a un donante o auditor, este sabrá de inmediato a qué entidad pertenece el documento sin necesidad de abrirlo.</li>
+        <li><strong><code>NombreDescriptivo</code>:</strong> Sin espacios especiales, sin signos de interrogación ni acentos (usando CamelCase o guiones bajos). Debe indicar con precisión qué contiene el documento.</li>
+        <li><strong><code>_vX</code> (Control de versiones):</strong> Usa <code>_v1</code>, <code>_v2</code>, <code>_v3</code> durante el proceso de elaboración y revisión interna. Cuando el documento es formalmente aprobado o entregado con acuse al donante, se renombra a <code>_vFINAL</code> o <code>_vAprobada</code>.</li>
+      </ol>
+
+      <h3>Ejemplos prácticos (Antes frente a Después):</h3>
+
+      <ul>
+        <li><strong>Antes:</strong> <code>acta constitutiva escaneada.pdf</code><br><strong>Después:</strong> <code>20180614_OSC_ActaConstitutiva_Notaria42_vFINAL.pdf</code></li>
+        <li><strong>Antes:</strong> <code>presupuesto general 2026 ajustado.xlsx</code><br><strong>Después:</strong> <code>20260110_OSC_PresupuestoAnual_Operativo_v2.xlsx</code></li>
+        <li><strong>Antes:</strong> <code>reporte para fundación merced.docx</code><br><strong>Después:</strong> <code>20260630_OSC_ReporteNarrativo_FundacionMerced_Q2_v1.docx</code></li>
+      </ul>
+
+      <h2>5. Matriz de permisos y gobierno: Quién edita, quién ve y quién borra</h2>
+
+      <p>En muchas organizaciones existe el mal hábito de otorgar permisos de «Editor» o «Administrador» a todo el personal y voluntariado para evitar demoras operativas. <strong>Esto es una receta para el desastre.</strong></p>
+
+      <p>Bajo el <strong>Principio del Menor Privilegio</strong>, cada integrante del equipo debe tener únicamente el nivel de acceso estrictamente necesario para cumplir con sus funciones cotidianas.</p>
+
+      <div class="tabla-envoltura">
+        <table>
+          <caption>Matriz institucional de permisos por rol</caption>
+          <thead>
+            <tr>
+              <th scope="col">Perfil / Rol</th>
+              <th scope="col">Nivel de Acceso</th>
+              <th scope="col">Espacios Permitidos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1. Dirección General y Coordinación TI</th>
+              <td>Administrador (Gestor)</td>
+              <td>Acceso total a las 4 carpetas maestras.</td>
+            </tr>
+            <tr>
+              <th scope="row">2. Coordinación de Proyectos / Finanzas</th>
+              <td>Administrador de contenido / Editor</td>
+              <td>Edición en <code>10_Proyectos_Activos</code> y <code>30_Plantillas_Maestras</code>. Lectura en <code>00_Gobernanza_Legal</code>.</td>
+            </tr>
+            <tr>
+              <th scope="row">3. Personal Operativo / Facilitadores campo</th>
+              <td>Colaborador / Comentador</td>
+              <td>Edición en subcarpetas operativas asignadas. Lectura en <code>30_Plantillas_Maestras</code>.</td>
+            </tr>
+            <tr>
+              <th scope="row">4. Voluntarios / Servicio Social</th>
+              <td>Solo lectura (Lector)</td>
+              <td>Solo subcarpetas específicas asignadas a sus tareas.</td>
+            </tr>
+            <tr>
+              <th scope="row">5. Auditores externos / Donantes</th>
+              <td>Solo lectura temporal (Lector)</td>
+              <td>Solo la carpeta del proyecto a auditar con fecha de caducidad fijada.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Políticas de seguridad indispensables:</h3>
+
+      <ol>
+        <li><strong>Solo dos personas con botón de borrar:</strong> En Google Workspace o Microsoft 365, solo la Dirección General y la persona responsable de TI deben tener el rol de <em>Administrador</em> de la Unidad Compartida. Los colaboradores con rol de <em>Administrador de contenido</em> pueden agregar, editar y mover archivos, pero <strong>no pueden eliminar definitivamente archivos del repositorio</strong>.</li>
+        <li><strong>Protección de la papelera institucional:</strong> Los archivos eliminados en Unidades Compartidas van a una papelera central que solo los administradores pueden vaciar. Esto previene borrados malintencionados o accidentales.</li>
+        <li><strong>Prohibición de enlaces públicos abiertos («Cualquier persona con el enlace»):</strong> Salvo que se trate de un comunicado de prensa, folleto público o reporte de transparencia para descarga general, <strong>nunca compartas carpetas internas con la opción «Cualquiera con el enlace»</strong>. Todo acceso debe ser nominal y dirigido al correo institucional del colaborador o aliado.</li>
+        <li><strong>Vigencia en accesos externos:</strong> Al compartir información con consultores contables o despachos de auditoría externa, configura siempre una <strong>fecha de caducidad automática del acceso</strong> (por ejemplo, 30 o 60 días).</li>
+      </ol>
+
+      <h2>Checklist de Implementación (Plan de 5 pasos)</h2>
+
+      <details open>
+        <summary><strong>Expande para consultar el plan de implementación paso a paso</strong></summary>
+        <ul>
+          <li><label><input type="checkbox"> <strong>Paso 1: Dar de alta el dominio y las Unidades Compartidas.</strong> Crear la cuenta de Google Workspace para ONGs (o Microsoft 365) y habilitar la estructura de las 4 carpetas maestras (<code>00_Gobernanza_Legal</code>, <code>10_Proyectos_Activos</code>, <code>20_Archivo_Historico</code>, <code>30_Plantillas_Maestras</code>).</label></li>
+          <li><label><input type="checkbox"> <strong>Paso 2: Migrar titularidad en la nube.</strong> Invitar temporalmente las cuentas <code>@gmail.com</code> a las Unidades Compartidas correspondientes y mover los archivos sin descargarlos a discos locales.</label></li>
+          <li><label><input type="checkbox"> <strong>Paso 3: Revocar accesos a cuentas personales.</strong> Retirar todas las cuentas personales y externas de las carpetas maestras una vez completada la migración.</label></li>
+          <li><label><input type="checkbox"> <strong>Paso 4: Estandarizar la nomenclatura.</strong> Capacitar al equipo en una sesión de 30 minutos sobre la regla <code>YYYYMMDD_ORGANIZACION_NombreDescriptivo_vX</code> y fijar la regla en la carpeta <code>30_Plantillas_Maestras</code>.</label></li>
+          <li><label><input type="checkbox"> <strong>Paso 5: Bloquear permisos de borrado.</strong> Ajustar los roles de las Unidades Compartidas para que los colaboradores operen como editores o administradores de contenido, reservando el borrado definitivo exclusivamente para la dirección.</label></li>
+        </ul>
+      </details>
+    </article>
+
+    <section class="panel resalte" aria-label="Sobre esta guía">
+      <p><strong>Sobre esta guía.</strong> Publicada el 14 de septiembre de 2026. Escrita por Hugo Legorreta.</p>
+      <p>Esta guía forma parte de los recursos abiertos de <a href="/guias">Freejolitos Consultores</a>. Asesoramos y acompañamos a organizaciones de la sociedad civil para migrar, ordenar y proteger su infraestructura digital con soluciones pragmáticas y sin sobrecostos.</p>
+      <p>¿Detectaste un error o algo que cambió en las interfaces de Google Workspace o Microsoft 365? Escríbeme a <a href="mailto:hola@freejolitos.consulting">hola@freejolitos.consulting</a> y lo corrijo. El historial de correcciones es público.</p>
+    </section>
+
+    <section class="slab" aria-label="Contacto">
+      <div class="contenedor">
+        <h2>¿Necesitas acompañamiento para migrar el archivo de tu organización?</h2>
+        <p>Configuramos tus Unidades Compartidas institucionales, migramos la información acumulada sin pérdida ni duplicados y capacitamos a tu equipo en gobernanza documental.</p>
+        <div class="acciones">
+          <a href="/servicios#diagnostico" class="boton">Solicita diagnóstico institucional</a>
+          <a href="https://wa.me/525533444852" class="boton-secundario">Escríbeme por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="sitio-pie">
+  <div class="contenedor">
+    <div class="pie-caja">
+      <div class="pie-marca">
+        <p><strong>Freejolitos Consultores</strong><br>
+        Hugo Legorreta, consultor de tecnología.<br>
+        Zona Metropolitana del Valle de México.</p>
+      </div>
+      <nav aria-label="Navegación del pie" class="pie-grupos">
+        <div class="pie-grupo">
+          <span class="pie-titulo">Sitio</span>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/servicios">Servicios y precios</a></li>
+            <li><a href="/como-trabajo">Cómo trabajo</a></li>
+            <li><a href="/quien-soy">Quién soy</a></li>
+            <li><a href="/guias">Guías</a></li>
+          </ul>
+        </div>
+        <div class="pie-grupo">
+          <span class="pie-titulo">Privacidad</span>
+          <ul>
+            <li><a href="/como-manejo-tu-informacion">Cómo manejo tu información</a></li>
+            <li><a href="/aviso-de-privacidad">Aviso de privacidad</a></li>
+            <li><a href="/terminos">Términos de uso</a></li>
+          </ul>
+        </div>
+        <div class="pie-grupo">
+          <span class="pie-titulo">Contacto</span>
+          <ul>
+            <li><a href="https://wa.me/525533444852">WhatsApp</a></li>
+            <li><a href="mailto:hola@freejolitos.consulting">hola@freejolitos.consulting</a></li>
+            <li><a href="https://www.linkedin.com/in/hugolegorretamoysen" rel="me">LinkedIn</a></li>
+            <li><a href="https://github.com/HugoLeMoy47/freejolitosConsultingWeb/">Código fuente</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

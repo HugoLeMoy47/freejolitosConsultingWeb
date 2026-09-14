@@ -126,7 +126,7 @@ el HTML: es cronología visual, no texto inventado.
 Los enlaces del pie (`.pie-caja`) se agrupan en tres bloques dentro de la misma caja oscura —
 **Sitio**, **Privacidad**, **Contacto** — en vez de una lista plana de once enlaces. Cada bloque es
 un `.pie-grupo` con una etiqueta `.pie-titulo` (un `<span>`, no un encabezado: no debe alterar la
-jerarquía de `h1`/`h2` de la página) y su `<ul>`. La estructura es **idéntica en las dieciséis
+jerarquía de `h1`/`h2` de la página) y su `<ul>`. La estructura es **idéntica en las diecisiete
 páginas**, generada del mismo bloque de HTML — si un agente edita el pie de una página a mano en vez
 de replicar la estructura de otra, es el error más probable de reintroducir.
 
@@ -168,7 +168,7 @@ prohíbe para el turquesa.
 >
 > **Pendiente de depurar (reportado 2026-08-19):** el titular probó en Chrome de escritorio real y
 > la cortinilla no corrió al entrar o salir de `/guias`, `/aviso-de-privacidad`, `/terminos` ni
-> `/como-manejo-tu-informacion`. Auditoría estática ya descartada como causa: las dieciséis páginas
+> `/como-manejo-tu-informacion`. Auditoría estática ya descartada como causa: las diecisiete páginas
 > cargan la misma `estilos.css` con `@view-transition { navigation: auto; }`, ninguna tiene
 > `view-transition-name` (la regla §2 se respeta en todas), no hay ids duplicados, ni tags sin
 > cerrar, ni `<meta http-equiv>`/`<base>`/CSP en el HTML. Nada en el código explica por qué esas
@@ -303,7 +303,7 @@ ausencias que el literal deja pasar. Ver el ejemplo real en el punto 1.
    Inicio, cero peticiones a dominios externos. **Un solo script en todo el sitio**
    (`assets/terminal.js`, únicamente en la portada, §5): si aparece otro, es un error. El
    menú (seis enlaces) y el pie (tres grupos, once enlaces) deben ser byte-por-byte idénticos en las
-   dieciséis páginas — ver «Pie de página» en §3.
+   diecisiete páginas — ver «Pie de página» en §3.
 
 Contraste verificado, todos los pares pasan AA: 12.45 texto sobre panel · 12.26 sobre lienzo ·
 5.25 secundario · 11.24 sobre resalte · 6.40 botón · 9.79 y 12.45 en bloque oscuro · 7.75 pie.
@@ -316,7 +316,7 @@ propia caja, no arrastra la página.
 ## 8. Lo que falta
 
 1. **Verificar el alias de correo.** El WhatsApp ya es real: `wa.me/525533444852`, confirmado por
-   el titular el 12 de agosto de 2026 y presente en las dieciséis páginas. Falta comprobar que
+   el titular el 12 de agosto de 2026 y presente en las diecisiete páginas. Falta comprobar que
    `hola@freejolitos.consulting` exista como reenvío en el registrador — el dominio tiene MX
    activos, pero si el alias no está dado de alta, el correo rebota y el sitio anuncia una
    dirección muerta.
@@ -324,7 +324,7 @@ propia caja, no arrastra la página.
    pública; hasta ahora solo se validó que parsea.
 3. **Ver el sitio con ojos humanos.** Nadie ha visto una captura.
 4. **`/casos` no existe** y con razón — §6 prohíbe agregar una página de casos sin autorización.
-   `/guias` sí existe, con siete guías publicadas, en la navegación y en `sitemap.xml`.
+   `/guias` sí existe, con nueve guías publicadas, en la navegación y en `sitemap.xml`.
 5. **Depurar por qué la cortinilla del §4 no corre** en `/guias`, `/aviso-de-privacidad`,
    `/terminos` ni `/como-manejo-tu-informacion` en Chrome de escritorio real — nota añadida en §4.
 6. **Scripts de verificación (`scripts/verify-*.js`): arreglados el 2026-08-19** — ver el detalle
