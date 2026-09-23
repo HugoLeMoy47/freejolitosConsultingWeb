@@ -31,13 +31,13 @@ mayor parte de lo que te van a pedir se arregla con orden, no con equipo nuevo.
 ## Tres formas de trabajar conmigo
 
 ### Diagnóstico y ruta crítica
-**$14,400 + IVA** · *hay tarifa institucional para OSC*
+**$16,704 MXN** · *($14,400 + IVA) · hay tarifa institucional para OSC*
 
 Voy, escucho, reviso y te dejo una ruta crítica con prioridades y costos, lista para que tu dirección
 la lleve a su consejo o a su financiador. Incluye lo que no pude averiguar, dicho sin adornos.
 
 ### Acompañamiento mensual
-**Desde $7,000 + IVA al mes** · *hay tarifa institucional*
+**Desde $8,120 MXN al mes** · *($7,000 + IVA) · hay tarifa institucional para OSC*
 
 Alguien que ya conoce tu operación, que contesta cuando algo truena y que te avisa de lo que viene
 antes de que te caiga encima. Va después del diagnóstico, nunca antes.

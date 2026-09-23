@@ -117,7 +117,7 @@ nada de esto, te lo digo.
 
 **Title:** Servicios y precios — Hugo Legorreta | Freejolitos Consultores
 
-**Meta description:** Diagnóstico de tecnología desde $14,400, acompañamiento mensual desde $7,000
+**Meta description:** Diagnóstico de tecnología desde $16,704, acompañamiento mensual desde $8,120
 al mes y desarrollo a la medida, para organizaciones sin área de sistemas. Tarifa institucional para
 organizaciones de la sociedad civil.
 

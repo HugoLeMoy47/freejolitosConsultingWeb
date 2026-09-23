@@ -77,7 +77,7 @@ ayudarte, si lo que necesitas es otra cosa, o si esto lo puedes resolver por tu 
 Sí. Son mi foco: organizaciones sin área de sistemas, normalmente de menos de cien personas.
 
 **¿Cuánto cuesta un diagnóstico?**
-$14,400 más IVA, a precio fijo. Hay tarifa institucional para organizaciones sin fines de lucro.
+$16,704 MXN con IVA incluido ($14,400 más IVA), a precio fijo. Es el precio de lista; hay tarifa institucional para organizaciones de la sociedad civil sin fines de lucro.
 
 **Usas inteligencia artificial. ¿Qué pasa con los datos de las personas que atendemos?**
 No entran. Nunca trabajo con datos de las personas que atiende la organización; para modelar
@@ -101,6 +101,5 @@ Se cotiza como proyecto aparte. No hace falta contratar un acompañamiento mensu
 
 **Title:** Freejolitos Consultores — Tecnología para organizaciones de la sociedad civil | Hugo Legorreta
 
-**Meta description:** Diagnóstico, acompañamiento mensual y desarrollo a la medida para organizaciones sin área de sistemas en todo México, con base en la Zona Metropolitana del Valle de México. Diagnóstico desde
-$14,400, con tarifa institucional para OSC.
+**Meta description:** Diagnóstico, acompañamiento mensual y desarrollo a la medida para organizaciones sin área de sistemas en todo México, con base en la Zona Metropolitana del Valle de México. Diagnóstico desde $16,704 con IVA; hay tarifa institucional para OSC.
 
