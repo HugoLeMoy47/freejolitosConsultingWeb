@@ -7,9 +7,10 @@
 
 Sitio: https://freejolitos.consulting/
 Idioma: español de México
-Responsable: Hugo Legorreta, consultor de tecnología independiente. Trabaja solo, con técnicos
-que coordina cuando hace falta ejecución en sitio, y factura bajo el nombre de Freejolitos
-Consultores.
+Responsable: Hugo Legorreta, consultor de tecnología independiente. Factura a su nombre, como
+persona física con actividad empresarial, bajo la marca Freejolitos Consultores. Trabaja con una
+red de especialistas en tecnología, temas fiscales, jurídicos, de salud, agrícolas y de gobierno,
+con quienes conecta al cliente cuando el proyecto lo pide.
 
 ## A quién sirve
 
@@ -112,7 +113,9 @@ Términos de uso: https://freejolitos.consulting/terminos
 ## Trayectoria
 
 Ha desarrollado sistemas para agencias del sistema de Naciones Unidas que trabajan con población
-migrante. Antes trabajó en banca y en telecomunicaciones.
+migrante. Trabaja en tecnología desde 2008, con clientes de banca, telecomunicaciones, marketing y
+producción, gobierno, logística y comercio exterior, y fintech. Toma también proyectos fuera del
+tercer sector, cotizados a la medida.
 
 ## Cómo contratar
 

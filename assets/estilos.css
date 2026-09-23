@@ -341,6 +341,18 @@ main { display: block; padding-bottom: 3rem; }
 .resalte > :last-child { margin-bottom: 0; }
 .resalte p { max-width: none; }
 
+/* Epígrafe (cita con autor, p. ej. Thoreau en /quien-soy). Barra de borde, no subrayado,
+   para no confundirse con enlaces ni con `.marcado`. */
+.epigrafe {
+  margin: 0 0 1.75rem;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--acento);
+  max-width: var(--ancho-texto);
+}
+.epigrafe blockquote { margin: 0; }
+.epigrafe blockquote p { font-size: 1.1875rem; font-style: italic; margin: 0 0 0.5rem; }
+.epigrafe figcaption { font-size: 0.9375rem; color: var(--secundario); }
+
 /* ---------- Tarjetas de servicio ---------- */
 
 .servicios {
@@ -507,6 +519,11 @@ tbody th { font-weight: bold; }
 .slab h2 { color: #FFFFFF; }
 .slab p { color: #E4E4E4; max-width: 34rem; }
 .slab .etiqueta { color: #CCCCCC; }
+/* Enlaces de texto en el bloque oscuro (p. ej. «aviso de privacidad completo» en la
+   nota del cierre). Sin esto heredan `a { color: var(--texto) }` = #343434 sobre #343434:
+   invisibles. Blanco da 12.45:1. Los botones no se tocan: `.slab .boton` pesa más. */
+.slab a { color: #FFFFFF; }
+.slab a:hover { text-decoration-color: #FFFFFF; }
 .slab > :last-child { margin-bottom: 0; }
 
 /* ---------- Botones píldora ---------- */
