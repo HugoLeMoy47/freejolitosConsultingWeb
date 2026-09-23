@@ -9,7 +9,7 @@ Pongo en orden la tecnología de organizaciones de la sociedad civil sin área d
 
 ## Subtítulo
 
-Diagnóstico, acompañamiento mensual y desarrollo a la medida. Zona Metropolitana del Valle de México.
+Diagnóstico, acompañamiento mensual y desarrollo a la medida. Con base en la Zona Metropolitana del Valle de México y a distancia en todo el país.
 
 ## El problema
 
@@ -50,11 +50,9 @@ El sistema que necesitas, probado en chiquito antes de que le metas dinero compl
 ## De dónde viene esto
 
 He desarrollado sistemas para agencias del sistema de Naciones Unidas que trabajan con población
-migrante. Ahí aprendí cómo se piden las cosas cuando hay auditoría de por medio. Antes estuve en
-banca y en telecomunicaciones, donde equivocarse sale caro.
+migrante. Ahí aprendí cómo se piden las cosas cuando hay auditoría de por medio. Desde 2008 he trabajado también con banca, telecomunicaciones, marketing, gobierno y comercio exterior, donde todo tiene que poder verificarse.
 
-Trabajo con el tercer sector porque quiero que esto sirva para algo. No lo pongo de adorno: es la
-razón de que el negocio esté armado así.
+Trabajo con el tercer sector por convicción: quiero dejar algo sembrado, más allá de una factura. Es la razón de que el negocio esté armado así.
 
 ## Uso inteligencia artificial, y lo digo
 

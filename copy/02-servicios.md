@@ -19,14 +19,14 @@ aplica una tarifa institucional; no es una negociación caso por caso, es polít
 
 ## 1. Diagnóstico y ruta crítica
 
-**$16,704 MXN** · precio fijo · *($14,400 + IVA) · tarifa institucional para OSC*
+**$16,704 MXN** · precio fijo · *($14,400 + IVA) · tarifa institucional para OSC: 12 % u 8 % de descuento*
 
 Es la puerta de entrada, y es requisito para el acompañamiento mensual. No me comprometo a acompañar
 a una organización sin saber primero en qué estado está.
 
 ### Cómo funciona
 
-Una visita de levantamiento en tus instalaciones, el análisis posterior, y una sesión donde te
+Una visita de levantamiento en tus instalaciones —o una sesión a distancia, si así lo acordamos—, el análisis posterior, y una sesión donde te
 presento los resultados y respondo preguntas.
 
 ### Qué recibes
@@ -43,7 +43,7 @@ Es un documento que tu dirección puede llevar a su consejo o a su financiador t
 
 ## 2. Acompañamiento mensual
 
-**Desde $8,120 MXN al mes** · *($7,000 + IVA) · tarifa institucional para OSC*
+**Desde $8,120 MXN al mes** · *($7,000 + IVA) · tarifa institucional para OSC: 12 % u 8 % de descuento*
 
 ### Qué incluye
 
@@ -66,7 +66,7 @@ quedas sin quien la enlace.
 - Requiere un diagnóstico previo. No hay acompañamiento a ciegas.
 - Tres meses iniciales, después mes a mes con aviso de treinta días.
 - Las horas que no uses se acumulan un mes y después se pierden.
-- Traslados incluidos dentro de la Zona Metropolitana del Valle de México.
+- Traslados incluidos dentro de la Zona Metropolitana del Valle de México. Fuera de ella, las visitas y sus traslados se acuerdan antes, por escrito.
 - Las visitas de soporte tienen un mínimo de dos horas.
 - Horas adicionales se facturan con tu autorización por escrito, nunca sin avisar.
 

@@ -259,6 +259,27 @@ Worker de Cloudflare sirva una u otra en el borde más adelante.
 versión distinta a la del visitante, o ambas. Eso contamina exactamente lo que el sitio busca
 lograr.
 
+### Posicionamiento vigente — fuente de verdad (alineado con el titular el 2026-09-23)
+
+Estos hechos mandan sobre cualquier redacción anterior. Si una página, `copy/`, `llms.txt` o el
+JSON-LD dice otra cosa, **está desactualizado**: se corrige para que cuadre con esta lista, en todos
+los lugares a la vez (HTML visible, `<meta>`/`og:`, JSON-LD, `copy/` y `llms.txt`). Ante una duda
+nueva, la referencia más reciente es `/quien-soy` (`copy/04`).
+
+| Tema | Lo que es cierto | Lo que ya **no** se dice |
+|---|---|---|
+| Figura fiscal | Hugo Legorreta Moysén factura **a su nombre, como persona física con actividad empresarial, bajo la marca** Freejolitos Consultores. | «Facturo bajo el nombre de Freejolitos». Ninguna persona moral opera el negocio. |
+| Equipo | Consultor con **red de especialistas** (tecnología, fiscal, jurídico, salud, agrícola, gobierno), incluidas personas del tercer sector. Conecta al cliente con ellos cuando el proyecto lo pide, con su visto bueno. El soporte operativo lo ejecuta un técnico que él coordina y supervisa. | «Trabajo solo». |
+| Trayectoria | Tecnología **desde 2008**; banca, telecomunicaciones, marketing y producción, gobierno, logística y comercio exterior, fintech; más la formulación aprobada de Naciones Unidas. **Solo sectores, nunca nombres de clientes** (§6). | Solo «banca y telecomunicaciones». |
+| Cobertura | **Todo México**, con base en la ZMVM. Consultoría a distancia; visitas fuera de la ZMVM se acuerdan antes, junto con sus traslados (dentro de la ZMVM van incluidos). JSON-LD: `areaServed` = `Country` México; `workLocation` de la persona sigue siendo la ZMVM. | «Presencialmente no» / cobertura solo ZMVM. |
+| Soporte del día a día | Dentro del acompañamiento mensual **y hasta las horas de soporte de la modalidad contratada**; lo adicional, solo con autorización por escrito. | Soporte sin límite implícito. |
+| Fuera del tercer sector | Sí trabaja con empresas y lo disfruta; se **cotiza a la medida**. Paquetes y tarifa publicados son para organizaciones sin área de sistemas. Tono abierto, no excluyente. | Redacción tajante que cierra la puerta. |
+| Tarifa institucional | Las tarjetas muestran el **precio de lista** y la tarifa institucional **como porcentaje** («12 % u 8 % de descuento»). El titular recuerda una razón legal para expresarla en porcentajes. La tabla de `/servicios` con montos calculados está pendiente de su revisión: no ampliarla. | Etiquetar el precio de lista como si fuera la tarifa institucional. |
+| Motivo del tercer sector | Convicción: dejar algo sembrado, más allá de una factura (epígrafe de Thoreau en `/quien-soy`). | «Porque quiero que lo que hago sirva para algo» (el titular lo sintió agresivo). |
+
+El pie de las diecisiete páginas sigue diciendo «Zona Metropolitana del Valle de México.»: es la
+**base**, no la cobertura, y no contradice la tabla.
+
 ---
 
 ## 7. Verificar antes de dar algo por terminado
@@ -306,7 +327,9 @@ ausencias que el literal deja pasar. Ver el ejemplo real en el punto 1.
    diecisiete páginas — ver «Pie de página» en §3.
 
 Contraste verificado, todos los pares pasan AA: 12.45 texto sobre panel · 12.26 sobre lienzo ·
-5.25 secundario · 11.24 sobre resalte · 6.40 botón · 9.79 y 12.45 en bloque oscuro · 7.75 pie.
+5.25 secundario · 11.24 sobre resalte · 6.40 botón · 9.79 y 12.45 en bloque oscuro · 7.75 pie ·
+12.45 enlaces de texto dentro de `.slab` (blancos desde 2026-09-23; antes heredaban `#343434` sobre
+`#343434` y eran invisibles en dieciséis páginas).
 
 Sin desbordamiento horizontal a 375 px ni a 1280 px. La tabla de modalidades desplaza dentro de su
 propia caja, no arrastra la página.

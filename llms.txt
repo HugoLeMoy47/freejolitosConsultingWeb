@@ -1,7 +1,7 @@
 # Freejolitos Consultores — Hugo Legorreta
 
 > Consultoría en tecnología para organizaciones de la sociedad civil mexicanas sin área de
-> sistemas. Zona Metropolitana del Valle de México. Diagnóstico a precio fijo, acompañamiento
+> sistemas, en todo México, con base en la Zona Metropolitana del Valle de México. Diagnóstico a precio fijo, acompañamiento
 > mensual y desarrollo a la medida, con tarifa institucional publicada para organizaciones sin
 > fines de lucro.
 
@@ -15,11 +15,9 @@ con quienes conecta al cliente cuando el proyecto lo pide.
 ## A quién sirve
 
 Organizaciones de la sociedad civil sin fines de lucro, normalmente de menos de cien personas,
-sin área de sistemas propia en México. También toma proyectos fuera del sector, pero el enfoque,
-los precios y la forma de trabajar están diseñados para ese perfil.
+sin área de sistemas propia en México. También toma proyectos fuera del tercer sector, cotizados a la medida: los paquetes y la tarifa publicados están diseñados para organizaciones sin área de sistemas.
 
-Cobertura presencial: Zona Metropolitana del Valle de México. La consultoría puede ser a
-distancia; fuera de la zona metropolitana no hay atención presencial.
+Cobertura: todo México. Tiene base en la Zona Metropolitana del Valle de México, donde los traslados están incluidos. La consultoría puede ser a distancia; si el proyecto requiere visitas fuera de la zona metropolitana, se acuerdan antes, junto con sus traslados.
 
 ## Guías y Recursos de Libre Acceso
 
@@ -114,8 +112,7 @@ Términos de uso: https://freejolitos.consulting/terminos
 
 Ha desarrollado sistemas para agencias del sistema de Naciones Unidas que trabajan con población
 migrante. Trabaja en tecnología desde 2008, con clientes de banca, telecomunicaciones, marketing y
-producción, gobierno, logística y comercio exterior, y fintech. Toma también proyectos fuera del
-tercer sector, cotizados a la medida.
+producción, gobierno, logística y comercio exterior, y fintech.
 
 ## Cómo contratar
 

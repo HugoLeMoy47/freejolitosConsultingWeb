@@ -8,7 +8,7 @@ Pongo en orden la tecnología de organizaciones de la sociedad civil sin área d
 
 ## Subtítulo
 
-Diagnóstico, acompañamiento mensual y desarrollo a la medida. Zona Metropolitana del Valle de México.
+Diagnóstico, acompañamiento mensual y desarrollo a la medida. Con base en la Zona Metropolitana del Valle de México y a distancia en todo el país.
 
 ## El problema
 
@@ -31,13 +31,13 @@ equipo nuevo.
 ## Tres formas de trabajar conmigo
 
 ### Diagnóstico y ruta crítica
-**$16,704 MXN** · *($14,400 + IVA) · tarifa institucional para organizaciones sin fines de lucro*
+**$16,704 MXN** · *($14,400 + IVA) · tarifa institucional para OSC: 12 % u 8 % de descuento*
 
 Voy, escucho, reviso y te entrego una ruta crítica priorizada que tu dirección puede llevar a su
 consejo o a su financiador. Con costos, con riesgos, y con lo que no pude averiguar dicho de frente.
 
 ### Acompañamiento mensual
-**Desde $8,120 MXN al mes** · *($7,000 + IVA) · tarifa institucional disponible*
+**Desde $8,120 MXN al mes** · *($7,000 + IVA) · tarifa institucional para OSC: 12 % u 8 % de descuento*
 
 Alguien que ya conoce tu operación, que responde cuando algo se descompone y que te avisa de lo que
 viene antes de que te caiga encima. Requiere un diagnóstico previo.
@@ -50,11 +50,9 @@ El sistema que necesitas, probado en pequeño antes de que inviertas en construi
 ## De dónde viene esto
 
 He desarrollado sistemas para agencias del sistema de Naciones Unidas que trabajan con población
-migrante. Ahí aprendí cómo se piden las cosas cuando hay una auditoría de por medio. Antes trabajé
-en banca y en telecomunicaciones, donde los errores se pagan caro.
+migrante. Ahí aprendí cómo se piden las cosas cuando hay una auditoría de por medio. Desde 2008 he trabajado también con banca, telecomunicaciones, marketing, gobierno y comercio exterior: sectores donde todo tiene que poder verificarse.
 
-Trabajo con organizaciones del tercer sector porque quiero que lo que hago sirva para algo. No es
-una frase de presentación: es la razón por la que este negocio está armado como está.
+Trabajo con organizaciones del tercer sector por convicción: quiero que lo que hago deje algo sembrado, más allá de una factura. Es la razón por la que este negocio está armado como está.
 
 ## Uso inteligencia artificial, y lo digo
 
@@ -76,7 +74,7 @@ ayudarte, si lo que necesitas es otra cosa, o si esto lo puedes resolver por tu 
 > Marcar con `FAQPage` en JSON-LD. Es la sección de mayor rendimiento para agentes.
 
 **¿Trabajas con organizaciones pequeñas?**
-Sí. Es con quien trabajo. Organizaciones sin área de sistemas, normalmente de menos de cien personas.
+Sí. Son mi foco: organizaciones sin área de sistemas, normalmente de menos de cien personas.
 
 **¿Cuánto cuesta un diagnóstico?**
 $14,400 más IVA, a precio fijo. Hay tarifa institucional para organizaciones sin fines de lucro.
@@ -85,12 +83,11 @@ $14,400 más IVA, a precio fijo. Hay tarifa institucional para organizaciones si
 No entran. Nunca trabajo con datos de las personas que atiende la organización; para modelar
 reportes uso un esquema equivalente con datos de prueba.
 
-**¿Atiendes fuera de la Zona Metropolitana del Valle de México?**
-Presencialmente no. La consultoría sí puede ser a distancia; si estás fuera, escríbeme y lo vemos.
+**¿Trabajas con organizaciones fuera de la Zona Metropolitana del Valle de México?**
+Sí, con organizaciones de todo el país. La consultoría puede ser a distancia y, si tu proyecto requiere que vaya en persona, lo acordamos junto con los traslados.
 
 **¿Te haces cargo del soporte técnico del día a día?**
-Sí, dentro del acompañamiento mensual. Lo ejecuta un técnico que yo coordino y superviso; yo me
-ocupo de las decisiones.
+Sí, dentro del acompañamiento mensual y hasta las horas de soporte que incluye tu modalidad. Lo ejecuta un técnico que yo coordino y superviso; yo me ocupo de las decisiones. Si un mes hace falta más, las horas adicionales se facturan solo con tu autorización por escrito.
 
 **¿Necesito tener área de sistemas para trabajar contigo?**
 No. Justamente trabajo con quien no la tiene.
@@ -104,7 +101,6 @@ Se cotiza como proyecto aparte. No hace falta contratar un acompañamiento mensu
 
 **Title:** Freejolitos Consultores — Tecnología para organizaciones de la sociedad civil | Hugo Legorreta
 
-**Meta description:** Diagnóstico, acompañamiento mensual y desarrollo a la medida para
-organizaciones sin área de sistemas en la Zona Metropolitana del Valle de México. Diagnóstico desde
+**Meta description:** Diagnóstico, acompañamiento mensual y desarrollo a la medida para organizaciones sin área de sistemas en todo México, con base en la Zona Metropolitana del Valle de México. Diagnóstico desde
 $14,400, con tarifa institucional para OSC.
 
