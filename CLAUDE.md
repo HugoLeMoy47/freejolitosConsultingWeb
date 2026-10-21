@@ -347,7 +347,7 @@ propia caja, no arrastra la página.
    pública; hasta ahora solo se validó que parsea.
 3. **Ver el sitio con ojos humanos.** Nadie ha visto una captura.
 4. **`/casos` no existe** y con razón — §6 prohíbe agregar una página de casos sin autorización.
-   `/guias` sí existe, con diez guías publicadas, en la navegación y en `sitemap.xml`.
+   `/guias` sí existe, con quince guías publicadas, en la navegación y en `sitemap.xml`.
 5. **Depurar por qué la cortinilla del §4 no corre** en `/guias`, `/aviso-de-privacidad`,
    `/terminos` ni `/como-manejo-tu-informacion` en Chrome de escritorio real — nota añadida en §4.
 6. **Scripts de verificación (`scripts/verify-*.js`): arreglados el 2026-08-19** — ver el detalle

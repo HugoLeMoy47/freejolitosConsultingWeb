@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo separar la red Wi-Fi de tu albergue: red operativa vs. red de huéspedes — Freejolitos Consultores</title>
+<meta name="description" content="Guía práctica para albergues y centros asistenciales: cómo aislar la red Wi-Fi de la oficina de la de visitantes, evitar la saturación y proteger equipos sin gastar una fortuna.">
+<link rel="canonical" href="https://freejolitos.consulting/guias/separar-wifi-albergue-red-operativa-huespedes">
+<link rel="stylesheet" href="/assets/estilos.css">
+<link rel="icon" href="/assets/logo.png" type="image/png">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Freejolitos Consultores">
+<meta property="og:title" content="Cómo separar la red Wi-Fi de tu albergue: red operativa vs. red de huéspedes">
+<meta property="og:description" content="Guía práctica para albergues y centros asistenciales: cómo aislar la red Wi-Fi de la oficina de la de visitantes, evitar la saturación y proteger equipos sin gastar una fortuna.">
+<meta property="og:url" content="https://freejolitos.consulting/guias/separar-wifi-albergue-red-operativa-huespedes">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cómo separar la red Wi-Fi de tu albergue: red operativa vs. red de huéspedes sin gastar una fortuna",
+      "description": "Estrategias prácticas de infraestructura de red para albergues y espacios comunitarios: aislamiento de clientes, control de ancho de banda y tres niveles de implementación técnica.",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Personal directivo y operativo de albergues para migrantes, comedores comunitarios y centros asistenciales"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Hugo Legorreta",
+        "jobTitle": "Consultor Principal",
+        "sameAs": [
+          "https://www.linkedin.com/in/hugolegorretamoysen"
+        ],
+        "worksFor": {
+          "@type": "ProfessionalService",
+          "name": "Freejolitos Consultores",
+          "url": "https://freejolitos.consulting",
+          "sameAs": [
+            "https://www.linkedin.com/company/143555145/"
+          ]
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Freejolitos Consultores",
+        "sameAs": [
+          "https://www.linkedin.com/company/143555145/"
+        ],
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://freejolitos.consulting/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-10-21",
+      "dateModified": "2026-10-21",
+      "inLanguage": "es-MX",
+      "isPartOf": { "@id": "https://freejolitos.consulting/#sitio" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="sitio-encabezado">
+  <div class="contenedor">
+    <a class="marca" href="/" aria-label="Freejolitos Consultores — inicio">
+      <img src="/assets/logo.png" width="2245" height="520" alt="Freejolitos Consultores">
+    </a>
+    <input type="checkbox" id="menu-interruptor" class="solo-lectores menu-interruptor">
+    <label for="menu-interruptor" class="menu-boton">
+      <span class="solo-lectores">Menú</span>
+      <span class="menu-icono" aria-hidden="true"></span>
+    </label>
+    <nav class="navegacion" aria-label="Navegación principal">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/servicios">Servicios</a></li>
+        <li><a href="/como-trabajo">Cómo trabajo</a></li>
+        <li><a href="/quien-soy">Quién soy</a></li>
+        <li><a href="/guias" aria-current="page">Guías</a></li>
+        <li><a href="/como-manejo-tu-informacion">Datos e IA</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <div class="contenedor">
+
+    <section class="portada">
+      <div class="kicker">Guía práctica · Infraestructura de Redes y Continuidad Operativa · 8–10 minutos de lectura</div>
+      <h1 class="titulo-pagina">Cómo separar la red Wi-Fi de tu albergue: <span class="marcado">red operativa vs. red de huéspedes</span></h1>
+      <p class="meta">Publicada el 21 de octubre de 2026 · Hugo Legorreta</p>
+
+      <p class="entrada">En la gran mayoría de los albergues para personas en movilidad, comedores asistenciales y centros comunitarios en México, la conectividad se resuelve con lo elemental: <strong>un único módem comercial de Telmex, Totalplay o Izzi en la oficina, cuya contraseña termina pegada en una cartulina en la pared</strong>. Esta práctica satura el internet de la administración, expone las computadoras de la oficina ante escaneos locales y genera responsabilidades legales indebidas.</p>
+    </section>
+
+    <article class="panel">
+      <h2>El problema</h2>
+
+      <p>Compartir una sola red doméstica en un entorno donde conviven decenas de personas genera tres fallas críticas:</p>
+
+      <ol>
+        <li><strong>Colapso del ancho de banda y parálisis administrativa:</strong> Cuando 30 o 50 personas conectan sus teléfonos a la vez para hacer videollamadas con sus familias o actualizar aplicaciones, la red se congela. El equipo no puede timbrar recibos ante el SAT, subir informes a donantes ni atender emergencias.</li>
+        <li><strong>Exposición directa de computadoras e impresoras:</strong> Al convivir en la misma subred local, cualquier teléfono conectado puede explorar la red y encontrar carpetas compartidas de las laptops de la oficina, impresoras de red o cámaras de seguridad sin contraseña.</li>
+        <li><strong>Responsabilidad legal sobre la IP pública:</strong> Si un usuario comete actos ilícitos en internet (descargas de material indebido, fraudes o ataques), la dirección IP señalada ante las autoridades es la contratada por la organización o su titular, exponiéndola a investigaciones penales.</li>
+      </ol>
+
+      <p>Esta guía detalla las tres reglas indispensables de conectividad comunitaria y tres niveles de solución según el presupuesto de tu albergue.</p>
+
+      <h2>1. Las tres reglas indispensables de una red para albergues</h2>
+
+      <p>Cualquier esquema de conectividad asistencial debe apoyarse en tres pilares:</p>
+
+      <ul>
+        <li><strong>Aislamiento de clientes (AP Isolation):</strong> Los dispositivos de las personas visitantes no deben poder comunicarse entre sí ni ver a los demás aparatos de la red. Solo deben comunicarse con la salida a internet.</li>
+        <li><strong>Segmentación lógica total:</strong> Los equipos de trabajo de la organización (computadoras de dirección, impresoras, servidores de archivos) deben habitar en un segmento de red independiente e invisible para las personas huéspedes.</li>
+        <li><strong>Distribución equitativa del ancho de banda (Traffic Shaping):</strong> Es preferible que 40 personas naveguen a una velocidad fluida y moderada (2 a 3 Mbps por teléfono, ideal para mensajes y llamadas familiares) a que dos usuarios descargando archivos pesados dejen sin servicio a todo el albergue.</li>
+      </ul>
+
+      <h2>2. Tres niveles de solución técnica según presupuesto</h2>
+
+      <div class="tabla-envoltura">
+        <table>
+          <caption>Comparativa de soluciones para separar la red Wi-Fi en albergues y centros comunitarios</caption>
+          <thead>
+            <tr>
+              <th scope="col">Nivel</th>
+              <th scope="col">Inversión</th>
+              <th scope="col">Capacidad</th>
+              <th scope="col">Características principales</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Nivel 0: Red de Invitados del módem</th>
+              <td>$0 MXN</td>
+              <td>Hasta 15–20 usuarios</td>
+              <td>Aprovecha la función nativa del módem de Telmex/Totalplay/Izzi; aislamiento de red básico sin hardware extra.</td>
+            </tr>
+            <tr>
+              <th scope="row">Nivel 1: Router comercial secundario</th>
+              <td>$800 a $1,500 MXN</td>
+              <td>Hasta 25–35 usuarios</td>
+              <td>Router TP-Link o Mercusys dedicado exclusivamente a visitantes; subred separada físicamente y control de ancho de banda.</td>
+            </tr>
+            <tr>
+              <th scope="row">Nivel 2: Enrutador profesional MikroTik</th>
+              <td>$1,800 a $3,500 MXN</td>
+              <td>50 a 200+ usuarios</td>
+              <td>Colas simples dinámicas (PCQ), bloqueo de descargas pesadas/torrents, VLANs corporativas y portal cautivo informativo.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Nivel 0: Paso a paso para activar la Red de Invitados sin costo</h3>
+      <ol>
+        <li>Conecta una laptop por cable de red al módem de la oficina.</li>
+        <li>Abre el navegador e ingresa a la IP de administración (habitualmente <code>192.168.1.254</code> o <code>192.168.100.1</code>).</li>
+        <li>Escribe el usuario y la clave que vienen impresos en la etiqueta trasera del aparato.</li>
+        <li>Ingresa al menú <strong>Wi-Fi</strong> y busca la sección <strong>Red de Invitados (Guest Network o SSID Secundario)</strong>.</li>
+        <li>Activa la red, nómbrala (ej. <code>Albergue_Comunitario</code>) y define su clave.</li>
+        <li><strong>Paso crítico:</strong> Marca la casilla <strong>Aislamiento de red (AP Isolation)</strong> y desmarca cualquier opción que permita ver la red local (LAN).</li>
+        <li>Cambia la clave de la red Wi-Fi principal de la oficina para que solo el personal acreditado se conecte a ella.</li>
+      </ol>
+
+      <h3>Nivel 2: Por qué MikroTik es el estándar en albergues de alta rotación</h3>
+      <p>Cuando un espacio atiende a más de 30 personas simultáneas, los módems caseros se reinician constantemente por saturación de tabla de conexiones. Un enrutador MikroTik (modelos accesibles como <em>hEX</em> o <em>hAP ax</em>) resuelve esto definitivamente:</p>
+      <ul>
+        <li><strong>Colas Simples (PCQ):</strong> Reparte automáticamente el internet entre los usuarios activos. Si hay 10 personas conectadas, cada una recibe 10 Mbps; si llegan 60, el router modula la velocidad de todos sin que la red colapse.</li>
+        <li><strong>Bloqueo de tráfico abusivo:</strong> Detiene conexiones torrent y descargas P2P que acaparan el ancho de banda del albergue.</li>
+        <li><strong>VLANs nativas:</strong> Separa criptográficamente la red de la oficina, las cámaras de videovigilancia y los puntos de acceso de los dormitorios.</li>
+      </ul>
+
+      <h2>Checklist de Seguridad y Mantenimiento de Red</h2>
+
+      <details open>
+        <summary><strong>Expande para consultar la lista de verificación de la red</strong></summary>
+        <ul>
+          <li><label><input type="checkbox"> <strong>Paso 1: Cambiar clave administrativa del módem.</strong> Cambiar la contraseña de fábrica del panel del módem del proveedor para impedir que terceros alteren la configuración.</label></li>
+          <li><label><input type="checkbox"> <strong>Paso 2: Ocultar o proteger la red del personal.</strong> Asignar a la red operativa de la oficina una contraseña robusta conocida únicamente por el equipo base.</label></li>
+          <li><label><input type="checkbox"> <strong>Paso 3: Validar aislamiento de invitados (AP Isolation).</strong> Verificar desde un celular conectado a la red de huéspedes que sea imposible hacer "ping" o acceder a la IP de la computadora de la oficina.</label></li>
+          <li><label><input type="checkbox"> <strong>Paso 4: Limitar ancho de banda por dispositivo.</strong> Configurar en el router secundario o MikroTik un tope de descarga por teléfono para garantizar navegación fluida a todos.</label></li>
+          <li><label><input type="checkbox"> <strong>Paso 5: Horarios de corte nocturno (Opcional).</strong> En albergues con reglas de convivencia, programar el apagado automático de la señal Wi-Fi de huéspedes en el horario de sueño (ej. 23:00 a 06:00 hrs).</label></li>
+        </ul>
+      </details>
+
+    </article>
+
+    <section class="panel resalte" aria-label="Sobre esta guía">
+      <p><strong>Sobre esta guía.</strong> Publicada el 21 de octubre de 2026. Última revisión: 21 de octubre de 2026.</p>
+      <p>Las pantallas de configuración de los módems varían según la marca y el proveedor contratado (Telmex, Totalplay, Megacable, Izzi). Si tienes dudas sobre cómo acceder a tu modelo específico, escríbeme a <a href="mailto:hola@freejolitos.consulting">hola@freejolitos.consulting</a> y te oriento sin costo. El historial de cambios de este repositorio es público.</p>
+      <p>Esta guía se publica bajo licencia Creative Commons Atribución 4.0 Internacional: puedes compartirla y utilizarla en tu centro asistencial citando la autoría de Freejolitos Consultores.</p>
+    </section>
+
+    <section class="slab" aria-label="Contacto">
+      <div class="contenedor">
+        <h2>¿Necesitas estabilizar la infraestructura de red de tu albergue?</h2>
+        <p>Diagnosticamos la cobertura de tu espacio, configuramos enrutadores MikroTik o redes secundarias y garantizamos la continuidad de tu operación administrativa con costos justos.</p>
+        <div class="acciones">
+          <a href="/servicios#diagnostico" class="boton">Solicita diagnóstico institucional</a>
+          <a href="https://wa.me/525533444852" class="boton-secundario">Escríbeme por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="sitio-pie">
+  <div class="contenedor">
+    <div class="pie-caja">
+      <div class="pie-marca">
+        <p><strong>Freejolitos Consultores</strong><br>
+        Hugo Legorreta, consultor de tecnología.<br>
+        Zona Metropolitana del Valle de México.</p>
+      </div>
+      <nav aria-label="Navegación del pie" class="pie-grupos">
+        <div class="pie-grupo">
+          <span class="pie-titulo">Sitio</span>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/servicios">Servicios y precios</a></li>
+            <li><a href="/como-trabajo">Cómo trabajo</a></li>
+            <li><a href="/quien-soy">Quién soy</a></li>
+            <li><a href="/guias">Guías</a></li>
+          </ul>
+        </div>
+        <div class="pie-grupo">
+          <span class="pie-titulo">Privacidad</span>
+          <ul>
+            <li><a href="/como-manejo-tu-informacion">Cómo manejo tu información</a></li>
+            <li><a href="/aviso-de-privacidad">Aviso de privacidad</a></li>
+            <li><a href="/terminos">Términos de uso</a></li>
+          </ul>
+        </div>
+        <div class="pie-grupo">
+          <span class="pie-titulo">Contacto</span>
+          <ul>
+            <li><a href="https://wa.me/525533444852">WhatsApp</a></li>
+            <li><a href="mailto:hola@freejolitos.consulting">hola@freejolitos.consulting</a></li>
+            <li><a href="https://www.linkedin.com/in/hugolegorretamoysen" rel="me">LinkedIn</a></li>
+            <li><a href="https://github.com/HugoLeMoy47/freejolitosConsultingWeb/">Código fuente</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
