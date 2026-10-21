@@ -959,6 +959,187 @@ main input[type="checkbox"] {
 .termometro-critico { background: #FFF5F5; border-color: #EF4444; }
 .termometro-critico .termometro-cifra { color: #991B1B; }
 
+/* =========================================================
+   Muro de guías y filtros temáticos (CSS puro con :has)
+   ========================================================= */
+
+.guias-filtros-barra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.25rem 0 2rem;
+  padding: 0;
+}
+
+.filtro-control {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.filtro-pildora {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.15rem;
+  border: 1px solid var(--borde);
+  border-radius: 9999px;
+  background: var(--fondo);
+  color: var(--texto);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.filtro-pildora:hover {
+  border-color: var(--acento);
+  background: var(--resalte);
+}
+
+.filtro-control:focus-visible + .filtro-pildora {
+  outline: 2px solid var(--acento);
+  outline-offset: 2px;
+}
+
+.filtro-control:checked + .filtro-pildora {
+  background: var(--texto);
+  color: #FFFFFF;
+  border-color: var(--texto);
+}
+
+.muro-guias {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-auto-flow: dense;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.tarjeta-guia {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.6rem;
+  margin-bottom: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.tarjeta-guia:hover {
+  transform: translateY(-3px);
+  border-color: var(--acento);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta-guia .tarjeta-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tarjeta-guia .tarjeta-categoria {
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--secundario);
+}
+
+.tarjeta-guia .tarjeta-tiempo {
+  font-size: 0.75rem;
+  color: var(--secundario);
+  white-space: nowrap;
+}
+
+.tarjeta-guia h2 {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+.tarjeta-guia h2::before {
+  display: none;
+}
+
+.tarjeta-guia h2 a {
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.tarjeta-guia h2 a:hover {
+  color: var(--acento);
+  text-decoration: underline;
+}
+
+.tarjeta-guia .tarjeta-cuerpo {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--texto);
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.tarjeta-guia .tarjeta-cuerpo p {
+  margin: 0;
+}
+
+.tarjeta-guia .tarjeta-pie {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--borde-suave);
+}
+
+.tarjeta-guia .tarjeta-enlace {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.tarjeta-guia .tarjeta-enlace:hover {
+  color: var(--acento);
+}
+
+/* Variaciones de tamaño y estilo para ritmo visual */
+@media (min-width: 52rem) {
+  .tarjeta-guia.tarjeta-destacada {
+    grid-column: span 2;
+  }
+  .tarjeta-guia.tarjeta-destacada h2 {
+    font-size: 1.45rem;
+  }
+}
+
+.tarjeta-guia.tarjeta-resalte {
+  background: var(--resalte);
+  border-color: var(--acento);
+}
+
+.tarjeta-guia.tarjeta-resalte .tarjeta-pie {
+  border-top-color: rgba(1, 207, 203, 0.35);
+}
+
+/* Filtrado temático interactivo con CSS puro (:has) */
+.muro-guias-envoltura:has(#filtro-privacidad:checked) .tarjeta-guia:not([data-tema~="privacidad"]) {
+  display: none;
+}
+.muro-guias-envoltura:has(#filtro-infraestructura:checked) .tarjeta-guia:not([data-tema~="infraestructura"]) {
+  display: none;
+}
+.muro-guias-envoltura:has(#filtro-seguridad:checked) .tarjeta-guia:not([data-tema~="seguridad"]) {
+  display: none;
+}
+.muro-guias-envoltura:has(#filtro-gestion:checked) .tarjeta-guia:not([data-tema~="gestion"]) {
+  display: none;
+}
+
 /* ---------- Impresión ---------- */
 
 @media print {
