@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- SutraMind Isotipo — El Hilo Conductor (Sūtra Thread) -->
+  <defs>
+    <linearGradient id="sutraAmber" x1="8" y1="8" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <!-- Base geométrica: hilo continuo con doble lazo y nodos de precisión -->
+  <path d="M34 11H18C14.134 11 11 14.134 11 18C11 21.866 14.134 25 18 25H30C33.866 25 37 28.134 37 32C37 35.866 33.866 39 30 39H14" 
+        stroke="url(#sutraAmber)" 
+        stroke-width="4.5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  <!-- Nodos de verificación determinista (inicio y fin citable) -->
+  <circle cx="34" cy="11" r="2.2" fill="#FBBF24"/>
+  <circle cx="14" cy="39" r="2.2" fill="#B45309"/>
+</svg>

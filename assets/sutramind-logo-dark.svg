@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 52" width="240" height="52" fill="none">
+  <!-- SutraMind Logo — Dark Mode -->
+  <defs>
+    <linearGradient id="sutraAmberDark" x1="12" y1="10" x2="44" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <!-- Isotipo El Hilo Conductor -->
+  <g transform="translate(4, 2)">
+    <path d="M34 11H18C14.134 11 11 14.134 11 18C11 21.866 14.134 25 18 25H30C33.866 25 37 28.134 37 32C37 35.866 33.866 39 30 39H14" 
+          stroke="url(#sutraAmberDark)" 
+          stroke-width="4.2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+    <circle cx="34" cy="11" r="2" fill="#FDE68A"/>
+    <circle cx="14" cy="39" r="2" fill="#B45309"/>
+  </g>
+  <!-- Tipografía -->
+  <text x="56" y="32" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.02em" fill="#F8FAFC">Sutra<tspan fill="#F59E0B">Mind</tspan></text>
+  <text x="56" y="44" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" letter-spacing="0.08em" text-transform="uppercase" fill="#94A3B8">Asesor Determinista</text>
+</svg>

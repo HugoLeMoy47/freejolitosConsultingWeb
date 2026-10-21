@@ -1140,6 +1140,23 @@ main input[type="checkbox"] {
   display: none;
 }
 
+/* Clases para El Laboratorio */
+.marca-sutramind {
+  margin-bottom: 1.25rem;
+}
+.marca-sutramind img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.tesis-bloque {
+  padding: 1rem 1.25rem;
+  border-radius: var(--r-chico);
+  border-left: 4px solid var(--acento);
+  margin-bottom: 1.25rem;
+}
+
 /* ---------- Impresión ---------- */
 
 @media print {
