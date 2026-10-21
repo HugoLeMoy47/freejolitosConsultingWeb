@@ -113,7 +113,7 @@ el HTML: es cronología visual, no texto inventado.
   botón visual (`.menu-boton`, icono de tres barras en CSS puro — nada de SVG nuevo, para no mover
   el conteo de doce SVG de más abajo). Debajo de `40rem` de ancho la casilla oculta `.navegacion`
   hasta que se marca; arriba de ese ancho la casilla no se muestra y el menú se ve como siempre. Los
-  seis enlaces del menú **siguen en el HTML en todo momento**, igual que el resto de la sección.
+  siete enlaces del menú (incluyendo `/laboratorio`) **siguen en el HTML en todo momento**, igual que el resto de la sección.
 - **Checklists de las guías** (`<input type="checkbox">` dentro de `<li>`): cada casilla va envuelta
   en `<label>` — nombre accesible para lector de pantalla, y clic en el texto marca la casilla (un
   solo hit-target, sin zona muerta). El estilo (`estilos.css`, sección «Listas de verificación») usa
@@ -124,7 +124,7 @@ el HTML: es cronología visual, no texto inventado.
 ### Pie de página
 
 Los enlaces del pie (`.pie-caja`) se agrupan en tres bloques dentro de la misma caja oscura —
-**Sitio**, **Privacidad**, **Contacto** — en vez de una lista plana de once enlaces. Cada bloque es
+**Sitio**, **Privacidad**, **Contacto** — en vez de una lista plana de doce enlaces. Cada bloque es
 un `.pie-grupo` con una etiqueta `.pie-titulo` (un `<span>`, no un encabezado: no debe alterar la
 jerarquía de `h1`/`h2` de la página) y su `<ul>`. La estructura es **idéntica en las diecisiete
 páginas**, generada del mismo bloque de HTML — si un agente edita el pie de una página a mano en vez
@@ -323,7 +323,7 @@ ausencias que el literal deja pasar. Ver el ejemplo real en el punto 1.
    fluyendo hacia el sistema; adorno puro, cero información nueva), siete `<details>` abiertos en
    Inicio, cero peticiones a dominios externos. **Un solo script en todo el sitio**
    (`assets/terminal.js`, únicamente en la portada, §5): si aparece otro, es un error. El
-   menú (seis enlaces) y el pie (tres grupos, once enlaces) deben ser byte-por-byte idénticos en las
+   menú (siete enlaces) y el pie (tres grupos, doce enlaces) deben ser byte-por-byte idénticos en las
    diecisiete páginas — ver «Pie de página» en §3.
 
 Contraste verificado, todos los pares pasan AA: 12.45 texto sobre panel · 12.26 sobre lienzo ·
