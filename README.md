@@ -149,7 +149,7 @@ completo ni en bloques grandes.
 
 Dos valores del `:root` se ven como errores y no lo son: `#6B6B6B` en vez del `#888888` de la
 marca (el original reprueba WCAG AA) y `#FAFEFE` en vez de blanco puro (es `#D8FAF9` al 12 %).
-Están documentados en el §16 de [CLAUDE.md](CLAUDE.md).
+Están documentados en el §2 de [CLAUDE.md](CLAUDE.md).
 
 ---
 
@@ -190,12 +190,12 @@ Criterio de aceptación, no aspiración.
 **La cortinilla entre páginas.** Al navegar, una cortina opaca de 1.2 s cubre la pantalla. Está
 hecha con view transitions puras, sin JavaScript. Se puede ajustar con dos variables al principio
 de `estilos.css` (`--cortina` y `--cortina-tiempo`). Es una decisión deliberada del titular que
-contradice el brief original; está razonada en el §15 de [CLAUDE.md](CLAUDE.md).
+contradice el brief original; está razonada en [docs/cortinilla.md](docs/cortinilla.md).
 
 **El modo terminal.** Cinco clics en el logotipo, en `/` y solo en `/`, y la pantalla se reimprime
 como una sesión de terminal. Otros cinco lo apagan; cualquier enlace navega a esa página ya sin el
 efecto. El motor **no contiene una sola palabra de copy** — lee el texto del DOM vivo, así que si
-editas el HTML la terminal cambia sola. Detalle en el §14 de [CLAUDE.md](CLAUDE.md).
+editas el HTML la terminal cambia sola. Detalle en [docs/modo-terminal.md](docs/modo-terminal.md).
 
 > Ninguno de los dos se puede observar desde un panel embebido: Chrome detiene las animaciones en
 > pestañas que no componen. Hay que abrirlos en Chrome de escritorio.
@@ -268,8 +268,8 @@ Si quieres reutilizar la estructura, hay una guía de cinco pasos en [NOTICE.md]
 
 ## Trabajar en esto con un agente
 
-[CLAUDE.md](CLAUDE.md) es la memoria del proyecto: qué existe, por qué se decidió así, y qué
-falta. Documenta cuatro decisiones que parecen errores y no lo son. **Manténlo al día** — es lo
+[CLAUDE.md](CLAUDE.md) es la memoria del proyecto: las reglas que mandan y las decisiones que
+parecen errores y no lo son; el detalle de diseño está en `docs/` y los pendientes en Jarvis. **Manténlo al día** — es lo
 único que un agente nuevo lee automáticamente, y sin él una sesión desde otro equipo «arreglaría»
 esas cuatro cosas.
 
