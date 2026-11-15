@@ -137,6 +137,9 @@ de contacto es WhatsApp; la alternativa es correo. No hay formulario de contacto
 - [Quién soy](https://freejolitos.consulting/quien-soy) — Hugo Legorreta: trayectoria y por qué
   trabaja con el tercer sector.
 - [El Laboratorio](https://freejolitos.consulting/laboratorio) — Construcción de software en público (Public Building): Bitácora Viva (expedientes humanitarios) y SutraMind (asesor analítico determinista), con bitácora viva de ingeniería.
+- [Bitácora Viva](https://freejolitos.consulting/bitacora-viva) — expediente digital único para albergues y
+  organizaciones que atienden a personas en movilidad. Proyecto en construcción, solo con datos de
+  prueba: qué problema resuelve, para quién es, qué no hará y cómo va el trabajo.
 - [Datos e IA](https://freejolitos.consulting/como-manejo-tu-informacion) — política de manejo de datos e
   inteligencia artificial.
 
