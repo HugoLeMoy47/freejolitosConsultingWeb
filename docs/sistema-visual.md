@@ -84,7 +84,7 @@ el HTML: es cronología visual, no texto inventado.
 Los enlaces del pie (`.pie-caja`) se agrupan en tres bloques dentro de la misma caja oscura —
 **Sitio**, **Privacidad**, **Contacto** — en vez de una lista plana de doce enlaces. Cada bloque es
 un `.pie-grupo` con una etiqueta `.pie-titulo` (un `<span>`, no un encabezado: no debe alterar la
-jerarquía de `h1`/`h2` de la página) y su `<ul>`. La estructura es **idéntica en las diecisiete
+jerarquía de `h1`/`h2` de la página) y su `<ul>`. La estructura es **idéntica en todas las
 páginas**, generada del mismo bloque de HTML — si un agente edita el pie de una página a mano en vez
 de replicar la estructura de otra, es el error más probable de reintroducir.
 

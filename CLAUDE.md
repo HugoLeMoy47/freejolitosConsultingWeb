@@ -51,7 +51,7 @@ Lee esto completo antes de editar. Hay cuatro decisiones que parecen errores y n
 ## 4. Verificar antes de dar algo por terminado
 
 1. **Copy:** `npm run verify:copy` y `node scripts/verify-semantic.js`, juntos. Esperado: 0 discrepancias, salvo el bloque comentado de `como-manejo-tu-informacion`.
-2. **DOM:** un `h1` por página, sin saltos de jerarquía, ids duplicados ni anclas rotas; JSON-LD que parsea; doce SVG `aria-hidden` sin texto; cero peticiones externas; un solo script (`assets/terminal.js`, solo en `/`); menú y pie idénticos en las diecisiete páginas.
+2. **DOM:** un `h1` por página, sin saltos de jerarquía, ids duplicados ni anclas rotas; JSON-LD que parsea; doce SVG `aria-hidden` sin texto; cero peticiones externas; un solo script (`assets/terminal.js`, solo en `/`); menú y pie idénticos en todas las páginas.
 3. Contraste AA y sin desbordamiento horizontal a 375 y 1280 px.
 
 ## 5. Git
