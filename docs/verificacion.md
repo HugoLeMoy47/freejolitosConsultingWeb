@@ -41,8 +41,8 @@ ausencias que el literal deja pasar. Ver el ejemplo real en el punto 1.
    fluyendo hacia el sistema; adorno puro, cero información nueva), siete `<details>` abiertos en
    Inicio, cero peticiones a dominios externos. **Un solo script en todo el sitio**
    (`assets/terminal.js`, únicamente en la portada, §5): si aparece otro, es un error. El
-   menú (siete enlaces) y el pie (tres grupos, doce enlaces) deben ser byte-por-byte idénticos en las
-   diecisiete páginas — ver «Pie de página» en §3.
+   menú (siete enlaces) y el pie (tres grupos, doce enlaces) deben ser byte-por-byte idénticos en
+   todas las páginas — ver «Pie de página» en §3.
 
 Contraste verificado, todos los pares pasan AA: 12.45 texto sobre panel · 12.26 sobre lienzo ·
 5.25 secundario · 11.24 sobre resalte · 6.40 botón · 9.79 y 12.45 en bloque oscuro · 7.75 pie ·
