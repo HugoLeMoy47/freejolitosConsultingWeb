@@ -1140,11 +1140,13 @@ main input[type="checkbox"] {
   display: none;
 }
 
-/* Clases para El Laboratorio */
-.marca-sutramind {
+/* Clases para El Laboratorio y páginas de producto */
+.marca-sutramind,
+.marca-producto {
   margin-bottom: 1.25rem;
 }
-.marca-sutramind img {
+.marca-sutramind img,
+.marca-producto img {
   display: block;
   max-width: 100%;
   height: auto;

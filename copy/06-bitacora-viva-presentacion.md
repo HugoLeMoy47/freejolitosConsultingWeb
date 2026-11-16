@@ -60,7 +60,7 @@ Estas cuatro líneas vienen del diseño y no dependen de quién la use.
 
 - No califica ni perfila a las personas de forma automática. Las valoraciones las hace una persona.
 
-- No usa biometría. No hay reconocimiento facial. La fotografía sirve solo para que una persona identifique a otra, y siempre con consentimiento firmado.
+- En esta etapa no levanta datos biométricos. No hay reconocimiento facial. La fotografía sirve solo para que una persona identifique a otra, y siempre con consentimiento firmado.
 
 ## Cómo va el trabajo
 
