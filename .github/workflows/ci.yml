@@ -1,0 +1,88 @@
+# Verificación antes de publicar.
+# En este sitio fusionar a `main` publica directo en Cloudflare, así que las
+# reglas de CLAUDE.md §4 (copy, semántica, estructura HTML, enlaces internos,
+# JSON-LD y exclusiones de .assetsignore) deben revisarse en cada PR y en `main`.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verificar:
+    name: Copy, semántica y reglas del sitio
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verificar copy y semántica (salvo el bloque comentado conocido)
+        run: |
+          out_copy=$(node scripts/verify-copy.js || true)
+          echo "$out_copy"
+          echo "$out_copy" | grep -q "Summary: total missing blocks across pages: 1"
+          echo "$out_copy" | grep -q "como-manejo-tu-informacion.html"
+
+          out_sem=$(node scripts/verify-semantic.js || true)
+          echo "$out_sem"
+          echo "$out_sem" | grep -q "Summary semantic: total missing blocks across pages: 1"
+          echo "$out_sem" | grep -q "como-manejo-tu-informacion.html"
+
+      - name: Verificar estructura DOM, JSON-LD y .assetsignore
+        run: |
+          node -e '
+            const fs = require("fs");
+            const path = require("path");
+            const root = process.cwd();
+
+            // 1. Archivos que no deben servirse en público están en .assetsignore
+            const ignore = fs.readFileSync(".assetsignore", "utf8");
+            for (const item of ["copy/", "scripts/", "docs/", ".git/", ".github/", "package.json", "REPORT.md", "commitmsg.txt", "CLAUDE.md"]) {
+              if (!ignore.includes(item)) throw new Error("Falta en .assetsignore: " + item);
+            }
+
+            // 2. Recolectar todas las páginas HTML del sitio
+            const htmlFiles = [
+              ...fs.readdirSync(root).filter(f => f.endsWith(".html")),
+              ...fs.readdirSync(path.join(root, "guias")).filter(f => f.endsWith(".html")).map(f => path.join("guias", f))
+            ];
+            if (htmlFiles.length < 25) throw new Error("Se esperaban al menos 25 páginas HTML, se encontraron " + htmlFiles.length);
+
+            for (const file of htmlFiles) {
+              const html = fs.readFileSync(path.join(root, file), "utf8");
+              const sinComentarios = html.replace(/<!--[\s\S]*?-->/g, "");
+
+              // Un solo h1 por página
+              const h1s = sinComentarios.match(/<h1[\s>]/gi) || [];
+              if (h1s.length !== 1) throw new Error(file + ": tiene " + h1s.length + " etiquetas <h1> (debe ser 1)");
+
+              // JSON-LD válido
+              const ldMatches = [...sinComentarios.matchAll(/<script\s+type=["\x27]application\/ld\+json["\x27]>([\s\S]*?)<\/script>/gi)];
+              for (const m of ldMatches) {
+                try { JSON.parse(m[1]); }
+                catch (e) { throw new Error(file + ": JSON-LD inválido: " + e.message); }
+              }
+
+              // Sin scripts externos y solo terminal.js en index.html
+              const scripts = [...sinComentarios.matchAll(/<script(?![^>]*application\/ld\+json)[^>]*>/gi)];
+              if (file === "index.html") {
+                if (scripts.length !== 1 || !scripts[0][0].includes("/assets/terminal.js")) {
+                  throw new Error("index.html debe tener únicamente /assets/terminal.js como script ejecutable");
+                }
+              } else if (scripts.length > 0) {
+                throw new Error(file + ": no debe contener scripts ejecutables");
+              }
+            }
+            console.log("OK:", htmlFiles.length, "páginas HTML verificadas y .assetsignore completo.");
+          '

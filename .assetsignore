@@ -12,11 +12,21 @@
 # Fuente del copy: se versiona, no se publica.
 copy/
 
-# Documentación del repositorio, no del sitio.
+# Documentación y reportes del repositorio, no del sitio.
 CLAUDE.md
 README.md
 NOTICE.md
 LICENSE
+REPORT.md
+commitmsg.txt
+docs/
+reports/
+
+# Scripts y configuración de verificación.
+scripts/
+package.json
+package-lock.json
+.github/
 
 # CRÍTICO — el repositorio de git.
 #
