@@ -6,20 +6,25 @@
 :root {
   --texto:        #343434;
   --acento:       #01CFCB;
+  --acento-fuerte:#00b5b1;
+  --acento-profundo:#0f4f4e;
   --resalte:      #D8FAF9;
+  --resalte-suave:#EBFDFC;
   --secundario:   #6B6B6B;   /* variante accesible de #888888, ver nota abajo */
   --secundario-decorativo: #888888;
   --borde:        #CCCCCC;
   --fondo:        #FFFFFF;
 
-  /* Derivado, no inventado: #D8FAF9 al 12% sobre blanco.
-     Es el lienzo sobre el que flotan los paneles blancos. Casi imperceptible
-     de frente, pero da la profundidad por capas sin meter un gris nuevo. */
-  --lienzo:       #FAFEFE;
+  /* Lienzo sutilmente tintado para dar profundidad real a los paneles blancos */
+  --lienzo:       #F4FAFA;
 
-  /* Borde de panel: el #CCCCCC de la paleta, aclarado sobre el lienzo para que
-     defina sin dibujar una caja dura. */
-  --borde-suave:  rgba(1, 207, 203, 0.18);
+  /* Borde de panel: acento suave para definir con delicadeza */
+  --borde-suave:  rgba(1, 207, 203, 0.22);
+
+  /* Sombras enriquecidas con destello ambiental turquesa */
+  --sombra-sm:    0 2px 8px -2px rgba(1, 207, 203, 0.12), 0 1px 4px 0 rgba(0, 0, 0, 0.04);
+  --sombra-md:    0 10px 28px -5px rgba(1, 207, 203, 0.18), 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+  --sombra-lg:    0 18px 40px -8px rgba(1, 207, 203, 0.26), 0 6px 18px -3px rgba(0, 0, 0, 0.07);
 
   --r-panel:      20px;
   --r-chico:      10px;
@@ -51,7 +56,12 @@ body {
   font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--texto);
-  background: var(--lienzo);
+  background-color: var(--lienzo);
+  background-image:
+    radial-gradient(circle at 12% 14%, rgba(1, 207, 203, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 88% 26%, rgba(216, 250, 249, 0.75) 0%, transparent 46%),
+    radial-gradient(circle at 50% 85%, rgba(1, 207, 203, 0.05) 0%, transparent 52%);
+  background-attachment: fixed;
   text-rendering: optimizeLegibility;
 }
 
@@ -106,13 +116,14 @@ h3 {
 
 p { margin: 0 0 1.25rem; max-width: var(--ancho-texto); }
 
-/* Marcador turquesa bajo una frase del titular. Grueso y a la altura de la
-   línea base, para que se lea como resaltador y no como enlace. */
+/* Marcador turquesa bajo una frase del titular con degradado estilizado */
 .marcado {
-  background-image: linear-gradient(var(--acento), var(--acento));
+  background-image: linear-gradient(90deg, rgba(1, 207, 203, 0.4) 0%, rgba(1, 207, 203, 0.95) 100%);
   background-repeat: no-repeat;
-  background-size: 100% 0.22em;
+  background-size: 100% 0.3em;
   background-position: 0 88%;
+  border-radius: 2px;
+  padding: 0 0.08em;
 }
 
 .entrada {
@@ -164,7 +175,15 @@ main { display: block; padding-bottom: 3rem; }
 /* ---------- Encabezado ---------- */
 
 .sitio-encabezado {
-  padding: 1.5rem 0 2.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  background: rgba(244, 250, 250, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(1, 207, 203, 0.16);
+  transition: padding 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .sitio-encabezado .contenedor {
@@ -198,9 +217,7 @@ main { display: block; padding-bottom: 3rem; }
 }
 .navegacion li { margin: 0; }
 
-/* Píldoras de navegación, al estilo de la barra de referencia.
-   min-height 2.75rem (44px): área de toque cómoda, no solo el mínimo AA
-   de 24px que ya cumplía el padding por sí solo. */
+/* Píldoras de navegación con estilo pulido y micro-interacción */
 .navegacion a {
   display: inline-flex;
   align-items: center;
@@ -208,15 +225,24 @@ main { display: block; padding-bottom: 3rem; }
   text-decoration: none;
   font-size: 0.9375rem;
   color: var(--secundario);
-  padding: 0.45rem 0.9rem;
+  padding: 0.45rem 0.95rem;
   border-radius: var(--r-pildora);
-  transition: color 0.18s ease, background-color 0.18s ease;
+  border: 1px solid transparent;
+  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
 }
-.navegacion a:hover { color: var(--texto); background: var(--resalte); }
+.navegacion a:hover {
+  color: var(--texto);
+  background: var(--resalte);
+  border-color: rgba(1, 207, 203, 0.25);
+  transform: translateY(-1px);
+}
 
 .navegacion a[aria-current="page"] {
   color: var(--texto);
   background: var(--resalte);
+  border-color: rgba(1, 207, 203, 0.45);
+  box-shadow: 0 2px 8px -2px rgba(1, 207, 203, 0.25);
+  font-weight: bold;
 }
 
 /* Menú móvil sin JavaScript: casilla + etiqueta, la misma técnica que ya usan
@@ -256,44 +282,105 @@ main { display: block; padding-bottom: 3rem; }
 .menu-icono::after { top: 6px; }
 
 @media (max-width: 40rem) {
+  .sitio-encabezado { padding: 0.75rem 0; }
   .menu-boton { display: inline-flex; }
 
   .navegacion {
     flex-basis: 100%;
     max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.25s ease;
+    overflow-y: auto;
+    transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  /* 8 entradas de 2.75rem más separaciones: 16rem cortaba las últimas. */
-  .menu-interruptor:checked ~ .navegacion { max-height: 30rem; }
+  .menu-interruptor:checked ~ .navegacion {
+    max-height: calc(100vh - 4.5rem);
+  }
 
-  .navegacion ul { flex-direction: column; gap: 0.125rem; padding: 0.5rem 0 0.75rem; }
+  .navegacion ul { flex-direction: column; gap: 0.25rem; padding: 0.75rem 0; }
   .navegacion a { display: block; }
 }
 
 /* ---------- Paneles ---------- */
 
 /* El panel es la unidad de composición: bloque blanco redondeado flotando
-   sobre el lienzo. Sustituye a las líneas divisorias de la versión anterior. */
+   sobre el lienzo con sombra ambiental suave. */
 .panel {
   background: var(--fondo);
   border: 1px solid var(--borde-suave);
   border-radius: var(--r-panel);
-  padding: clamp(1.75rem, 1rem + 3vw, 3rem);
-  margin-bottom: 1.25rem;
+  padding: clamp(2rem, 1.25rem + 3vw, 3.25rem);
+  margin-bottom: 2.25rem;
+  box-shadow: var(--sombra-sm);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.panel:hover {
+  border-color: rgba(1, 207, 203, 0.38);
+  box-shadow: var(--sombra-md);
 }
 .panel > :last-child { margin-bottom: 0; }
 
 .panel-hueco {
   background: transparent;
   border: 0;
+  box-shadow: none;
   padding-left: 0;
   padding-right: 0;
 }
+.panel-hueco:hover {
+  border-color: transparent;
+  box-shadow: none;
+}
 
-/* Panel de apertura: sin caja, el titular respira contra el lienzo. */
+/* Panel de apertura: con animación de entrada y aire generoso */
 .portada {
-  padding: 1rem 0 3rem;
+  padding: 2.25rem 0 3.5rem;
+  position: relative;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .portada .kicker,
+  .portada .etiqueta {
+    animation: entrarSuave 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .portada h1 {
+    animation: entrarSuave 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+  }
+  .portada .subtitulo,
+  .portada .entrada {
+    animation: entrarSuave 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both;
+  }
+  .portada .acciones {
+    animation: entrarSuave 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+  }
+}
+
+@keyframes entrarSuave {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Kicker (antetítulo en píldora con color de marca) ---------- */
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--acento-profundo);
+  background: var(--resalte);
+  border: 1px solid rgba(1, 207, 203, 0.35);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--r-pildora);
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px -2px rgba(1, 207, 203, 0.2);
 }
 
 /* ---------- Etiqueta de sección (cuadrito + texto) ---------- */
@@ -333,11 +420,13 @@ main { display: block; padding-bottom: 3rem; }
 /* ---------- Bloques de resalte ---------- */
 
 .resalte {
-  background: var(--resalte);
-  border-radius: var(--r-chico);
-  padding: 1.5rem 1.75rem;
+  background: linear-gradient(135deg, rgba(235, 253, 252, 0.95) 0%, rgba(216, 250, 249, 0.8) 100%);
+  border-left: 4px solid var(--acento);
+  border-radius: 0 var(--r-chico) var(--r-chico) 0;
+  padding: 1.5rem 1.85rem;
   margin: 1.75rem 0;
   max-width: var(--ancho-texto);
+  box-shadow: 0 4px 16px -4px rgba(1, 207, 203, 0.14);
 }
 .resalte > :last-child { margin-bottom: 0; }
 .resalte p { max-width: none; }
@@ -358,23 +447,47 @@ main { display: block; padding-bottom: 3rem; }
 
 .servicios {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-  gap: 1.25rem;
-  margin: 0 0 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.75rem;
+  margin: 0 0 1.75rem;
 }
 
 .servicio {
   background: var(--fondo);
   border: 1px solid var(--borde-suave);
   border-radius: var(--r-panel);
-  padding: 1.75rem;
+  padding: 2.25rem 2rem;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--sombra-sm);
+  position: relative;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.servicio:hover {
+
+.servicio::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  right: 2rem;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--acento), transparent);
+  opacity: 0.3;
+  transition: opacity 0.3s ease, left 0.3s ease, right 0.3s ease;
+}
+
+.servicio:hover,
+.servicio:focus-within {
   border-color: var(--acento);
-  box-shadow: 0 2px 20px rgba(1, 207, 203, 0.12);
+  box-shadow: var(--sombra-lg);
+  transform: translateY(-5px);
+}
+
+.servicio:hover::before,
+.servicio:focus-within::before {
+  opacity: 1;
+  left: 1rem;
+  right: 1rem;
 }
 
 .servicio h3 { margin-top: 0; }
@@ -388,11 +501,13 @@ main { display: block; padding-bottom: 3rem; }
   margin: 0 0 1.25rem;
   color: var(--secundario);
   line-height: 1.45;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed rgba(1, 207, 203, 0.28);
 }
 
 .precio {
-  font-size: 1.375rem;
-  font-weight: normal;
+  font-size: 1.45rem;
+  font-weight: bold;
   letter-spacing: -0.02em;
   color: var(--texto);
 }
@@ -408,16 +523,28 @@ main { display: block; padding-bottom: 3rem; }
 .enlace-chevron {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
   text-decoration: none;
   font-weight: bold;
   font-size: 0.9375rem;
   border-bottom: 2px solid var(--acento);
   padding-bottom: 0.15rem;
-  transition: gap 0.18s ease, border-color 0.18s ease;
+  transition: gap 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, color 0.2s ease;
 }
-.enlace-chevron::after { content: "›"; font-size: 1.15em; line-height: 1; }
-.enlace-chevron:hover { gap: 0.7rem; border-color: var(--texto); }
+.enlace-chevron::after {
+  content: "›";
+  font-size: 1.25em;
+  line-height: 1;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.enlace-chevron:hover {
+  gap: 0.75rem;
+  border-color: var(--texto);
+  color: #000000;
+}
+.enlace-chevron:hover::after {
+  transform: translateX(3px);
+}
 
 /* ---------- Lista con palomita (dibujada en CSS, sin SVG) ---------- */
 
@@ -490,9 +617,11 @@ th, td {
 tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
 
 thead th {
-  background: var(--resalte);
+  background: linear-gradient(135deg, rgba(235, 253, 252, 0.95) 0%, rgba(216, 250, 249, 0.85) 100%);
   font-size: 0.875rem;
   font-weight: bold;
+  color: var(--texto);
+  border-bottom: 2px solid rgba(1, 207, 203, 0.35);
 }
 
 tbody th { font-weight: bold; }
@@ -510,11 +639,15 @@ tbody th { font-weight: bold; }
 /* ---------- Bloque oscuro de llamada a la acción ---------- */
 
 .slab {
-  background: var(--texto);
+  background: radial-gradient(circle at 92% 15%, rgba(1, 207, 203, 0.22) 0%, transparent 60%), #2D3333;
   color: #FFFFFF;
   border-radius: var(--r-panel);
-  padding: clamp(2rem, 1.2rem + 3.5vw, 3.5rem);
-  margin: 2.5rem 0 0;
+  border: 1px solid rgba(1, 207, 203, 0.28);
+  box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.35), 0 0 35px -5px rgba(1, 207, 203, 0.12);
+  padding: clamp(2.25rem, 1.5rem + 3.5vw, 3.85rem);
+  margin: 3.5rem 0 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .slab h2 { color: #FFFFFF; }
@@ -532,19 +665,20 @@ tbody th { font-weight: bold; }
 .acciones {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.85rem;
   align-items: center;
-  margin-top: 1.75rem;
+  margin-top: 1.85rem;
 }
 
 .boton, .boton-secundario {
   display: inline-block;
   text-decoration: none;
-  padding: 0.85rem 1.6rem;
+  padding: 0.85rem 1.65rem;
   font-size: 1rem;
   border-radius: var(--r-pildora);
   border: 2px solid transparent;
-  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .boton {
@@ -552,21 +686,58 @@ tbody th { font-weight: bold; }
   color: var(--texto);
   border-color: var(--acento);
   font-weight: bold;
+  box-shadow: 0 4px 14px 0 rgba(1, 207, 203, 0.35);
 }
-.boton:hover { background: var(--texto); color: #FFFFFF; border-color: var(--texto); }
+.boton:hover {
+  background: var(--texto);
+  color: #FFFFFF;
+  border-color: var(--texto);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(52, 52, 52, 0.25);
+}
+.boton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px 0 rgba(1, 207, 203, 0.2);
+}
 
 .boton-secundario {
   background: transparent;
   color: var(--texto);
   border-color: var(--borde);
 }
-.boton-secundario:hover { border-color: var(--acento); }
+.boton-secundario:hover {
+  border-color: var(--acento);
+  background: var(--resalte-suave);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px 0 rgba(1, 207, 203, 0.15);
+}
+.boton-secundario:active {
+  transform: translateY(0);
+}
 
 /* Dentro del bloque oscuro los botones se invierten. */
-.slab .boton { background: var(--acento); color: var(--texto); border-color: var(--acento); }
-.slab .boton:hover { background: #FFFFFF; border-color: #FFFFFF; }
-.slab .boton-secundario { color: #FFFFFF; border-color: #6B6B6B; }
-.slab .boton-secundario:hover { border-color: var(--acento); }
+.slab .boton {
+  background: var(--acento);
+  color: var(--texto);
+  border-color: var(--acento);
+  box-shadow: 0 4px 16px 0 rgba(1, 207, 203, 0.45);
+}
+.slab .boton:hover {
+  background: #FFFFFF;
+  color: var(--texto);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px 0 rgba(255, 255, 255, 0.3);
+}
+.slab .boton-secundario {
+  color: #FFFFFF;
+  border-color: #6B6B6B;
+}
+.slab .boton-secundario:hover {
+  border-color: var(--acento);
+  background: rgba(1, 207, 203, 0.12);
+  transform: translateY(-2px);
+}
 
 /* ---------- Pie ---------- */
 
@@ -696,10 +867,17 @@ tbody th { font-weight: bold; }
   display: block;
   width: 100%;
   height: auto;
-  margin: 1.5rem 0 0;
-  background: var(--resalte);
+  margin: 1.75rem 0 0;
+  background: linear-gradient(135deg, rgba(235, 253, 252, 0.8) 0%, rgba(216, 250, 249, 0.35) 100%);
+  border: 1px solid rgba(1, 207, 203, 0.2);
   border-radius: var(--r-chico);
   padding: 1.25rem;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.servicio:hover .diagrama {
+  background: linear-gradient(135deg, rgba(235, 253, 252, 0.95) 0%, rgba(216, 250, 249, 0.55) 100%);
+  border-color: rgba(1, 207, 203, 0.35);
 }
 
 .servicio .diagrama { margin-top: auto; }
@@ -711,6 +889,17 @@ tbody th { font-weight: bold; }
 .diagrama .recorre  { transition: stroke-dashoffset 0.7s cubic-bezier(0.32, 0.08, 0, 1); }
 .diagrama .late     { transition: r 0.4s ease, opacity 0.4s ease; }
 .diagrama .trazo    { opacity: 0.7; transition: opacity 0.35s ease; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .diagrama .late {
+    animation: latidoAmbient 2.8s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes latidoAmbient {
+  from { opacity: 0.45; r: 6; }
+  to   { opacity: 0.85; r: 7.5; }
+}
 
 .panel:hover .diagrama .trazo,
 .servicio:hover .diagrama .trazo { opacity: 1; }
@@ -740,8 +929,8 @@ tbody th { font-weight: bold; }
 .fichas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
-  gap: 1.25rem;
-  margin: 0 0 1.25rem;
+  gap: 1.75rem;
+  margin: 0 0 1.75rem;
   padding: 0;
   list-style: none;
   counter-reset: ficha;
@@ -754,9 +943,10 @@ tbody th { font-weight: bold; }
   background: var(--fondo);
   border: 1px solid var(--borde-suave);
   border-radius: var(--r-panel);
-  padding: 1.75rem;
+  padding: 2.25rem 2rem;
   margin: 0;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.32, 0.08, 0, 1);
+  box-shadow: var(--sombra-sm);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ficha::after {
@@ -765,15 +955,20 @@ tbody th { font-weight: bold; }
   top: 1.6rem;
   right: 1.75rem;
   font-size: 0.8125rem;
+  font-weight: bold;
   letter-spacing: 0.1em;
-  color: var(--secundario);
+  color: var(--acento-profundo);
+  background: rgba(216, 250, 249, 0.7);
+  border: 1px solid rgba(1, 207, 203, 0.25);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--r-pildora);
 }
 
 .ficha:hover,
 .ficha:focus-within {
   border-color: var(--acento);
-  box-shadow: 0 4px 24px rgba(1, 207, 203, 0.14);
-  transform: translateY(-4px);
+  box-shadow: var(--sombra-lg);
+  transform: translateY(-5px);
 }
 
 .ficha h2,
@@ -811,12 +1006,26 @@ tbody th { font-weight: bold; }
 /* ---------- Realce de fila en la tabla ---------- */
 
 tbody tr { transition: background-color 0.18s ease; }
-tbody tr:hover { background: var(--resalte); }
+tbody tr:hover { background: rgba(216, 250, 249, 0.45); }
 
 /* ---------- Preguntas frecuentes plegables ----------
    <details open> por omisión: el contenido está visible al cargar y
    presente en el HTML para cualquier lector automático. Plegar es una
    comodidad del visitante, nunca una condición para ver el texto. */
+
+.faq-item {
+  padding: 1.25rem 1rem;
+  margin: 0.35rem -1rem;
+  border-radius: var(--r-chico);
+  border-bottom: 1px solid var(--borde-suave);
+  transition: background-color 0.2s ease;
+}
+.faq-item:hover {
+  background-color: rgba(216, 250, 249, 0.3);
+}
+.faq-item[open] {
+  background-color: rgba(216, 250, 249, 0.16);
+}
 
 .faq-item > summary {
   cursor: pointer;
@@ -1016,23 +1225,27 @@ main input[type="checkbox"] {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-auto-flow: dense;
-  gap: 1.25rem;
-  margin-bottom: 2.5rem;
+  gap: 1.75rem;
+  margin-bottom: 2.75rem;
 }
 
 .tarjeta-guia {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.6rem;
+  padding: 1.85rem;
   margin-bottom: 0;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  background: var(--fondo);
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--r-panel);
+  box-shadow: var(--sombra-sm);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .tarjeta-guia:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
   border-color: var(--acento);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--sombra-lg);
 }
 
 .tarjeta-guia .tarjeta-meta {
@@ -1040,7 +1253,7 @@ main input[type="checkbox"] {
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
 .tarjeta-guia .tarjeta-categoria {
@@ -1048,7 +1261,11 @@ main input[type="checkbox"] {
   font-weight: bold;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--secundario);
+  color: var(--acento-profundo);
+  background: rgba(216, 250, 249, 0.7);
+  border: 1px solid rgba(1, 207, 203, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--r-pildora);
 }
 
 .tarjeta-guia .tarjeta-tiempo {
