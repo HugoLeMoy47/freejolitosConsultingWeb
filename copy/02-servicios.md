@@ -85,6 +85,21 @@ muchísimo más barato que descubrirlo a medio proyecto.
 
 ---
 
+## Para empresas
+
+Los paquetes de esta página están pensados para organizaciones sin área de sistemas. Con empresas
+trabajo a la medida: sistemas para negocios donde las cifras tienen que poder verificarse.
+
+He construido, por ejemplo, un sistema de gestión de cuentas y de pagos de inversión para un
+intermediario financiero con oficinas en México y Estados Unidos, y he trabajado en plataformas B2B
+para banca, seguros y fintech, en comercio exterior y en comercio minorista.
+
+Se cotiza por proyecto y empieza igual que todo lo demás: con una conversación y, si hace falta
+construir, con una prueba de concepto. Mi primer producto para empresas es
+[SutraMind](/sutramind), un asesor de datos que no inventa cifras.
+
+---
+
 ## Lo que se cotiza como proyecto aparte
 
 Son trabajos con alcance propio, fuera del acompañamiento mensual:

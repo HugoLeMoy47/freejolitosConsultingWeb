@@ -54,6 +54,12 @@ migrante. Ahí aprendí cómo se piden las cosas cuando hay una auditoría de po
 
 Trabajo con organizaciones del tercer sector por convicción: quiero que lo que hago deje algo sembrado, más allá de una factura. Es la razón por la que este negocio está armado como está.
 
+## ¿Eres empresa?
+
+También trabajo con empresas fuera del tercer sector: desarrollo a la medida para negocios que necesitan que sus cifras se puedan verificar. Mi primer producto para ellas es SutraMind, un asesor de datos que no inventa cifras.
+
+[Conoce SutraMind](/sutramind) · [Desarrollo a la medida para empresas](/servicios#para-empresas)
+
 ## Uso inteligencia artificial, y lo digo
 
 Uso IA para producir buena parte de mi trabajo: análisis, documentación y revisión. Nunca con datos
