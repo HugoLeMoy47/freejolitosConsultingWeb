@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bitácora Viva: expediente digital para albergues y organizaciones civiles — Freejolitos Consultores</title>
-<meta name="description" content="Bitácora Viva es un expediente único para organizaciones que atienden a personas en movilidad. Está en construcción y hoy trabaja solo con datos de prueba. Aquí cuento cómo va.">
+<title>Bitácora Viva: expediente digital para organizaciones de atención humanitaria — Freejolitos Consultores</title>
+<meta name="description" content="Bitácora Viva es un expediente digital en construcción para albergues y organizaciones que atienden a personas en situación de vulnerabilidad. Busco tres organizaciones fundadoras.">
 <link rel="canonical" href="https://freejolitos.consulting/bitacora-viva">
 <link rel="stylesheet" href="/assets/estilos.css">
 <link rel="icon" href="/assets/logo.png" type="image/png">
@@ -12,8 +12,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 <meta property="og:site_name" content="Freejolitos Consultores">
-<meta property="og:title" content="Bitácora Viva: un expediente que cuida la historia de las personas">
-<meta property="og:description" content="Bitácora Viva es un expediente único para organizaciones que atienden a personas en movilidad. Está en construcción y hoy trabaja solo con datos de prueba. Aquí cuento cómo va.">
+<meta property="og:title" content="Bitácora Viva: un expediente digital para organizaciones que hacen atención humanitaria">
+<meta property="og:description" content="Bitácora Viva es un expediente digital en construcción para albergues y organizaciones que atienden a personas en situación de vulnerabilidad. Busco tres organizaciones fundadoras.">
 <meta property="og:url" content="https://freejolitos.consulting/bitacora-viva">
 <meta property="og:image" content="https://freejolitos.consulting/assets/bitacora-viva-og.png">
 <meta property="og:image:width" content="1200">
@@ -27,12 +27,15 @@
     {
       "@type": "WebPage",
       "@id": "https://freejolitos.consulting/bitacora-viva#pagina",
-      "name": "Bitácora Viva — expediente digital para albergues y organizaciones civiles",
-      "description": "Bitácora Viva es un expediente único para organizaciones que atienden a personas en movilidad. Está en construcción y hoy trabaja solo con datos de prueba. Aquí cuento cómo va.",
+      "name": "Bitácora Viva — expediente digital para organizaciones de atención humanitaria",
+      "description": "Bitácora Viva es un expediente digital en construcción para albergues y organizaciones que atienden a personas en situación de vulnerabilidad. Busco tres organizaciones fundadoras.",
       "url": "https://freejolitos.consulting/bitacora-viva",
       "inLanguage": "es-MX",
       "isPartOf": {
         "@id": "https://freejolitos.consulting/#sitio"
+      },
+      "mainEntity": {
+        "@id": "https://freejolitos.consulting/bitacora-viva#producto"
       },
       "publisher": {
         "@type": "Organization",
@@ -40,6 +43,30 @@
         "sameAs": [
           "https://www.linkedin.com/company/143555145/"
         ]
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://freejolitos.consulting/bitacora-viva#producto",
+      "name": "Bitácora Viva",
+      "description": "Expediente digital en construcción para organizaciones que hacen atención humanitaria: un expediente por persona, notas privadas por área, anonimización en lugar de borrado e indicadores que no señalan a nadie.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "inLanguage": ["es-MX", "en"],
+      "creativeWorkStatus": "En construcción",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Albergues, casas de acogida y organizaciones de la sociedad civil que atienden a personas en situación de vulnerabilidad"
+      },
+      "image": "https://freejolitos.consulting/assets/bitacora-viva-og.png",
+      "url": "https://freejolitos.consulting/bitacora-viva",
+      "author": {
+        "@type": "Person",
+        "name": "Hugo Legorreta"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Freejolitos Consultores"
       }
     },
     {
@@ -55,7 +82,7 @@
           "name": "¿Ya puedo usar Bitácora Viva en mi organización?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Todavía no. Hoy es una prueba de concepto que trabaja solo con datos de prueba. Si te interesa ser de las primeras organizaciones en probarla, escríbeme."
+            "text": "Con datos reales, todavía no. Las organizaciones fundadoras la prueban conmigo primero, con datos de prueba, mientras se cierran los candados de seguridad y la revisión legal."
           }
         },
         {
@@ -63,7 +90,7 @@
           "name": "¿Cuánto cuesta?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Aún no tiene precio. Cuando lo tenga, estará publicado aquí con su cifra, igual que el resto de mis servicios."
+            "text": "Aún no tiene precio de lista. Las tres organizaciones fundadoras tendrán precio de lanzamiento. Cuando haya precio de lista, estará publicado aquí con su cifra, igual que el resto de mis servicios."
           }
         },
         {
@@ -79,7 +106,15 @@
           "name": "¿Sirve para organizaciones que no son albergues?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Está pensada primero para albergues y casas de acogida. Si atiendes a otra población y llevas expedientes, cuéntame cómo trabajas: eso define qué se construye después."
+            "text": "Está pensada primero para albergues y casas de acogida. Cada organización configura sus áreas, sus catálogos y su logotipo. Si atiendes a otra población y llevas expedientes, cuéntame cómo trabajas: eso define qué se construye después."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Otras organizaciones pueden ver nuestros datos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Cada organización ve solo sus datos, y eso se comprueba con pruebas automáticas en cada cambio."
           }
         }
       ]
@@ -106,6 +141,7 @@
       <ul>
         <li><a href="/">Inicio</a></li>
         <li><a href="/servicios">Servicios</a></li>
+        <li><a href="/productos">Productos</a></li>
         <li><a href="/como-trabajo">Cómo trabajo</a></li>
         <li><a href="/quien-soy">Quién soy</a></li>
         <li><a href="/guias">Guías</a></li>
@@ -123,9 +159,13 @@
       <div class="marca-producto">
         <img src="/assets/bitacora-viva-logo-light.svg" width="280" height="68" alt="Bitácora Viva — de Freejolitos Consultores">
       </div>
-      <div class="kicker">Proyecto en construcción · Solo datos de prueba · Avances públicos</div>
-      <h1 class="titulo-pagina">Bitácora Viva: <span class="marcado">un expediente que cuida la historia de las personas</span></h1>
-      <p class="entrada">Estoy construyendo Bitácora Viva para las organizaciones que atienden a personas en movilidad y cargan con el dato más delicado que existe usando cuadernos, hojas de cálculo compartidas y chats de WhatsApp. Todavía no está a la venta ni guarda datos reales. Esta página cuenta qué problema resuelve, para quién es y cómo va el trabajo.</p>
+      <div class="kicker">En construcción · Demo con datos de prueba · Busco organizaciones fundadoras</div>
+      <h1 class="titulo-pagina">Bitácora Viva: <span class="marcado">un expediente digital para organizaciones que hacen atención humanitaria</span></h1>
+      <p class="entrada">Estoy construyendo Bitácora Viva para albergues, casas de acogida y organizaciones que atienden a personas en situación de vulnerabilidad. Cuida la historia de cada persona: se cuenta una vez, cada área ve lo que le toca y nada se pierde cuando alguien del equipo se va. Está en construcción y hoy trabaja solo con datos de prueba.</p>
+      <div class="acciones">
+        <a class="boton" href="#fundadoras">Quiero ser organización fundadora</a>
+        <a class="boton-secundario" href="/productos">Ver todos los productos</a>
+      </div>
     </section>
 
     <section class="panel" aria-labelledby="el-problema">
@@ -142,8 +182,8 @@
 
     <section class="panel" aria-labelledby="para-quien">
       <h2 id="para-quien">Para quién es</h2>
-      <p>Hoy la construyo pensando en albergues y casas de acogida para personas en movilidad: quien recibe en la puerta, quien da seguimiento desde trabajo social y quien dirige.</p>
-      <p>Si tu organización atiende a personas en situación de vulnerabilidad, lleva expedientes y se reconoce en el problema de arriba, también me interesa escucharte. Las necesidades de otros tipos de organización todavía no están construidas, y prefiero decirlo.</p>
+      <p>La construyo primero para albergues y casas de acogida: quien recibe en la puerta, quien da seguimiento desde trabajo social y quien dirige.</p>
+      <p>Si tu organización atiende a personas en situación de vulnerabilidad, lleva expedientes y se reconoce en el problema de arriba, también me interesa escucharte. Lo que necesitan otros tipos de organización todavía no está construido, y prefiero decirlo.</p>
     </section>
 
     <section class="panel" aria-labelledby="que-resuelve">
@@ -160,6 +200,9 @@
 
       <h3>Cifras que no señalan a nadie</h3>
       <p>Los indicadores solo se muestran a partir de cinco personas, para que ninguna cifra permita adivinar de quién se trata.</p>
+
+      <h3>Se adapta a tu organización</h3>
+      <p>Cada organización ve solo sus datos, con su logotipo, sus áreas y sus catálogos. Funciona en español y en inglés, y está diseñada con alta legibilidad y accesibilidad.</p>
     </section>
 
     <section class="panel" aria-labelledby="lo-que-no-hace">
@@ -173,18 +216,24 @@
       </ol>
     </section>
 
-    <section class="panel" aria-labelledby="avance">
-      <h2 id="avance">Cómo va el trabajo</h2>
+    <section class="panel" aria-labelledby="donde-esta-hoy">
+      <h2 id="donde-esta-hoy">Dónde está hoy</h2>
       <div class="resalte">
-        <p><strong>Estado al 12 de noviembre de 2026:</strong> prueba de concepto funcional, únicamente con datos de prueba.</p>
+        <p>La estoy co-diseñando con una organización de atención humanitaria en México. Hoy trabaja solo con datos de prueba, y te la puedo mostrar en una videollamada con datos ficticios.</p>
       </div>
+      <p>Está diseñada para cumplir con la ley de protección de datos personales. Antes de guardar el primer dato real faltan cuatro cosas: activar la verificación en dos pasos, usar un correo propio para los avisos, revisar el marco legal con una persona abogada y publicar el aviso de privacidad. Ningún dato real entra antes de eso.</p>
+      <p><a class="enlace-chevron" href="/laboratorio#bitacora-vuelo">Sigue los avances, con fecha, en el Laboratorio</a></p>
+    </section>
+
+    <section class="panel resalte" id="fundadoras" aria-labelledby="h-fundadoras">
+      <h2 id="h-fundadoras">Organizaciones fundadoras</h2>
+      <p>Busco tres organizaciones fundadoras que quieran usar Bitácora Viva primero y ayudarme a terminarla.</p>
       <ul>
-        <li>1,888 pruebas automáticas de seguridad aprobadas. Comprueban, entre otras cosas, que una organización no vea datos de otra y que cada rol solo haga lo que le corresponde.</li>
-        <li>Una operadora de trabajo social dio de alta un caso de prueba, y sus comentarios ya están construidos: el expediente muestra lo esencial sin cambiar de pestaña y registra los consentimientos que se firman en papel.</li>
-        <li>El expediente, el alta, la lista de casos y los indicadores ya se usan bien desde un celular, y se probaron en un teléfono real.</li>
+        <li>Precio de lanzamiento, que platicamos según el tamaño de tu organización.</li>
+        <li>Acompañamiento directo conmigo en la puesta en marcha.</li>
+        <li>Voz en lo que se construye después.</li>
       </ul>
-      <p>Lo que falta antes de guardar el primer dato real: validar las reglas de operación con la organización, activar la verificación en dos pasos, revisar el marco legal con una persona abogada y publicar el aviso de privacidad. Ningún dato real entra antes de eso.</p>
-      <p><a class="enlace-chevron" href="/laboratorio#bitacora-vuelo">Sigue los avances, con fecha, en la bitácora de vuelo del Laboratorio</a></p>
+      <p>A cambio te pido tiempo de tu equipo para probarla y decirme con franqueza qué no funciona.</p>
     </section>
 
     <section class="panel" aria-labelledby="preguntas-frecuentes">
@@ -193,11 +242,11 @@
       <div class="faq">
         <details class="faq-item" open>
           <summary><h3>¿Ya puedo usar Bitácora Viva en mi organización?</h3></summary>
-          <p>Todavía no. Hoy es una prueba de concepto que trabaja solo con datos de prueba. Si te interesa ser de las primeras organizaciones en probarla, escríbeme.</p>
+          <p>Con datos reales, todavía no. Las organizaciones fundadoras la prueban conmigo primero, con datos de prueba, mientras se cierran los candados de seguridad y la revisión legal.</p>
         </details>
         <details class="faq-item" open>
           <summary><h3>¿Cuánto cuesta?</h3></summary>
-          <p>Aún no tiene precio. Cuando lo tenga, estará publicado aquí con su cifra, igual que el resto de mis servicios.</p>
+          <p>Aún no tiene precio de lista. Las tres organizaciones fundadoras tendrán precio de lanzamiento. Cuando haya precio de lista, estará publicado aquí con su cifra, igual que el resto de mis servicios.</p>
         </details>
         <details class="faq-item" open>
           <summary><h3>¿Usa inteligencia artificial para evaluar a las personas?</h3></summary>
@@ -205,7 +254,11 @@
         </details>
         <details class="faq-item" open>
           <summary><h3>¿Sirve para organizaciones que no son albergues?</h3></summary>
-          <p>Está pensada primero para albergues y casas de acogida. Si atiendes a otra población y llevas expedientes, cuéntame cómo trabajas: eso define qué se construye después.</p>
+          <p>Está pensada primero para albergues y casas de acogida. Cada organización configura sus áreas, sus catálogos y su logotipo. Si atiendes a otra población y llevas expedientes, cuéntame cómo trabajas: eso define qué se construye después.</p>
+        </details>
+        <details class="faq-item" open>
+          <summary><h3>¿Otras organizaciones pueden ver nuestros datos?</h3></summary>
+          <p>No. Cada organización ve solo sus datos, y eso se comprueba con pruebas automáticas en cada cambio.</p>
         </details>
       </div>
     </section>
@@ -221,13 +274,13 @@
     </section>
 
     <section class="slab" aria-labelledby="platiquemos">
-      <h2 id="platiquemos">Si esto se parece a tu día a día, platiquemos</h2>
-      <p>Quiero escuchar cómo trabaja tu equipo hoy y qué se les complica. No es una llamada de ventas.</p>
+      <h2 id="platiquemos">¿Quieres ser una de las tres organizaciones fundadoras?</h2>
+      <p>Escríbeme y te muestro la demo. Primero quiero escuchar cómo trabaja tu equipo hoy y qué se les complica.</p>
       <p class="nota-precio">Al escribirme trataré tus datos de contacto para responderte y, si decides contratar o colaborar, para prestarte el servicio. No los comparto con fines comerciales. Consulta el <a href="/aviso-de-privacidad">aviso de privacidad completo</a>.</p>
 
       <div class="acciones">
-        <a class="boton" href="https://wa.me/525533444852">Escríbeme por WhatsApp</a>
-        <a class="boton-secundario" href="mailto:hola@freejolitos.consulting">hola@freejolitos.consulting</a>
+        <a class="boton" href="https://wa.me/525533444852?text=Hola%20Hugo%2C%20vi%20Bit%C3%A1cora%20Viva%20en%20tu%20sitio%20y%20quiero%20saber%20m%C3%A1s.">Escríbeme por WhatsApp</a>
+        <a class="boton-secundario" href="mailto:hola@freejolitos.consulting?subject=Bit%C3%A1cora%20Viva">hola@freejolitos.consulting</a>
       </div>
     </section>
 
@@ -248,6 +301,7 @@
           <ul>
             <li><a href="/">Inicio</a></li>
             <li><a href="/servicios">Servicios y precios</a></li>
+            <li><a href="/productos">Productos</a></li>
             <li><a href="/como-trabajo">Cómo trabajo</a></li>
             <li><a href="/quien-soy">Quién soy</a></li>
             <li><a href="/guias">Guías</a></li>

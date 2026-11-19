@@ -264,7 +264,8 @@ main { display: block; padding-bottom: 3rem; }
     overflow: hidden;
     transition: max-height 0.25s ease;
   }
-  .menu-interruptor:checked ~ .navegacion { max-height: 16rem; }
+  /* 8 entradas de 2.75rem más separaciones: 16rem cortaba las últimas. */
+  .menu-interruptor:checked ~ .navegacion { max-height: 30rem; }
 
   .navegacion ul { flex-direction: column; gap: 0.125rem; padding: 0.5rem 0 0.75rem; }
   .navegacion a { display: block; }
@@ -1141,6 +1142,10 @@ main input[type="checkbox"] {
 }
 
 /* Clases para El Laboratorio y páginas de producto */
+/* Escaparate: con dos productos, auto-fit reparte el ancho completo
+   (auto-fill dejaba una tercera columna vacía en escritorio). */
+.muro-productos { grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
+
 .marca-sutramind,
 .marca-producto {
   margin-bottom: 1.25rem;

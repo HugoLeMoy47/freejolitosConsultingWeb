@@ -71,7 +71,7 @@ el HTML: es cronología visual, no texto inventado.
   botón visual (`.menu-boton`, icono de tres barras en CSS puro — nada de SVG nuevo, para no mover
   el conteo de doce SVG de más abajo). Debajo de `40rem` de ancho la casilla oculta `.navegacion`
   hasta que se marca; arriba de ese ancho la casilla no se muestra y el menú se ve como siempre. Los
-  siete enlaces del menú (incluyendo `/laboratorio`) **siguen en el HTML en todo momento**, igual que el resto de la sección.
+  ocho enlaces del menú (incluyendo `/productos` y `/laboratorio`) **siguen en el HTML en todo momento**, igual que el resto de la sección.
 - **Checklists de las guías** (`<input type="checkbox">` dentro de `<li>`): cada casilla va envuelta
   en `<label>` — nombre accesible para lector de pantalla, y clic en el texto marca la casilla (un
   solo hit-target, sin zona muerta). El estilo (`estilos.css`, sección «Listas de verificación») usa

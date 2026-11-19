@@ -9,7 +9,9 @@ const pages = [
   { html: 'como-trabajo.html', copy: 'copy/03-como-trabajo.md' },
   { html: 'quien-soy.html', copy: 'copy/04-quien-soy.md' },
   { html: 'como-manejo-tu-informacion.html', copy: 'copy/05-como-manejo-tu-informacion.md' },
-  { html: 'bitacora-viva.html', copy: 'copy/06-bitacora-viva-presentacion.md' },
+  { html: 'bitacora-viva.html', copy: 'copy/06-bitacora-viva.md' },
+  { html: 'productos.html', copy: 'copy/07-productos.md' },
+  { html: 'sutramind.html', copy: 'copy/08-sutramind.md' },
 ];
 
 function read(file) {

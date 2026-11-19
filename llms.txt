@@ -73,6 +73,31 @@ dos horas; las horas adicionales se facturan solo con autorización por escrito.
 
 Nunca se cotiza un desarrollo completo sin construir antes una prueba de concepto funcional.
 
+### Para empresas
+
+Fuera del tercer sector trabaja a la medida con empresas que necesitan que sus cifras se puedan
+verificar. Ejemplos, solo por sector: un sistema de gestión de cuentas y de pagos de inversión para
+un intermediario financiero con oficinas en México y Estados Unidos; plataformas B2B para banca,
+seguros y fintech; comercio exterior; comercio minorista. Se cotiza por proyecto, empezando por una
+prueba de concepto. Detalle: https://freejolitos.consulting/servicios#para-empresas
+
+## Productos (en construcción)
+
+Escaparate: https://freejolitos.consulting/productos
+
+- Bitácora Viva — expediente digital para organizaciones que hacen atención humanitaria (albergues,
+  casas de acogida y organizaciones que atienden a personas en situación de vulnerabilidad). Un
+  expediente por persona, notas privadas por área, anonimización en lugar de borrado e indicadores
+  que no señalan a nadie. Cada organización ve solo sus datos, con su logotipo, sus áreas y sus
+  catálogos; en español y en inglés. Hoy trabaja solo con datos de prueba; busca tres
+  organizaciones fundadoras con precio de lanzamiento. Aún no tiene precio de lista.
+  https://freejolitos.consulting/bitacora-viva
+- SutraMind — tablero de indicadores y asesor con inteligencia artificial para direcciones de
+  empresas medianas y pymes. Las cifras las calcula la base de datos, no el modelo; cada respuesta
+  cita su fuente; cada persona ve solo lo que su rol permite. Prueba de concepto con datos de
+  prueba y demo guiada; busca tres empresas fundadoras con precio de lanzamiento. Aún no tiene
+  precio de lista. https://freejolitos.consulting/sutramind
+
 ### Trabajos que se cotizan como proyecto aparte
 
 Ciberseguridad, análisis de viabilidad de infraestructura, planeación de crecimiento de
@@ -136,10 +161,17 @@ de contacto es WhatsApp; la alternativa es correo. No hay formulario de contacto
   declarado de inteligencia artificial.
 - [Quién soy](https://freejolitos.consulting/quien-soy) — Hugo Legorreta: trayectoria y por qué
   trabaja con el tercer sector.
-- [El Laboratorio](https://freejolitos.consulting/laboratorio) — Construcción de software en público (Public Building): Bitácora Viva (expedientes humanitarios) y SutraMind (asesor analítico determinista), con bitácora viva de ingeniería.
-- [Bitácora Viva](https://freejolitos.consulting/bitacora-viva) — expediente digital único para albergues y
-  organizaciones que atienden a personas en movilidad. Proyecto en construcción, solo con datos de
-  prueba: qué problema resuelve, para quién es, qué no hará y cómo va el trabajo.
+- [Productos](https://freejolitos.consulting/productos) — escaparate de los productos que ya se
+  pueden probar con datos de prueba: Bitácora Viva (organizaciones de la sociedad civil) y
+  SutraMind (empresas), y cómo funciona ser organización o empresa fundadora.
+- [Bitácora Viva](https://freejolitos.consulting/bitacora-viva) — expediente digital para
+  organizaciones que hacen atención humanitaria. En construcción, solo con datos de prueba: qué
+  problema resuelve, para quién es, qué no hará, dónde está hoy y organizaciones fundadoras.
+- [SutraMind](https://freejolitos.consulting/sutramind) — asesor de datos para empresas que no
+  inventa cifras. En construcción, con demo guiada: qué resuelve, qué no hace y empresas
+  fundadoras.
+- [El Laboratorio](https://freejolitos.consulting/laboratorio) — construcción en público de
+  Bitácora Viva y SutraMind: decisiones de diseño, pruebas automáticas y cifras con fecha de corte.
 - [Datos e IA](https://freejolitos.consulting/como-manejo-tu-informacion) — política de manejo de datos e
   inteligencia artificial.
 
