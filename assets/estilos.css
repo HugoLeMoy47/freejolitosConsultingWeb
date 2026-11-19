@@ -120,10 +120,21 @@ p { margin: 0 0 1.25rem; max-width: var(--ancho-texto); }
 .marcado {
   background-image: linear-gradient(90deg, rgba(1, 207, 203, 0.4) 0%, rgba(1, 207, 203, 0.95) 100%);
   background-repeat: no-repeat;
-  background-size: 100% 0.3em;
+  background-size: 100% 0.32em;
   background-position: 0 88%;
   border-radius: 2px;
   padding: 0 0.08em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .marcado {
+    animation: dibujarMarcado 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+  }
+}
+
+@keyframes dibujarMarcado {
+  from { background-size: 0% 0.32em; }
+  to   { background-size: 100% 0.32em; }
 }
 
 .entrada {
@@ -178,20 +189,20 @@ main { display: block; padding-bottom: 3rem; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 1rem 0;
-  background: rgba(244, 250, 250, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(1, 207, 203, 0.16);
-  transition: padding 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  padding: 0.75rem 0;
+  background: var(--fondo);
+  border-bottom: 1px solid rgba(1, 207, 203, 0.2);
+  box-shadow: 0 4px 18px -4px rgba(1, 207, 203, 0.1);
+  transition: padding 0.25s ease, box-shadow 0.25s ease;
 }
 
 .sitio-encabezado .contenedor {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem 2rem;
+  gap: 1rem 1.5rem;
+  max-width: 72rem;
 }
 
 /* Sin view-transition-name: con la cortinilla opaca, cualquier elemento con
@@ -201,15 +212,21 @@ main { display: block; padding-bottom: 3rem; }
   display: inline-block;
   line-height: 0;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 /* Proporción real del archivo: 2245 × 520 (4.317:1). No recolorear ni recortar. */
-.marca img { width: 190px; height: 44px; display: block; }
+.marca img { width: 172px; height: auto; display: block; }
+
+.navegacion {
+  flex-shrink: 1;
+}
 
 .navegacion ul {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 0.5rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.2rem 0.35rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -221,11 +238,13 @@ main { display: block; padding-bottom: 3rem; }
 .navegacion a {
   display: inline-flex;
   align-items: center;
-  min-height: 2.75rem;
+  min-height: 2.35rem;
   text-decoration: none;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
   color: var(--secundario);
-  padding: 0.45rem 0.95rem;
+  padding: 0.35rem 0.65rem;
   border-radius: var(--r-pildora);
   border: 1px solid transparent;
   transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
@@ -233,14 +252,14 @@ main { display: block; padding-bottom: 3rem; }
 .navegacion a:hover {
   color: var(--texto);
   background: var(--resalte);
-  border-color: rgba(1, 207, 203, 0.25);
+  border-color: rgba(1, 207, 203, 0.3);
   transform: translateY(-1px);
 }
 
 .navegacion a[aria-current="page"] {
   color: var(--texto);
   background: var(--resalte);
-  border-color: rgba(1, 207, 203, 0.45);
+  border-color: rgba(1, 207, 203, 0.5);
   box-shadow: 0 2px 8px -2px rgba(1, 207, 203, 0.25);
   font-weight: bold;
 }
@@ -281,8 +300,8 @@ main { display: block; padding-bottom: 3rem; }
 .menu-icono::before { top: -6px; }
 .menu-icono::after { top: 6px; }
 
-@media (max-width: 40rem) {
-  .sitio-encabezado { padding: 0.75rem 0; }
+@media (max-width: 58rem) {
+  .sitio-encabezado .contenedor { flex-wrap: wrap; }
   .menu-boton { display: inline-flex; }
 
   .navegacion {
@@ -295,8 +314,18 @@ main { display: block; padding-bottom: 3rem; }
     max-height: calc(100vh - 4.5rem);
   }
 
-  .navegacion ul { flex-direction: column; gap: 0.25rem; padding: 0.75rem 0; }
-  .navegacion a { display: block; }
+  .navegacion ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    padding: 0.75rem 0;
+  }
+  .navegacion a {
+    display: block;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9375rem;
+  }
 }
 
 /* ---------- Paneles ---------- */
@@ -450,6 +479,18 @@ main { display: block; padding-bottom: 3rem; }
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   gap: 1.75rem;
   margin: 0 0 1.75rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .servicios .servicio:nth-child(1) {
+    animation: entrarSuave 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+  }
+  .servicios .servicio:nth-child(2) {
+    animation: entrarSuave 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+  }
+  .servicios .servicio:nth-child(3) {
+    animation: entrarSuave 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
+  }
 }
 
 .servicio {
@@ -687,6 +728,23 @@ tbody th { font-weight: bold; }
   border-color: var(--acento);
   font-weight: bold;
   box-shadow: 0 4px 14px 0 rgba(1, 207, 203, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+.boton::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -70%;
+  width: 45%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: rotate(25deg);
+  transition: left 0.55s ease;
+  pointer-events: none;
+}
+.boton:hover::before {
+  left: 130%;
 }
 .boton:hover {
   background: var(--texto);
@@ -894,11 +952,20 @@ tbody th { font-weight: bold; }
   .diagrama .late {
     animation: latidoAmbient 2.8s ease-in-out infinite alternate;
   }
+  .diagrama .recorre {
+    animation: flujoTrazo 5s ease-in-out infinite;
+  }
 }
 
 @keyframes latidoAmbient {
   from { opacity: 0.45; r: 6; }
-  to   { opacity: 0.85; r: 7.5; }
+  to   { opacity: 0.9; r: 7.5; }
+}
+
+@keyframes flujoTrazo {
+  0%, 15% { stroke-dashoffset: 150; }
+  45%, 70% { stroke-dashoffset: 0; }
+  90%, 100% { stroke-dashoffset: -150; }
 }
 
 .panel:hover .diagrama .trazo,
@@ -906,11 +973,11 @@ tbody th { font-weight: bold; }
 
 .servicio:hover .diagrama .crece,
 .servicio:focus-within .diagrama .crece,
-.panel:hover .diagrama .crece { transform: scaleX(1.06); }
+.panel:hover .diagrama .crece { transform: scaleX(1.08); }
 
 .servicio:hover .diagrama .sube,
 .servicio:focus-within .diagrama .sube,
-.panel:hover .diagrama .sube { transform: scaleY(1.08); }
+.panel:hover .diagrama .sube { transform: scaleY(1.1); }
 
 .servicio:hover .diagrama .recorre,
 .panel:hover .diagrama .recorre { stroke-dashoffset: 0; }
